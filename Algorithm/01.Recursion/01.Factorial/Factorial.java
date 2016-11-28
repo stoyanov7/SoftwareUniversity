@@ -11,6 +11,13 @@ public class Factorial {
        else
            return num * factorial(num - 1);
    }
+   
+   private static int findSum(int[] arr, int index) {
+       if (index == arr.length) {
+           return 0;
+       }
+       return arr[index] + findSum(arr, index + 1);
+    }
 
    public static void main(String[] args) {
        Scanner scanner = new Scanner(System.in);
@@ -27,5 +34,9 @@ public class Factorial {
                nne.what();
            }
        }
+      
+       int[] arr = { 1, 2, 3 };
+       int sum = findSum(arr, 0);
+       System.out.printf("%n%d", sum);
    }
 }
