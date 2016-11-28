@@ -22,7 +22,7 @@ public class Main {
    public static void main(String[] args) {
        Scanner scanner = new Scanner(System.in);
        System.out.print("Enter size for a vector: ");
-       int size = Integer.parseInt(scanner.nextInt());
+       int size = Integer.parseInt(scanner.nextLine());
        int[] vector = new int[size];
        gen01(vector, size - 1);
    }
