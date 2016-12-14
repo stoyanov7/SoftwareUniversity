@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MergeSort {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int day = Integer.parseInt(scanner.nextLine());
