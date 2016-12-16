@@ -1,6 +1,2 @@
 booleanInput = input()
-
-if booleanInput == "True":
-    print("Yes")
-else:
-    print("No")
+print("Yes") if booleanInput == "True" else print("No")
