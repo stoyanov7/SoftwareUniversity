@@ -1,6 +1,6 @@
-s = input()
+booleanInput = input()
 
-if s == "True":
+if booleanInput == "True":
     print("Yes")
 else:
     print("No")
