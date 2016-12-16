@@ -1,3 +1,3 @@
-s = input()
-toInt = int(s, 16)
-print(toInt)
+variableInHex = input()
+variableToInt = int(variableInHex, 16)
+print(variableToInt)
