@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-class Program
+class CentriesToMinutes
 {
     static void Main(string[] args)
     {
