@@ -1,8 +1,8 @@
 # SoftwareUniversity
 
-![Software University Logo](http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png)</a>
+[![Software University Logo](http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png)] (https://softuni.bg)
 
-![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)] (https://github.com/stoyanov7/SoftwareUniversity/blob/master/LICENSE)
 
 #Programming Basics - Java
 1. [First Steps In Coding] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/FirstStepsInCoding)
