@@ -1,7 +1,6 @@
 # SoftwareUniversity
 
-<a href="https://softuni.bg/trainings/1509/programming-fundamentals-january-2017" rel="Programming-Fundamentals">![Software University]
-(http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png)</a>
+![Software University Logo](http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png)</a>
 
 #Programming Basics - Java
 1. [First Steps In Coding] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/FirstStepsInCoding)
