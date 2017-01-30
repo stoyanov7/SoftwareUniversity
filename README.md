@@ -20,4 +20,5 @@
 3. [Methods and Debugging - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/MethodsAndDebugging-Lab)
 4. [Methods and Debugging - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/MethodsAndDebugging-Excercises)
 5. [Arrays - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ArraysAndLists-Lab)
+6. [Arrays - Excercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ArraysAndLists-Excercises)
 7. [List - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/Lists-Lab)
