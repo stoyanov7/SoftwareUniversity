@@ -21,6 +21,7 @@ public class TrippleSum
                 {
                     Console.WriteLine($"{array[i]} + {array[j]} == {sum}");
                     hasFoundSum = true;
+                    break;
                 }
             }
         }
