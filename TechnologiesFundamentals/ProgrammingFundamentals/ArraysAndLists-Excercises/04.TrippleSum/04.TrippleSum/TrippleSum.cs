@@ -9,8 +9,8 @@ public class TrippleSum
             .Split(' ')
             .Select(int.Parse).
             ToArray();
-        int counter = 0;
-
+        bool hasFoundSum = false;
+        
         for (int i = 0; i < array.Length; i++)
         {
             for (int j = i + 1; j < array.Length; j++)
@@ -20,12 +20,12 @@ public class TrippleSum
                 if (array.Contains(sum))
                 {
                     Console.WriteLine($"{array[i]} + {array[j]} == {sum}");
-                    counter++;
+                    hasFoundSum = true;
                 }
             }
         }
 
-        if (counter == 0)
+        if (!hasFoundSum)
         {
             Console.WriteLine("No");
         }
