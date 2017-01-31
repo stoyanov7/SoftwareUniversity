@@ -25,11 +25,10 @@ public class LargestCommonEnd
             if (arrOne[i] == arrTwo[i])
             {
                 count++;
+                continue;
             }
-            else
-            {
-                break;
-            }
+            
+            break;
         }
 
         return count;
