@@ -15,12 +15,9 @@ public class LastKNumbersSums
         {
             long sum = 0;
 
-            for (int previous = i - k; previous <= i - 1; previous++)
+            for (int previous = i - 1; previous >= 0 && previous >= i - k; previous--)
             {
-                if (previous >= 0)
-                {
                     sum += numberArray[previous];
-                }
             }
             numberArray[i] = sum;
         }
