@@ -9,13 +9,13 @@ public class RotateAndSum
         int numberRotates = int.Parse(Console.ReadLine());
         int[] sum = new int[array.Length];
 
-        for (int i = 0; i < numberRotates; i++)
+        for (int rotations = 0; rotations < numberRotates; rotations++)
         {
             int lastElement = array[array.Length - 1];
 
-            for (int j = array.Length - 1; j > 0; j--)
+            for (int element = array.Length - 1; element > 0; element--)
             {
-                array[j] = array[j - 1];
+                array[element] = array[element - 1];
             }
             array[0] = lastElement;
 
