@@ -22,3 +22,4 @@
 5. [Arrays - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ArraysAndLists-Lab)
 6. [Arrays - Excercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ArraysAndLists-Excercises)
 7. [List - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/Lists-Lab)
+8. [List - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/List-Excercises)
