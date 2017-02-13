@@ -27,3 +27,4 @@
 10. [Dictionaries, Lambda And LINQ - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DictionariesLambdaAndLINQ-Excercises)
 11. [Objects and Classes - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ObjectsAndClasses-Lab)
 12. [Objects and Classes - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ObjectsAndClasses-Exercises)
+13. [Files And Directories - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/FilesAndDirectories-Lab)
