@@ -29,6 +29,7 @@
 12. [Objects and Classes - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ObjectsAndClasses-Exercises)
 13. [Files And Directories - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/FilesAndDirectories-Lab)
 14. [Strings - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/Strings-Lab)
+15. [Exam Preparation I] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ExamPreparationI)
 
 ## Programming Fundamentals - Old Exams
 [Programming Fundamentals Sample Exam I - October 2016] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ProgrammingFundamentalsSampleExamI-October2016)
