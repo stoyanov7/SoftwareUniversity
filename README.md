@@ -34,5 +34,5 @@
 17. [Exam Preparation III] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ExamPreparationIII)
 18. [Exam Preparation IV] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ExamPreparationIV)
 
-## Programming Fundamentals - Old Exams
-[Programming Fundamentals Sample Exam I - October 2016] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ProgrammingFundamentalsSampleExamI-October2016)
+## Software Technologies
+1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/HTML5AndCSS/BasicTagsStylingFormsSimpleSites)
