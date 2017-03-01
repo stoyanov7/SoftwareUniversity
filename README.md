@@ -15,8 +15,8 @@
 
 #Technologies Fundamentals
 ## Programming Fundamentals - C# 
-1. [Data Types and Variables - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Lab)
-2. [Data Types and Variables - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Exercises)
+1. [Data Types and Variables - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Lab) [(assignment)] (https://docs.google.com/document/d/10fsgJC7F1JPbJGK1dGaoXBFNq15sMkoGNedyrb6-fUY/edit?usp=sharing)
+2. [Data Types and Variables - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Exercises) [(assignment)] (https://docs.google.com/document/d/1JEkOShIWnfR-hn_zEHohziWTMrfduWUc0jscOLqGHag/edit?usp=sharing)
 3. [Methods and Debugging - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/MethodsAndDebugging-Lab)
 4. [Methods and Debugging - Exercises] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/MethodsAndDebugging-Excercises)
 5. [Arrays - Lab] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ArraysAndLists-Lab)
