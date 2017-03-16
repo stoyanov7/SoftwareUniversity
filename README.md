@@ -38,4 +38,3 @@
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/HTML5AndCSS/BasicTagsStylingFormsSimpleSites) [(assignment)] (https://docs.google.com/document/d/1faKBh1rX4cgNGRNAUMcWZuCwuBmR_8KvkC9jl3Baups/edit?usp=sharing)
 2. [HTML5 and CSS: Exercises - Slice and Dice the Blog Web Design] (https://github.com/stoyanov7/stoyanov7.github.io) [(SoftUni Blog)] (https://stoyanov7.github.io/)
 3. [PHP: Syntax, Basic Web - Exercise] (https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/PHP/SyntaxBasicWeb-Exercise) [(assignment)] (https://docs.google.com/document/d/1OtuL4M30seuruaTE4mlWIWnjXlzTOzpLCx1BNU_PaMo/edit?usp=sharing)
-
