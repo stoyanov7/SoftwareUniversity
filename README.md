@@ -4,7 +4,7 @@
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/stoyanov7/SoftwareUniversity/blob/master/LICENSE)
 
-#Programming Basics - Java
+# Programming Basics - Java
 1. [First Steps In Coding](https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/FirstStepsInCoding)
 2. [Simple Calculations](https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/.SimpleCalculations)
 3. [Simple Conditional Statements](https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/.SimpleConditionalStatements)
@@ -13,7 +13,7 @@
 6. [Drawing Figures with Loops](https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/DrawingFiguresWithLoops)
 7. [Advanced Loops](https://github.com/stoyanov7/SoftwareUniversity/tree/master/.ProgramingBasics/AdvancedLoops)
 
-#Technologies Fundamentals
+# Technologies Fundamentals
 ## Programming Fundamentals - C# 
 1. [Data Types and Variables - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Lab) [(assignment)](https://docs.google.com/document/d/10fsgJC7F1JPbJGK1dGaoXBFNq15sMkoGNedyrb6-fUY/edit?usp=sharing)
 2. [Data Types and Variables - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DataTypesAndVariables-Exercises)[(assignment)](https://docs.google.com/document/d/1JEkOShIWnfR-hn_zEHohziWTMrfduWUc0jscOLqGHag/edit?usp=sharing)
@@ -24,7 +24,7 @@
 7. [List - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/Lists-Lab) [(assignment)](https://docs.google.com/document/d/1hiZjJbiu952j1ZnCGzrubyLWI-v9va4IdqXTIDBPGC0/edit?usp=sharing)
 8. [List - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/List-Excercises) [(assignment)](https://docs.google.com/document/d/1gGT67hw-Log4uuZTGcbr_Tb0Tv3MvUgxGOvZysp_2D0/edit?usp=sharing)
 9. [Dictionaries, Lambda And LINQ - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DictionariesLambdaAndLINQ-Lab) [(assignment)](https://docs.google.com/document/d/1tYX5TQIA0_r9pgI_eD0VUourBED0s6m-wMn-ng9DumU/edit?usp=sharing)
-10. [Dictionaries, Lambda And LINQ - Exercises] https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DictionariesLambdaAndLINQ-Excercises) [(assignment)](https://docs.google.com/document/d/1wxH6UdXEPVy0gUPOJrtafRrKoUl91_MCKYEjZEkoQno/edit?usp=sharing)
+10. [Dictionaries, Lambda And LINQ - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/DictionariesLambdaAndLINQ-Excercises) [(assignment)](https://docs.google.com/document/d/1wxH6UdXEPVy0gUPOJrtafRrKoUl91_MCKYEjZEkoQno/edit?usp=sharing)
 11. [Objects and Classes - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ObjectsAndClasses-Lab) [(assignment)](https://docs.google.com/document/d/1YxjTnIM1PMCr1epW1_x-KDuqwEdTd7CtRJYclqWy7Tc/edit?usp=sharing)
 12. [Objects and Classes - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ObjectsAndClasses-Exercises) [(assignment)](https://docs.google.com/document/d/1-LzAz9JiLpey7D_f_6mNz9mdTC9YEFazhmX5VRO1YnU/edit?usp=sharing)
 13. [Files And Directories - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/FilesAndDirectories-Lab) [(assignment)](https://docs.google.com/document/d/1cL84l-mQvSpv5NqM6zYshwF5VOWArxy37sKTKsclc7I/edit?usp=sharing)
