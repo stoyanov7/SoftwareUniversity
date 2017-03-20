@@ -39,3 +39,4 @@
 2. [HTML5 and CSS: Exercises - Slice and Dice the Blog Web Design](https://github.com/stoyanov7/stoyanov7.github.io) [(SoftUni Blog)](https://stoyanov7.github.io/)
 3. [PHP: Syntax, Basic Web - Exercise](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/PHP/SyntaxBasicWeb-Exercise) [(assignment)](https://docs.google.com/document/d/1OtuL4M30seuruaTE4mlWIWnjXlzTOzpLCx1BNU_PaMo/edit?usp=sharing)
 4. [PHP: MVC & Symfony Overview - Exercise](https://drive.google.com/file/d/0B8dnLRrq6fOgSEJfck5uelVacDA/view?usp=sharing) [(assignment)](https://docs.google.com/document/d/1pg9kZRGcJlNW9Xb-K4raNQGlv63HB44fRgN9rwyCL4w/edit?usp=sharing)
+5. [JavaScript: Syntax, Basic Web - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/JavaScript/SyntaxBasicWeb) [(assignment)](https://docs.google.com/document/d/1F79L4q6byfSX6tLTZNOQHWF6UVD7hOJRtZ7fwjZowqc/edit?usp=sharing)
