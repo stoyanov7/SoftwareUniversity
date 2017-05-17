@@ -34,6 +34,11 @@
 17. [Exam Preparation III](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ExamPreparationIII)
 18. [Exam Preparation IV](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals/ExamPreparationIV)
 
+## Programming Fundamentals Extended - C#
+1. [Data Types: Numeral Types and Type Conversion - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/DataTypesNumeralTypesAndTypeConversion-Lab) [(assignment)](https://docs.google.com/document/d/1Fd2vvK5G8YxOCj1sSTo3JIaoTQkpiQI0VKov0xhMFr4/edit?usp=sharing)
+2. [Data Types: Text and Other Types, Variables - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/DataTypesTextAndOtherTypesVariables-Lab) [(assignment)](https://docs.google.com/document/d/1qFqPiYWZmn3q8dzlWaXdyo4C1qkj74LcgSD70C1yeY4/edit?usp=sharing)
+3. [Data Types and Variables - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/DataTypesAndVariables-Exercises) [(assignment)](https://docs.google.com/document/d/1K7OUZzEu8KsuREpZWw4on4JupDGs6rXP3Bwz0fa2Ijw/edit?usp=sharing)
+
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/HTML5AndCSS/BasicTagsStylingFormsSimpleSites) [(assignment)](https://docs.google.com/document/d/1faKBh1rX4cgNGRNAUMcWZuCwuBmR_8KvkC9jl3Baups/edit?usp=sharing)
 2. [HTML5 and CSS: Exercises - Slice and Dice the Blog Web Design](https://github.com/stoyanov7/stoyanov7.github.io) [(SoftUni Blog)](https://stoyanov7.github.io/)
