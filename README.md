@@ -44,6 +44,8 @@
 7. [Debugging - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/Debugging-Exercises) [(assignment)](https://docs.google.com/document/d/1PMZDyM4RI-fC_YHhXIuuEwWqHgEr9RxkqpgXb62nMkU/edit?usp=sharing)
 8. [Arrays - Simple Array Processing - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/ArraysSimpleArrayProcessing-Lab) [(assignment)](https://docs.google.com/document/d/1bnai7SCaXYQLeGsa7jExZD53ghBhtz5SbyUuaQfuv7Q/edit?usp=sharing)
 9. [Simple Arrays - Exercises](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/SimpleArrays-Exercises) [(assignment)](https://docs.google.com/document/d/1T8IbxzBY7tjhIFd_40EXS4SnMy4ozx8_XVxl8Ps4g44/edit?usp=sharing)
+10. [Lists Processing Variable Length Sequences - Lab](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/ProgrammingFundamentals-Extended/ListsProcessingVariableLengthSequences-Lab) [(assignment)](https://docs.google.com/document/d/1ybUKMFmf8C-kjYdt-cBtKJtNyQsDpksnMpSqx2RQzbo/edit?usp=sharing)
+
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://github.com/stoyanov7/SoftwareUniversity/tree/master/TechnologiesFundamentals/SoftwareTechnologies/HTML5AndCSS/BasicTagsStylingFormsSimpleSites) [(assignment)](https://docs.google.com/document/d/1faKBh1rX4cgNGRNAUMcWZuCwuBmR_8KvkC9jl3Baups/edit?usp=sharing)
 2. [HTML5 and CSS: Exercises - Slice and Dice the Blog Web Design](https://github.com/stoyanov7/stoyanov7.github.io) [(SoftUni Blog)](https://stoyanov7.github.io/)
