@@ -1,0 +1,9 @@
+{
+  "name": "02.calculate-sum-and-vat",
+  "version": "0.0.0",
+  "description": "02.CalculateSumAndVAT",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

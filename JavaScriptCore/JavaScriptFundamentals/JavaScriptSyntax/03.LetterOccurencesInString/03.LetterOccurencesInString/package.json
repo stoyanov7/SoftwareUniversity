@@ -1,0 +1,9 @@
+{
+  "name": "03.letter-occurences-in-string",
+  "version": "0.0.0",
+  "description": "03.LetterOccurencesInString",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "05.string-of-numbers-one-to-n",
+  "version": "0.0.0",
+  "description": "05.StringOfNumbersOneToN",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

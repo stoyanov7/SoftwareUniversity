@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "07.NextDay", "07.NextDay\07.NextDay.njsproj", "{F82D4B21-4FDF-4E51-BFDE-26FDC571C69B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F82D4B21-4FDF-4E51-BFDE-26FDC571C69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82D4B21-4FDF-4E51-BFDE-26FDC571C69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82D4B21-4FDF-4E51-BFDE-26FDC571C69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82D4B21-4FDF-4E51-BFDE-26FDC571C69B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
