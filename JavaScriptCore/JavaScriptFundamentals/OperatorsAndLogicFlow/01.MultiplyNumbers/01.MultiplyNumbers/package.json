@@ -1,0 +1,9 @@
+{
+  "name": "01.multiply-numbers",
+  "version": "0.0.0",
+  "description": "01.MultiplyNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

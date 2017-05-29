@@ -1,0 +1,9 @@
+{
+  "name": "02.boxes-and-bottles",
+  "version": "0.0.0",
+  "description": "02.BoxesAndBottles",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

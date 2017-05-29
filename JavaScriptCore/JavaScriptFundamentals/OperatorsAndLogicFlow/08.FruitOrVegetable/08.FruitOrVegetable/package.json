@@ -1,0 +1,9 @@
+{
+  "name": "08.fruit-or-vegetable",
+  "version": "0.0.0",
+  "description": "08.FruitOrVegetable",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

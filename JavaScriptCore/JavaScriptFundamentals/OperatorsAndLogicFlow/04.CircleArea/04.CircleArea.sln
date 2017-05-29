@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "04.CircleArea", "04.CircleArea\04.CircleArea.njsproj", "{74E6D284-AD52-4AF2-98D0-81DA98F65B00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74E6D284-AD52-4AF2-98D0-81DA98F65B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E6D284-AD52-4AF2-98D0-81DA98F65B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E6D284-AD52-4AF2-98D0-81DA98F65B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E6D284-AD52-4AF2-98D0-81DA98F65B00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+{
+  "name": "10.chessboard",
+  "version": "0.0.0",
+  "description": "10.Chessboard",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}
