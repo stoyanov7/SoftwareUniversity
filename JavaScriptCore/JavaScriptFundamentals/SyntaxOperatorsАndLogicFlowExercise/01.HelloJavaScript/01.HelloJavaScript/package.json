@@ -1,0 +1,9 @@
+{
+  "name": "01.hello-java-script",
+  "version": "0.0.0",
+  "description": "01.HelloJavaScript",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

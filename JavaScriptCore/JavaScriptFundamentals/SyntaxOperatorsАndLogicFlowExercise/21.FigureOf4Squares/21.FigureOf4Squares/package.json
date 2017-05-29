@@ -1,0 +1,9 @@
+{
+  "name": "21.figure-of4-squares",
+  "version": "0.0.0",
+  "description": "21.FigureOf4Squares",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

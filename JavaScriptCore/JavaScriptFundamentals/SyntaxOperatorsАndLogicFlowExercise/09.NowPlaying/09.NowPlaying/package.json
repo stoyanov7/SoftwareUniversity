@@ -1,0 +1,9 @@
+{
+  "name": "09.now-playing",
+  "version": "0.0.0",
+  "description": "09.NowPlaying",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

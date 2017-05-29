@@ -1,0 +1,9 @@
+{
+  "name": "20.multiplication-table",
+  "version": "0.0.0",
+  "description": "20.MultiplicationTable",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

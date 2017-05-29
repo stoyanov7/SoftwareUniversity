@@ -1,0 +1,9 @@
+{
+  "name": "18.movie-prices",
+  "version": "0.0.0",
+  "description": "18.MoviePrices",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

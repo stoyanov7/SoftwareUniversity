@@ -1,0 +1,9 @@
+{
+  "name": "02.area-and-perimeter",
+  "version": "0.0.0",
+  "description": "02.AreaAndPerimeter",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

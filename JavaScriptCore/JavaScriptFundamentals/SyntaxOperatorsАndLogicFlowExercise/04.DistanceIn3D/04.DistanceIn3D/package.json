@@ -1,0 +1,9 @@
+{
+  "name": "04.distance-in3-d",
+  "version": "0.0.0",
+  "description": "04.DistanceIn3D",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "11.binary-to-decimal",
+  "version": "0.0.0",
+  "description": "11.BinaryToDecimal",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}
