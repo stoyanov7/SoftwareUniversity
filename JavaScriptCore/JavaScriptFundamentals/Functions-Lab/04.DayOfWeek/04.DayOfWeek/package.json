@@ -1,0 +1,9 @@
+{
+  "name": "04.day-of-week",
+  "version": "0.0.0",
+  "description": "04.DayOfWeek",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

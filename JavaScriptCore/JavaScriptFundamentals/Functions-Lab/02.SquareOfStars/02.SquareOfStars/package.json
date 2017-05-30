@@ -1,0 +1,9 @@
+{
+  "name": "02.square-of-stars",
+  "version": "0.0.0",
+  "description": "02.SquareOfStars",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

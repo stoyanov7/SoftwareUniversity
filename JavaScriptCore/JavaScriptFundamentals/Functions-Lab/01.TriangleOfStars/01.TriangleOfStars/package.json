@@ -1,0 +1,9 @@
+{
+  "name": "01.triangle-of-stars",
+  "version": "0.0.0",
+  "description": "01.TriangleOfStars",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

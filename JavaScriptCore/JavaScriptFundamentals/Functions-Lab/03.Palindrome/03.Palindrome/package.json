@@ -1,0 +1,9 @@
+{
+  "name": "03.palindrome",
+  "version": "0.0.0",
+  "description": "03.Palindrome",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}
