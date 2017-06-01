@@ -1,0 +1,9 @@
+{
+  "name": "01.inside-volume",
+  "version": "0.0.0",
+  "description": "01.InsideVolume",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

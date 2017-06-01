@@ -1,0 +1,9 @@
+{
+  "name": "02.road-radar",
+  "version": "0.0.0",
+  "description": "02.RoadRadar",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}

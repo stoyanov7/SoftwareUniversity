@@ -1,0 +1,9 @@
+{
+  "name": "03.template-format",
+  "version": "0.0.0",
+  "description": "03.TemplateFormat",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}
