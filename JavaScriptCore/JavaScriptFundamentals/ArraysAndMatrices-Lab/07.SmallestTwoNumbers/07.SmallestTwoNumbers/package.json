@@ -1,0 +1,9 @@
+{
+  "name": "07.smallest-two-numbers",
+  "version": "0.0.0",
+  "description": "07.SmallestTwoNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "Joro"
+  }
+}
