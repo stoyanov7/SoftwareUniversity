@@ -66,3 +66,5 @@
 2. [Operators and Logic Flow - Lab](https://goo.gl/dKX08G) [(assignment)](https://goo.gl/xFawaF)
 3. [Syntax Operators and Logic Flow - Exercise](https://goo.gl/S96dL5) [(assignment)](https://goo.gl/G0LKJ3)
 4. [Functions - Lab](https://goo.gl/WGb3ig) [(assignment)](https://goo.gl/IE8Rxy)
+5. [Functions - Exercise](https://goo.gl/tPi4iF) [(assignment)](https://goo.gl/8TA2K4)
+6. [Arrays and Matrices - Lab](https://goo.gl/ZGszio) [(assignment)](https://goo.gl/lDKBNZ)
