@@ -4,14 +4,14 @@
 
 [![license](https://goo.gl/YJtYFV)](https://goo.gl/3hbwmB)
 
-# Programming Basics - Java
-1. [First Steps In Coding](https://goo.gl/yOdV5d)
-2. [Simple Calculations](https://goo.gl/NrPjKm)
-3. [Simple Conditional Statements](https://goo.gl/o849ie)
-4. [Complex Conditional Statements](https://goo.gl/2bs5cj)
-5. [Simple Loops](https://goo.gl/T0qpcB)
-6. [Drawing Figures with Loops](https://goo.gl/LnyWrc)
-7. [Advanced Loops](https://goo.gl/yfTyWY)
+# Programming Basics - C#
+1. [First Steps In Coding](https://goo.gl/pprbG1)
+2. [Simple Calculations](https://goo.gl/Nflars)
+3. [Simple Conditional Statements](https://goo.gl/VCg0Qc)
+4. [Complex Conditional Statements](https://goo.gl/5LhXDv)
+5. [Simple Loops](https://goo.gl/VNbS2a)
+6. [Drawing Figures with Loops](https://goo.gl/ReLeUV)
+7. [Advanced Loops](https://goo.gl/5CsJjV)
 
 # Technologies Fundamentals
 ## Programming Fundamentals - C# 
