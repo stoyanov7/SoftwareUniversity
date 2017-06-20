@@ -49,6 +49,7 @@
 12. [Dictionaries - Lab](https://goo.gl/G6fTyT) [(assignment)](https://goo.gl/EDJSTf)
 13. [Lambda and LINQ - Lab](https://goo.gl/Vo0wLl) [(assignment)](https://goo.gl/XYrckt)
 14. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
+15. [Objects and Simple Classes - Exercises](https://goo.gl/61zHzH) [(assignment)](https://goo.gl/tTih7K)
 
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://goo.gl/VsDxGS) [(assignment)](https://goo.gl/GNEMlN)
