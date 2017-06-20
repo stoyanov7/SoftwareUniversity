@@ -46,8 +46,9 @@
 9. [Simple Arrays - Exercises](https://goo.gl/SKwNEl) [(assignment)](https://goo.gl/9Uv7ks)
 10. [Lists Processing Variable Length Sequences - Lab](https://goo.gl/CSbtT3) [(assignment)](https://goo.gl/hMtDci)
 11. [Array and List Algorithms - Lab](https://goo.gl/YJIdFT) [(assignment)](https://goo.gl/TTB1P4)
-12. [Lambda and LINQ - Lab](https://goo.gl/Vo0wLl) [(assignment)](https://goo.gl/XYrckt)
-13. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
+12. [Dictionaries - Lab](https://goo.gl/G6fTyT) [(assignment)](https://goo.gl/EDJSTf)
+13. [Lambda and LINQ - Lab](https://goo.gl/Vo0wLl) [(assignment)](https://goo.gl/XYrckt)
+14. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
 
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://goo.gl/VsDxGS) [(assignment)](https://goo.gl/GNEMlN)
