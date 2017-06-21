@@ -50,6 +50,8 @@
 13. [Lambda and LINQ - Lab](https://goo.gl/Vo0wLl) [(assignment)](https://goo.gl/XYrckt)
 14. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
 15. [Objects and Simple Classes - Exercises](https://goo.gl/61zHzH) [(assignment)](https://goo.gl/tTih7K)
+16. [Files and Directories - Lab](https://goo.gl/WXW7sv) [(assignment)](https://goo.gl/bJEgt2)
+17. [Strings and Text Processing - Lab](https://goo.gl/fqUcXg) [(assignment)](https://goo.gl/5suQal)
 
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://goo.gl/VsDxGS) [(assignment)](https://goo.gl/GNEMlN)
