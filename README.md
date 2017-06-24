@@ -55,6 +55,7 @@
 18. [Objects and Simple Classes - More Exercises](https://goo.gl/61zHzH) [(assignment)](https://goo.gl/tTih7K)
 19. [Files and Directories - Lab](https://goo.gl/WXW7sv) [(assignment)](https://goo.gl/bJEgt2)
 20. [Strings and Text Processing - Lab](https://goo.gl/fqUcXg) [(assignment)](https://goo.gl/5suQal)
+21. [Regular Expressions (RegEx) - Lab](https://goo.gl/138Qyt) [(assignment)](https://goo.gl/VnCyvV)
 
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://goo.gl/VsDxGS) [(assignment)](https://goo.gl/GNEMlN)
