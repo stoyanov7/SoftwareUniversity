@@ -53,11 +53,12 @@
 16. [Nested Dictionaries - Lab](https://goo.gl/Bn43p4) [(assignment)](https://goo.gl/ptLUSu)
 17. [Nested Dictionaries - Exercises](https://goo.gl/MNhwFT) [(assignment)](https://goo.gl/fB87zh)
 18. [Lambda and LINQ - Lab](https://goo.gl/Vo0wLl) [(assignment)](https://goo.gl/XYrckt)
-19. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
-20. [Objects and Simple Classes - More Exercises](https://goo.gl/61zHzH) [(assignment)](https://goo.gl/tTih7K)
-21. [Files and Directories - Lab](https://goo.gl/WXW7sv) [(assignment)](https://goo.gl/bJEgt2)
-22. [Strings and Text Processing - Lab](https://goo.gl/fqUcXg) [(assignment)](https://goo.gl/5suQal)
-23. [Regular Expressions (RegEx) - Lab](https://goo.gl/138Qyt) [(assignment)](https://goo.gl/VnCyvV)
+19. [Lambda and LINQ - Exercises](https://goo.gl/8yr6AV) [(assignment)](https://goo.gl/va6naa)
+20. [Objects and Simple Classes - Lab](https://goo.gl/fcK8vP) [(assignment)](https://goo.gl/DpCdgg)
+21. [Objects and Simple Classes - More Exercises](https://goo.gl/61zHzH) [(assignment)](https://goo.gl/tTih7K)
+22. [Files and Directories - Lab](https://goo.gl/WXW7sv) [(assignment)](https://goo.gl/bJEgt2)
+23. [Strings and Text Processing - Lab](https://goo.gl/fqUcXg) [(assignment)](https://goo.gl/5suQal)
+24. [Regular Expressions (RegEx) - Lab](https://goo.gl/138Qyt) [(assignment)](https://goo.gl/VnCyvV)
 
 ## Software Technologies
 1. [HTML5 and CSS: Basic Tags, Basic Styling, Forms, Simple Sites](https://goo.gl/VsDxGS) [(assignment)](https://goo.gl/GNEMlN)
