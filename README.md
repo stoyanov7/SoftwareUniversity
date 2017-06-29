@@ -75,6 +75,9 @@
 10. [Java: Syntax, Basic Web - Exercise](https://goo.gl/UtU9kM) [(assignment)](https://goo.gl/IEr3py)
 11. [C#: ASP.NET MVC Overview - Exercise](https://goo.gl/o66ZrK) [(assignment)](https://goo.gl/GANmTl)
 
+# C# Advanced
+1. [Stacks and Queues - Lab](https://goo.gl/AYohJe) [(assignment)](https://goo.gl/Visp3C)
+
 # Javascript Core
 ## JavaScript Fundamentals
 1. [JavaScript Syntax - Lab](https://goo.gl/Z9njU2) [(assignment)](https://goo.gl/a1Tkj6)
