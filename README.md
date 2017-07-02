@@ -78,6 +78,7 @@
 # C# Fundamentals
 ## C# Advanced
 1. [Stacks and Queues - Lab](https://goo.gl/AYohJe) [(assignment)](https://goo.gl/Visp3C)
+2. [Sets and Dictionaries - Lab](https://goo.gl/YSKSoo) [(assignment)](https://goo.gl/ThiGuE)
 
 # Javascript Core
 ## JavaScript Fundamentals
