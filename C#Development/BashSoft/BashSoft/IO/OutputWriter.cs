@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
 
     public static class OutputWriter
     {
@@ -26,6 +27,16 @@
             }
 
             Console.WriteLine(newLine, newLine);
+        }
+
+        public static void PrintMenu()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("1. Traverse Folder");
+            sb.AppendLine("2. Students Repository");
+            Console.WriteLine(sb.ToString());
+
+            InputReader.ReadCommands();
         }
 
         public static void WriteMessage(string message) => Console.Write(message);
