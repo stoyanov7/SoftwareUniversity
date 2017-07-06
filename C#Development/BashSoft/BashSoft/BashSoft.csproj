@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ExceptionMessages.cs" />
+    <Compile Include="IO\InputReader.cs" />
     <Compile Include="IO\IOManager.cs" />
     <Compile Include="IO\OutputWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
