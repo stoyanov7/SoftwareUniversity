@@ -10,6 +10,8 @@
 
         public const string InexistingStudentInDataBase = "The user name for the student you are trying to get does not exist!";
 
-        public const string DirectoryNotFound = "The name of the directory is not valid!";
+        public const string InvalidPath = "The name of the directory is not valid!";
+
+        public const string ComparisonOfFilesWithDifferentSizes = "Files not of equal size, certain mismatch.";
     }
 }
