@@ -42,7 +42,7 @@
                 }
                 catch (DirectoryNotFoundException ex)
                 {
-                    OutputWriter.DisplayException(ExceptionMessages.DirectoryNotFound);
+                    OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
                 }
             }
         }
