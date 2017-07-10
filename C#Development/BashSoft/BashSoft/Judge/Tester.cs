@@ -9,7 +9,7 @@
     {
         public static void CompareContent(string userOutputPath, string expectedOutputPath)
         {
-            OutputWriter.WriteMessageOnNewLine("Reading files...");
+            OutputWriter.DisplayDarkGreenLine("Reading files...");
 
             try
             {
@@ -20,12 +20,65 @@
 
                 Printoutput(mismatches, hasMismatches, mismatchesPath);
 
-                OutputWriter.WriteMessageOnNewLine("Files read!");
+                OutputWriter.WriteEmptyLine();
+                OutputWriter.DisplayDarkGreenLine("Files read!");
             }
             catch (FileNotFoundException)
             {
                 OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
             }
+        }
+
+        private static string GetMismatchPath(string expectedOutputPath)
+        {
+            var indexOf = expectedOutputPath.LastIndexOf('\\');
+            var directoryPath = expectedOutputPath.Substring(0, indexOf);
+            var finalPath = directoryPath + @"\Mismatches.txt";
+
+            return finalPath;
+        }
+
+        private static string[] GetLineWithPossibleMismatches(string[] actualOutputLines, string[] expectedOutputLine, out bool hasMismatches)
+        {
+            hasMismatches = false;
+            var output = string.Empty;
+            var mismatches = new string[actualOutputLines.Length];
+
+            OutputWriter.WriteMessageOnNewLine("Comparing files...");
+            OutputWriter.WriteEmptyLine();
+
+            var minOutputLine = actualOutputLines.Length;
+
+            if (actualOutputLines.Length != expectedOutputLine.Length)
+            {
+                hasMismatches = true;
+                minOutputLine = Math.Min(actualOutputLines.Length, expectedOutputLine.Length);
+
+                OutputWriter.DisplayException(ExceptionMessages.ComparisonOfFilesWithDifferentSizes);
+            }
+
+            for (var index = 0; index < minOutputLine; index++)
+            {
+                var actualLine = actualOutputLines[index];
+                var expectedLine = expectedOutputLine[index];
+
+                if (!actualLine.Equals(expectedLine))
+                {
+                    //TODO: Create mismaching line for "Mismatchs.txt"
+                    output = $"Mismatch at line {index} \"{expectedLine}\", actual: \"{actualLine}\"";
+                    //output += Environment.NewLine;
+                    hasMismatches = true;
+                }
+                else
+                {
+                    output = actualLine;
+                    //output += Environment.NewLine;
+                }
+
+                mismatches[index] = output;
+            }
+
+            return mismatches;
         }
 
         private static void Printoutput(string[] mismatches, bool hasMismatch, string mismatchesPath)
@@ -48,57 +101,10 @@
 
                 return;
             }
-
-            OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
-        }
-
-        private static string[] GetLineWithPossibleMismatches(string[] actualOutputLines, string[] expectedOutputLine, out bool hasMismatches)
-        {
-            hasMismatches = false;
-            var output = string.Empty;
-            var mismatches = new string[actualOutputLines.Length];
-
-            OutputWriter.WriteMessageOnNewLine("Comparing files...");
-
-            var minOutputLine = actualOutputLines.Length;
-
-            if (actualOutputLines.Length != expectedOutputLine.Length)
+            else
             {
-                hasMismatches = true;
-                minOutputLine = Math.Min(actualOutputLines.Length, expectedOutputLine.Length);
-                OutputWriter.DisplayException(ExceptionMessages.ComparisonOfFilesWithDifferentSizes);
+                OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
             }
-
-            for (int index = 0; index < minOutputLine; index++)
-            {
-                var actualLine = actualOutputLines[index];
-                var expectedLine = expectedOutputLine[index];
-
-                if (!actualLine.Equals(expectedLine))
-                {
-                    output = $"Mismatch at line {index} \"{expectedLine}\", actual: \"{actualLine}\"";
-                    output += Environment.NewLine;
-                    hasMismatches = true;
-                }
-                else
-                {
-                    output = actualLine;
-                    output += Environment.NewLine;
-                }
-
-                mismatches[index] = output;
-            }
-
-            return mismatches;
-        }
-
-        private static string GetMismatchPath(string expectedOutputPath)
-        {
-            var indexOf = expectedOutputPath.LastIndexOf('\\');
-            var directoryPath = expectedOutputPath.Substring(0, indexOf);
-            var finalPath = directoryPath + @"\Mismatches.txt";
-
-            return finalPath;
         }
     }
 }
