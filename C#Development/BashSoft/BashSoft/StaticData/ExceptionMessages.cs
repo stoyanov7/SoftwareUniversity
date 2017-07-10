@@ -1,4 +1,4 @@
-﻿namespace BashSoft.Exceptions
+﻿namespace BashSoft.StaticData
 {
     public static class ExceptionMessages
     {
@@ -18,6 +18,6 @@
 
         public const string UnauthorizedAccessExceptionMessage = "The folder/file you are trying to get access needs a higher level of rights than you currently have.";
 
-        public static string UnableToGoHigherInPartitionHierarchy "Unable to go higher in partition hierarchy.";
+        public static string UnableToGoHigherInPartitionHierarchy = "Unable to go higher in partition hierarchy.";
     }
 }

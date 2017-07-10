@@ -1,6 +1,6 @@
 ﻿namespace BashSoft.Judge
 {
-    using BashSoft.Exceptions;
+    using BashSoft.StaticData;
     using BashSoft.IO;
     using System;
     using System.IO;

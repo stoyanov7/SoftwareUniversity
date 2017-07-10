@@ -1,7 +1,6 @@
 ﻿namespace BashSoft
 {
     using BashSoft.IO;
-    using BashSoft.Judge;
 
     public class Startup
     {

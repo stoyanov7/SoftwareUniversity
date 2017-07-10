@@ -1,6 +1,5 @@
 ﻿namespace BashSoft.IO
 {
-    using BashSoft.Exceptions;
     using BashSoft.StaticData;
     using System;
     using System.Collections.Generic;
