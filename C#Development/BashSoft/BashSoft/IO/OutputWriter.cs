@@ -29,16 +29,6 @@
             Console.WriteLine(newLine, newLine);
         }
 
-        public static void PrintMenu()
-        {
-            var sb = new StringBuilder();
-            sb.AppendLine("1. Traverse Folder");
-            sb.AppendLine("2. Students Repository");
-            Console.WriteLine(sb.ToString());
-
-            InputReader.ReadCommands();
-        }
-
         public static void WriteMessage(string message) => Console.Write(message);
 
         public static void WriteMessageOnNewLine(string message) => Console.WriteLine(message);
@@ -47,8 +37,16 @@
 
         public static void DisplayException(string message)
         {
-            ConsoleColor currentColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
+            var currentColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(message);
+            Console.ForegroundColor = currentColor;
+        }
+
+        public static void DisplayDarkGreenLine(string message)
+        {
+            var currentColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine(message);
             Console.ForegroundColor = currentColor;
         }
