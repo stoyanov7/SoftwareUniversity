@@ -16,7 +16,6 @@
         {
             if (!isDataInitialized)
             {
-                
                 OutputWriter.WriteMessageOnNewLine("Reading data...");
                 studentsByCourse = new Dictionary<string, Dictionary<string, List<int>>>();
                 ReadData();
@@ -72,8 +71,10 @@
                 {
                     return true;
                 }
-
-                OutputWriter.DisplayException(ExceptionMessages.InexistingCourseInDataBase);
+                else
+                {
+                    OutputWriter.DisplayException(ExceptionMessages.InexistingCourseInDataBase);
+                }
             }
             else
             {
