@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IO\CommandInterpreter.cs" />
+    <Compile Include="IO\InputReader.cs" />
     <Compile Include="StaticData\ExceptionMessages.cs" />
     <Compile Include="IO\IOManager.cs" />
     <Compile Include="IO\OutputWriter.cs" />
