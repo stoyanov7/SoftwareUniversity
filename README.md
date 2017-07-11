@@ -82,6 +82,7 @@
 3. [Sets and Dictionaries - Lab](https://goo.gl/YSKSoo) [(assignment)](https://goo.gl/ThiGuE)
 4. [Sets and Dictionaries - Exercise](https://goo.gl/745w3K) [(assignment)](https://goo.gl/sQb5ef)
 
+
 # Javascript Core
 ## JavaScript Fundamentals
 1. [JavaScript Syntax - Lab](https://goo.gl/Z9njU2) [(assignment)](https://goo.gl/a1Tkj6)
