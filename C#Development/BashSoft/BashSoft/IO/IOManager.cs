@@ -7,7 +7,7 @@
 
     public static class IOManager
     {
-        public static void TraverseDirectory(string path, int depth)
+        public static void TraverseDirectory(int depth)
         {       
             OutputWriter.WriteEmptyLine();
 
@@ -31,6 +31,7 @@
 
                 try
                 {
+                    //TODO: Print all subfolders
                     foreach (var file in Directory.GetFiles(currentPath))
                     {
                         var indexOfLastSlash = file.LastIndexOf("\\");
@@ -49,6 +50,7 @@
                 {
                     OutputWriter.DisplayException(ExceptionMessages.UnauthorizedAccessExceptionMessage);
                 }
+
                 if (depth - initialIdentation > 0)
                 {
                     break;
@@ -101,8 +103,10 @@
                 OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
                 return;
             }
-
-            SessionData.currentPath = absolutePath;
+            else
+            {
+                SessionData.currentPath = absolutePath;
+            }
         }
     }
-}
+}   
