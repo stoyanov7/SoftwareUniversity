@@ -1,9 +1,9 @@
 ﻿namespace BashSoft.IO
 {
-    using BashSoft.StaticData;
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using StaticData;
 
     public static class IOManager
     {
@@ -12,26 +12,26 @@
             OutputWriter.WriteEmptyLine();
 
             var initialIdentation = SessionData
-                .currentPath
+                .CurrentPath
                 .Split('\\')
                 .Length;
             var subFolders = new Queue<string>();
-            subFolders.Enqueue(SessionData.currentPath);
+            subFolders.Enqueue(SessionData.CurrentPath);
 
             while (subFolders.Count != 0)
             {
-                //TODO: Dequeue the folder  at the start of the queue
+                // TODO: Dequeue the folder  at the start of the queue
                 var currentPath = subFolders.Dequeue();
                 var identation = currentPath
                     .Split('\\')
                     .Length - initialIdentation;
 
-                //TODO: Print the folder path
+                // TODO: Print the folder path
                 OutputWriter.WriteMessageOnNewLine($"{new string('-', identation)}{currentPath}");
 
                 try
                 {
-                    //TODO: Print all subfolders
+                    // TODO: Print all subfolders
                     foreach (var file in Directory.GetFiles(currentPath))
                     {
                         var indexOfLastSlash = file.LastIndexOf("\\");
@@ -40,7 +40,7 @@
                         OutputWriter.WriteMessageOnNewLine(new string('-', indexOfLastSlash) + fileName);
                     }
 
-                    //TODO: Add all it's subfolders to the end of the queue
+                    // TODO: Add all it's subfolders to the end of the queue
                     foreach (var directoryPath in Directory.GetDirectories(currentPath))
                     {
                         subFolders.Enqueue(directoryPath);
@@ -60,7 +60,7 @@
 
         public static void CreateDirectoryInCurrentFolder(string name)
         {
-            var path = SessionData.currentPath + "\\" + name;
+            var path = SessionData.CurrentPath + "\\" + name;
 
             try
             {
@@ -78,10 +78,10 @@
             {
                 try
                 {
-                    var currentPath = SessionData.currentPath;
+                    var currentPath = SessionData.CurrentPath;
                     var indexOfLastSlash = currentPath.LastIndexOf("\\");
                     var newPath = currentPath.Substring(0, indexOfLastSlash);
-                    SessionData.currentPath = newPath;
+                    SessionData.CurrentPath = newPath;
                 }
                 catch (ArgumentOutOfRangeException)
                 {
@@ -90,7 +90,7 @@
             }
             else
             {
-                var currentPath = SessionData.currentPath;
+                var currentPath = SessionData.CurrentPath;
                 currentPath += "\\" + relativePath;
                 ChangeCurrentDirectoryAbsolute(currentPath);
             }
@@ -105,7 +105,7 @@
             }
             else
             {
-                SessionData.currentPath = absolutePath;
+                SessionData.CurrentPath = absolutePath;
             }
         }
     }

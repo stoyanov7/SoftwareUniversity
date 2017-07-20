@@ -1,12 +1,12 @@
 ﻿namespace BashSoft.Repositories
 {
-    using BashSoft.StaticData;
-    using BashSoft.IO;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
     using System.Text.RegularExpressions;
+    using BashSoft.IO;
+    using BashSoft.StaticData;
 
     public static class StudentsRepository
     {
@@ -28,14 +28,34 @@
             }
         }
 
+        public static void GetStudentFromCourse(string courseName, string username)
+        {
+            if (IsQueryForStudentPossiblе(courseName, username))
+            {
+                OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(username, studentsByCourse[courseName][username]));
+            }
+        }
+
+        public static void GetAllStudentFromCourse(string courseName)
+        {
+            if (IsQueryForCoursePossible(courseName))
+            {
+                OutputWriter.WriteMessageOnNewLine($"{courseName}:");
+
+                foreach (var studentMarkEntry in studentsByCourse[courseName])
+                {
+                    OutputWriter.PrintStudent(studentMarkEntry);
+                }
+            }
+        }
+
         private static void ReadData()
         {
             var input = Console.ReadLine();
 
             while (!string.IsNullOrEmpty(input))
             {
-
-                //TODO: Split input and initilize variables
+                // TODO: Split input and initilize variables
                 var inputTokens = input
                     .Split(' ')
                     .ToArray();
@@ -44,7 +64,7 @@
                 var student = inputTokens[1];
                 var mark = int.Parse(inputTokens[2]);
 
-                //TODO: Add the cource and the student if they don't exist
+                // TODO: Add the cource and the student if they don't exist
                 if (!studentsByCourse.ContainsKey(course))
                 {
                     studentsByCourse.Add(course, new Dictionary<string, List<int>>());
@@ -55,7 +75,7 @@
                     studentsByCourse[course].Add(student, new List<int>());
                 }
 
-                //TODO: Add mark
+                // TODO: Add mark
                 studentsByCourse[course][student].Add(mark);
 
                 input = Console.ReadLine(); 
@@ -67,7 +87,7 @@
 
         private static void ReadData(string fileName)
         {
-            var path = SessionData.currentPath + "\\" + fileName;
+            var path = SessionData.CurrentPath + "\\" + fileName;
 
             if (File.Exists(path))
             {
@@ -140,27 +160,6 @@
             }
 
             return false;
-        }
-
-        public static void GetStudentFromCourse(string courseName, string username)
-        {
-            if (IsQueryForStudentPossiblе(courseName, username))
-            {
-                OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(username, studentsByCourse[courseName][username]));
-            }
-        }
-
-        public static void GetAllStudentFromCourse(string courseName)
-        {
-            if (IsQueryForCoursePossible(courseName))
-            {
-                OutputWriter.WriteMessageOnNewLine($"{courseName}:");
-
-                foreach (var studentMarkEntry in studentsByCourse[courseName])
-                {
-                    OutputWriter.PrintStudent(studentMarkEntry);
-                }
-            }
         }
     }
 }

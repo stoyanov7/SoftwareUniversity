@@ -1,9 +1,9 @@
 ﻿namespace BashSoft.Judge
 {
-    using BashSoft.StaticData;
-    using BashSoft.IO;
     using System;
     using System.IO;
+    using BashSoft.IO;
+    using BashSoft.StaticData;
 
     public static class Tester
     {
@@ -64,15 +64,13 @@
 
                 if (!actualLine.Equals(expectedLine))
                 {
-                    //TODO: Create mismaching line for "Mismatchs.txt"
+                    // TODO: Create mismaching line for "Mismatchs.txt"
                     output = $"Mismatch at line {index} \"{expectedLine}\", actual: \"{actualLine}\"";
-                    //output += Environment.NewLine;
                     hasMismatches = true;
                 }
                 else
                 {
                     output = actualLine;
-                    //output += Environment.NewLine;
                 }
 
                 mismatches[index] = output;

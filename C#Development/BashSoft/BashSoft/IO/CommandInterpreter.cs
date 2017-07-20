@@ -1,11 +1,10 @@
 ﻿namespace BashSoft.IO
 {
+    using System.Diagnostics;
+    using System.Linq;
     using BashSoft.Judge;
     using BashSoft.Repositories;
     using BashSoft.StaticData;
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
 
     public static class CommandInterpreter
     {
@@ -51,7 +50,7 @@
         private static void TryOpenFile(string input, string[] data)
         {
             var fileName = data[1];
-            Process.Start(SessionData.currentPath + "\\" + fileName);
+            Process.Start(SessionData.CurrentPath + "\\" + fileName);
         }
 
         private static void TryCreateDirectory(string input, string[] data)
