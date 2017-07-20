@@ -5,12 +5,12 @@
     using System.IO;
     using System.Linq;
     using System.Text.RegularExpressions;
-    using BashSoft.IO;
-    using BashSoft.StaticData;
+    using StaticData;
+    using IO;
 
     public static class StudentsRepository
     {
-        public static bool isDataInitialized = false;
+        private static bool isDataInitialized = false;
 
         private static Dictionary<string, Dictionary<string, List<int>>> studentsByCourse;
 
@@ -28,27 +28,51 @@
             }
         }
 
-        public static void GetStudentFromCourse(string courseName, string username)
-        {
-            if (IsQueryForStudentPossiblе(courseName, username))
             {
+        {
                 OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(username, studentsByCourse[courseName][username]));
             }
-        }
 
-        public static void GetAllStudentFromCourse(string courseName)
         {
-            if (IsQueryForCoursePossible(courseName))
-            {
                 OutputWriter.WriteMessageOnNewLine($"{courseName}:");
-
                 foreach (var studentMarkEntry in studentsByCourse[courseName])
-                {
-                    OutputWriter.PrintStudent(studentMarkEntry);
-                }
-            }
         }
+            }
+                RepositorySorters.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
 
+                }
+                    studentsToTake = studentsByCourse[courseName].Count;
+                {
+                if (studentsToTake == null)
+            {
+            if (IsQueryForCoursePossible(courseName))
+        {
+        public static void OrderAndTake(string courseName, string comparison, int? studentsToTake = null)
+
+        }
+            }
+
+                RepositoryFilters.FilterAndTake(studentsByCourse[courseName], givenFilter, studentsToTake.Value);
+                }
+                    studentsToTake = studentsByCourse[courseName].Count;
+                {
+                if (studentsToTake == null)
+            {
+            if (IsQueryForCoursePossible(courseName))
+        {
+        public static void FilterAndTake(string courseName, string givenFilter, int? studentsToTake = null)
+
+        }
+            }
+                }
+                    OutputWriter.PrintStudent(studentMarkEntry);
+                {
+
+            {
+            if (IsQueryForCoursePossible(courseName))
+        public static void GetAllStudentsFromCourse(string courseName)
+        }
+            if (IsQueryForStudentPossiblе(courseName, username))
         private static void ReadData()
         {
             var input = Console.ReadLine();
