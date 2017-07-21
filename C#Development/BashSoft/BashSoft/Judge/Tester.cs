@@ -2,8 +2,8 @@
 {
     using System;
     using System.IO;
-    using BashSoft.IO;
-    using BashSoft.StaticData;
+    using IO;
+    using StaticData;
 
     public static class Tester
     {
