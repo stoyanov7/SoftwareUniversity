@@ -5,7 +5,7 @@
     using System.IO;
     using StaticData;
 
-    public static class IOManager
+    public static class IoManager
     {
         public static void TraverseDirectory(int depth)
         {       

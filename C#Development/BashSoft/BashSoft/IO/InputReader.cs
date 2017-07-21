@@ -1,7 +1,7 @@
 ﻿namespace BashSoft.IO
 {
     using System;
-    using BashSoft.StaticData;
+    using StaticData;
 
     public static class InputReader
     {

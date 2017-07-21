@@ -62,14 +62,14 @@
         private static void TryCreateDirectory(string input, string[] data)
         {
             var folderName = data[1];
-            IOManager.CreateDirectoryInCurrentFolder(folderName);
+            IoManager.CreateDirectoryInCurrentFolder(folderName);
         }
 
         private static void TryTraverseDirectory(string input, string[] data)
         {
             if (data.Length == 1)
             {
-                IOManager.TraverseDirectory(0);
+                IoManager.TraverseDirectory(0);
             }
             else if (data.Length == 2)
             {
@@ -77,7 +77,7 @@
 
                 if (hasParsed)
                 {
-                    IOManager.TraverseDirectory(depth);
+                    IoManager.TraverseDirectory(depth);
                 }
                 else
                 {
@@ -109,7 +109,7 @@
             }
 
             var relPath = data[1];
-            IOManager.ChangeCurrentDirectoryRelative(relPath);
+            IoManager.ChangeCurrentDirectoryRelative(relPath);
         }
 
         private static void TryChandePathAbsolute(string input, string[] data)
@@ -121,7 +121,7 @@
             }
 
             var absolutePath = data[1];
-            IOManager.ChangeCurrentDirectoryAbsolute(absolutePath);
+            IoManager.ChangeCurrentDirectoryAbsolute(absolutePath);
         }
 
         private static void TryReadDatabaseFromFile(string input, string[] data)
