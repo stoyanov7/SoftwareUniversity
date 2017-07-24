@@ -2,6 +2,9 @@
 {
     public class Tire
     {
+        private int age;
+        private double pressure;
+
         public Tire(double pressure, int age)
         {
             this.Pressure = pressure;

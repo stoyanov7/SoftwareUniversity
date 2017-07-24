@@ -2,6 +2,10 @@
 {
     public class Company
     {
+        private string name;
+        private decimal salary;
+        private string department;
+
         public Company(string name, string department, decimal salary)
         {
             this.Name = name;

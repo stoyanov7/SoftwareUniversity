@@ -5,6 +5,13 @@
 
     public class Person
     {
+        private string name;
+        private Company company;
+        private Car car;
+        private List<Pokemon> pokemons;
+        private List<Parent> parents;
+        private List<Child> children;
+
         public Person(string name)
         {
             this.Name = name;

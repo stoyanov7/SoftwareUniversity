@@ -2,6 +2,9 @@
 {
     public class Pokemon
     {
+        private string name;
+        private string type;
+
         public Pokemon(string name, string type)
         {
             this.Name = name;

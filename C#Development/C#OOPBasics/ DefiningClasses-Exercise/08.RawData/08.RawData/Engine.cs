@@ -2,6 +2,9 @@
 {
     public class Engine
     {
+        private int speed;
+        private int power;
+
         public Engine(int speed, int power)
         {
             this.Speed = speed;

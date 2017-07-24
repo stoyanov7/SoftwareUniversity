@@ -2,6 +2,9 @@
 {
     public class Child
     {
+        private string name;
+        private string birthday;
+
         public Child(string name, string birthday)
         {
             this.Name = name;

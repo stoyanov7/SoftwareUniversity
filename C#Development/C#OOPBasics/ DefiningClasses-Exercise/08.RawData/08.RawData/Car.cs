@@ -4,6 +4,11 @@
 
     public class Car
     {
+        private string model;
+        private Engine engine;
+        private Cargo cargo;
+        private Tire[] tires;
+
         public Car(string model, Engine engine, Cargo cargo, Tire[] tires)
         {
             if (tires.Length != 4)

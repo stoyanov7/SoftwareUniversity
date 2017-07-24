@@ -2,7 +2,13 @@
 
 public class Rectangle
 {
-   public Rectangle(string id, double width, double height, double topLeftX, double topLeftY)
+    private string id;
+    private double width;
+    private double height;
+    private double topLeftX;
+    private double topLeftY;
+
+    public Rectangle(string id, double width, double height, double topLeftX, double topLeftY)
     {
         this.Id = id;
         this.Width = Math.Abs(width);

@@ -1,7 +1,12 @@
 ﻿namespace _02.CreatingConstructors
 {
+    using System;
+
     public class Person
     {
+        private string name;
+        private int age;
+
         public Person()
         {
             this.Name = "No name";
@@ -19,8 +24,36 @@
             this.Age = age;
         }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get => this.name;
 
-        public int Age { get; set; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    this.name = "No name";
+                }
+
+                this.name = value;
+            }
+        }
+
+        public int Age
+        {
+            get => this.age;
+
+            set
+            {
+                try
+                {
+                    this.age = value;
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+        }
     }
 }

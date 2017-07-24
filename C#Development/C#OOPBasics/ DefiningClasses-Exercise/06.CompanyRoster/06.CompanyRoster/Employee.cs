@@ -2,7 +2,13 @@
 {
     public class Employee
     {
-        public Employee() { }
+        private string department;
+        private string email;
+        private int age;
+
+        public Employee()
+        {
+        }
 
         public Employee(string name, decimal salary, string position, string department)
         {
@@ -12,7 +18,8 @@
             this.Department = department;
         }
 
-        public Employee(string name, decimal salary, string position, string department, string email, int age) : this(name, salary, position, department)
+        public Employee(string name, decimal salary, string position, string department, string email, int age)
+            : this(name, salary, position, department)
         {
             this.Email = email;
             this.Age = age;
@@ -31,5 +38,5 @@
         public int Age { get; set; }
 
         public override string ToString() => $"{this.Name} {this.Salary:F2} {this.Email} {this.Age}";
-        
+    }
 }

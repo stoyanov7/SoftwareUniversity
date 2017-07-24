@@ -2,6 +2,11 @@
 {
     public class Car
     {
+        private string model;
+        private double fuelAmount;
+        private double fuelConsumption;
+        private double distanceTravel;
+
         public Car(string model, double fuelAmount, double fuelConsumption)
         {
             this.Model = model;

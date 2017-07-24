@@ -4,6 +4,10 @@
 
     public class Trainer
     {
+        private string name;
+        private int badges;
+        private List<Pokemon> pokemons;
+
         public Trainer(string name)
         {
             this.Name = name;

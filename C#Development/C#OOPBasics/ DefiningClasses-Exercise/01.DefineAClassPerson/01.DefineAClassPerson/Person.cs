@@ -2,8 +2,19 @@
 {
     public class Person
     {
-        public string Name { get; set; }
+        private string name;
+        private int age;
 
-        public int Age { get; set; }
+        public string Name
+        {
+            get => this.name;
+            set => this.name = value;
+        }
+
+        public int Age
+        {
+            get => this.age;
+            set => this.age = value;
+        }
     }
 }

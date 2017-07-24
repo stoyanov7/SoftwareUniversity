@@ -2,6 +2,11 @@
 {
     public class Engine
     {
+        private string model;
+        private int power;
+        private int displacement;
+        private string efficiency;
+
         public Engine(string model, int power, int displacement, string efficiency)
         {
             this.Model = model;
@@ -10,11 +15,20 @@
             this.Efficiency = efficiency;
         }
 
-        public Engine(string model, int power) : this(model, power, -1, "n/a") { }
+        public Engine(string model, int power)
+            : this(model, power, -1, "n/a")
+        {
+        }
 
-        public Engine(string model, int power, int displacement) : this(model, power, displacement, "n/a") { }
+        public Engine(string model, int power, int displacement)
+            : this(model, power, displacement, "n/a")
+        {
+        }
 
-        public Engine(string model, int power, string efficiency) : this(model, power, -1, efficiency) { }
+        public Engine(string model, int power, string efficiency)
+            : this(model, power, -1, efficiency)
+        {
+        }
 
         public string Model { get; set; }
 
