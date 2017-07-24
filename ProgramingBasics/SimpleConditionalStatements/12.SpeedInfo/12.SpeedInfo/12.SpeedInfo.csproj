@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C5BE620-4FCC-4F4A-B89E-BD496B9174C7}</ProjectGuid>
+    <ProjectGuid>{901F0B59-6B45-4A65-9B8E-597C70EDDB85}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Number0_9ToText</RootNamespace>
-    <AssemblyName>Number0-9ToText</AssemblyName>
+    <RootNamespace>_12.SpeedInfo</RootNamespace>
+    <AssemblyName>12.SpeedInfo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NumberToText.cs" />
+    <Compile Include="SpeedInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExcellentOrNot
+namespace _02.ExcellentOrNot
 {
     public class ExcellentOrNot
     {
@@ -12,7 +12,8 @@ namespace ExcellentOrNot
             {
                 Console.WriteLine("Excellent!");
             }
-            else {
+            else
+            {
                 Console.WriteLine("Not excellent.");
             }
         }

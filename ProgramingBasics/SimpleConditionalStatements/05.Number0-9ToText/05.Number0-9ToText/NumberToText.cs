@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NumberToText
+namespace _05.NumberToText
 {
     public class NumberToText
     {

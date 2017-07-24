@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Number0-9ToText")]
+[assembly: AssemblyTitle("15.ThreeEqualNumbers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Number0-9ToText")]
+[assembly: AssemblyProduct("15.ThreeEqualNumbers")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5c5be620-4fcc-4f4a-b89e-bd496b9174c7")]
+[assembly: Guid("351b95f7-2b3f-4701-ade9-2eb7b0f8aa0f")]
 
 // Version information for an assembly consists of the following four values:
 //

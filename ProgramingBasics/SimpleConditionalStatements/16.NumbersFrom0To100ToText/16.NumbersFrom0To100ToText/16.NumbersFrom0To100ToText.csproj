@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6041024F-B55F-44C8-B837-70B278112D10}</ProjectGuid>
+    <ProjectGuid>{4BF5C196-F46C-4F11-AB38-FA823558AAFD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ExcellentOrNot</RootNamespace>
-    <AssemblyName>ExcellentOrNot</AssemblyName>
+    <RootNamespace>_16.NumbersFrom0To100ToText</RootNamespace>
+    <AssemblyName>16.NumbersFrom0To100ToText</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExcellentOrNot.cs" />
+    <Compile Include="NumbersFrom0To100ToText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
