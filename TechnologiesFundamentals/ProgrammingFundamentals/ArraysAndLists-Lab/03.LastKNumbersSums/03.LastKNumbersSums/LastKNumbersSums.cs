@@ -1,30 +1,36 @@
-﻿using System;
-using System.Linq;
-
-public class LastKNumbersSums
+﻿namespace _03.LastKNumbersSums
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class LastKNumbersSums
     {
-        int n = int.Parse(Console.ReadLine());
-        int k = int.Parse(Console.ReadLine());
-
-        long[] numberArray = new long[n];
-        numberArray[0] = 1;
-
-        for (int i = 1; i < n; i++)
+        public static void Main(string[] args)
         {
-            long sum = 0;
+            var n = int.Parse(Console.ReadLine());
+            var k = int.Parse(Console.ReadLine());
 
-            for (int previous = i - k; previous <= i - 1; previous++)
+            var numberArray = new long[n];
+            numberArray[0] = 1;
+
+            for (var i = 1; i < n; i++)
             {
-                if (previous >= 0)
-                {
-                    sum += numberArray[previous];
-                }
-            }
-            numberArray[i] = sum;
-        }
+                var sum = 0L;
 
-        numberArray.ToList().ForEach(e => Console.WriteLine(e));
-    }
+                for (var previous = i - k; previous <= i - 1; previous++)
+                {
+                    if (previous >= 0)
+                    {
+                        sum += numberArray[previous];
+                    }
+                }
+
+                numberArray[i] = sum;
+            }
+
+            numberArray
+                .ToList()
+                .ForEach(Console.WriteLine);
+        }
+    } 
 }

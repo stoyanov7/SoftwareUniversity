@@ -1,25 +1,32 @@
-﻿using System;
-using System.Linq;
-
-public class PairsByDifference
+﻿namespace _10.PairsByDifference
 {
-    public static void Main(string[] args)
-    {
-        var elements = Console.ReadLine().Split().Select(int.Parse).ToArray();
-        var number = int.Parse(Console.ReadLine());
-        var found = 0;
+    using System;
+    using System.Linq;
 
-        for (int i = 0; i < elements.Length; i++)
+    public class PairsByDifference
+    {
+        public static void Main(string[] args)
         {
-            for (int j = elements.Length - 1; j > i; j--)
+            var elements = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToArray();
+
+            var number = int.Parse(Console.ReadLine());
+            var found = 0;
+
+            for (var i = 0; i < elements.Length; i++)
             {
-                if (elements[i] - elements[j] == number || elements[j] - elements[i] == number)
+                for (var j = elements.Length - 1; j > i; j--)
                 {
-                    found++;
+                    if (elements[i] - elements[j] == number || elements[j] - elements[i] == number)
+                    {
+                        found++;
+                    }
                 }
             }
-        }
 
-        Console.WriteLine(found);
-    }
+            Console.WriteLine(found);
+        }
+    } 
 }

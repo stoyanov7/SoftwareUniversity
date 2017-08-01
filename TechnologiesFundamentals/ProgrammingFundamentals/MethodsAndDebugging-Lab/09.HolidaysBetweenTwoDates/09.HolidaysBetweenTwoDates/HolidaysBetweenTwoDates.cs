@@ -1,22 +1,27 @@
-﻿using System;
-using System.Globalization;
-
-public class HolidaysBetweenTwoDates
+﻿namespace _09.HolidaysBetweenTwoDates
 {
-    public static void Main()
+    using System;
+    using System.Globalization;
+
+    public class HolidaysBetweenTwoDates
     {
-        DateTime startDate = DateTime.ParseExact(Console.ReadLine(),
-            "d.M.yyyy", CultureInfo.InvariantCulture);
-        DateTime endDate = DateTime.ParseExact(Console.ReadLine(),
-            "d.M.yyyy", CultureInfo.InvariantCulture);
-        int holidaysCount = 0;
-        for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+        public static void Main(string[] args)
         {
-            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+            var startDate = DateTime.ParseExact(Console.ReadLine(),
+                "d.M.yyyy", CultureInfo.InvariantCulture);
+            var endDate = DateTime.ParseExact(Console.ReadLine(),
+                "d.M.yyyy", CultureInfo.InvariantCulture);
+            var holidaysCount = 0;
+
+            for (var date = startDate; date <= endDate; date = date.AddDays(1))
             {
-                holidaysCount++;
+                if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    holidaysCount++;
+                }
             }
+
+            Console.WriteLine(holidaysCount);
         }
-        Console.WriteLine(holidaysCount);
-    }
+    } 
 }

@@ -1,30 +1,40 @@
-﻿using System;
-using System.Linq;
-
-public class RotateAndSum
+﻿namespace _02.RotateAndSum
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class RotateAndSum
     {
-        int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        int numberRotates = int.Parse(Console.ReadLine());
-        int[] sum = new int[array.Length];
-
-        for (int rotations = 0; rotations < numberRotates; rotations++)
+        public static void Main(string[] args)
         {
-            int lastElement = array[array.Length - 1];
+            var array = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
 
-            for (int element = array.Length - 1; element > 0; element--)
-            {
-                array[element] = array[element - 1];
-            }
-            array[0] = lastElement;
+            var numberRotates = int.Parse(Console.ReadLine());
+            var sum = new int[array.Length];
 
-            for (int k = 0; k < array.Length; k++)
+            for (var rotations = 0; rotations < numberRotates; rotations++)
             {
-                sum[k] += array[k];
+                var lastElement = array[array.Length - 1];
+
+                for (var element = array.Length - 1; element > 0; element--)
+                {
+                    array[element] = array[element - 1];
+                }
+
+                array[0] = lastElement;
+
+                for (var k = 0; k < array.Length; k++)
+                {
+                    sum[k] += array[k];
+                }
             }
+
+            sum
+                .ToList()
+                .ForEach(e => Console.Write(e + " "));
         }
-
-        sum.ToList().ForEach(e => Console.Write(e + " "));
     }
 }

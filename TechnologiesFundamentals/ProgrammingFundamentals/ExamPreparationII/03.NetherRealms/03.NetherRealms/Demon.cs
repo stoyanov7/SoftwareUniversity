@@ -1,70 +1,74 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-
-public class Demon
+﻿namespace _03.NetherRealms
 {
-    public string Name { get; set; }
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text.RegularExpressions;
 
-    public decimal Health { get; set; }
-
-    public decimal Damage { get; set; }
-
-    public static Demon Parse(string demonName)
+    public class Demon
     {
-        var demon = new Demon();
-        demon.Name = demonName;
-        demon.Health = CalculateHealth(demonName);
-        demon.Damage = CalculateDamage(demonName);
-        return demon;
-    }
+        public string Name { get; set; }
 
-    private static decimal CalculateHealth(string demonName)
-    {
-        var healthPattern = @"[^0-9+\-*\/\.]";
-        var matches = Regex.Matches(demonName, healthPattern);
+        public decimal Health { get; set; }
 
-        var healthValues = new List<int>();
+        public decimal Damage { get; set; }
 
-        foreach (Match match in matches)
+        public static Demon Parse(string demonName)
         {
-            healthValues.Add(char.Parse(match.Value));
+            var demon = new Demon();
+            demon.Name = demonName;
+            demon.Health = CalculateHealth(demonName);
+            demon.Damage = CalculateDamage(demonName);
+
+            return demon;
         }
 
-        var healthSum = healthValues.Sum();
-
-        return healthSum;
-    }
-
-    private static decimal CalculateDamage(string demonName)
-    {
-        var damagePattern = @"[+-]?\d+(?:\.?\d+)?";
-        var matches = Regex.Matches(demonName, damagePattern);
-        var damageSum = 0m;
-
-        foreach (Match match in matches)
+        private static decimal CalculateHealth(string demonName)
         {
-            damageSum += decimal.Parse(match.Value);
-        }
+            const string healthPattern = @"[^0-9+\-*\/\.]";
+            var matches = Regex.Matches(demonName, healthPattern);
 
-        var modifiers = demonName
-            .Where(a => a == '*' || a == '/')
-            .ToArray();
+            var healthValues = new List<int>();
 
-        foreach (var modifier in modifiers)
-        {
-            switch (modifier)
+            foreach (Match match in matches)
             {
-                case '*':
-                    damageSum *= 2;
-                    break;
-
-                case '/':
-                    damageSum /= 2;
-                    break;
+                healthValues.Add(char.Parse(match.Value));
             }
+
+            var healthSum = healthValues.Sum();
+
+            return healthSum;
         }
 
-        return damageSum;
-    }
+        private static decimal CalculateDamage(string demonName)
+        {
+            const string damagePattern = @"[+-]?\d+(?:\.?\d+)?";
+            var matches = Regex.Matches(demonName, damagePattern);
+            var damageSum = 0m;
+
+            foreach (Match match in matches)
+            {
+                damageSum += decimal.Parse(match.Value);
+            }
+
+            var modifiers = demonName
+                .Where(a => a == '*' || a == '/')
+                .ToArray();
+
+            foreach (var modifier in modifiers)
+            {
+                switch (modifier)
+                {
+                    case '*':
+                        damageSum *= 2;
+                        break;
+
+                    case '/':
+                        damageSum /= 2;
+                        break;
+                }
+            }
+
+            return damageSum;
+        }
+    } 
 }

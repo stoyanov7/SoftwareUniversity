@@ -1,49 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class AverageGrades
+﻿namespace _04.AverageGrades
 {
-    public static void Main(string[] args)
-    {
-        var n = int.Parse(Console.ReadLine());
-        var students = new List<Student>();
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-        for (int i = 0; i < n; i++)
+    public class AverageGrades
+    {
+        public static void Main(string[] args)
         {
-            var currentStudent = ReadStudent();
-            students.Add(currentStudent);
+            var n = int.Parse(Console.ReadLine());
+            var students = new List<Student>();
+
+            for (var i = 0; i < n; i++)
+            {
+                var currentStudent = ReadStudent();
+                students.Add(currentStudent);
+            }
+
+            students = students
+                .Where(s => s.AverageGrades >= 5.00)
+                .OrderBy(s => s.Name)
+                .ThenByDescending(s => s.AverageGrades)
+                .ToList();
+
+            PrintTopStudent(students);
         }
 
-        students = students.Where(s => s.AverageGrades >= 5.00)
-                                    .OrderBy(s => s.Name)
-                                    .ThenByDescending(s => s.AverageGrades)
-                                    .ToList();
-
-        PrintTopStudent(students);
-    }
-
-    private static Student ReadStudent()
-    {
-        var tokens = Console.ReadLine().Split(' ').ToArray();
-        var name = tokens[0];
-        var grades = new List<double>();
-
-        for (int i = 1; i < tokens.Length; i++)
+        private static Student ReadStudent()
         {
-            grades.Add(double.Parse(tokens[i]));
+            var tokens = Console.ReadLine()
+                .Split(' ')
+                .ToArray();
+
+            var name = tokens[0];
+            var grades = new List<double>();
+
+            for (var i = 1; i < tokens.Length; i++)
+            {
+                grades.Add(double.Parse(tokens[i]));
+            }
+
+            var currentStudent = new Student(name, grades);
+
+            return currentStudent;
         }
 
-        var currentStudent = new Student(name, grades);
-
-        return currentStudent;
-    }
-
-    private static void PrintTopStudent(List<Student> students)
-    {
-        foreach (var student in students)
+        private static void PrintTopStudent(List<Student> students)
         {
-            Console.WriteLine($"{student.Name} -> {student.AverageGrades:f2}");
+            foreach (var student in students)
+            {
+                Console.WriteLine($"{student.Name} -> {student.AverageGrades:F2}");
+            }
         }
-    }
+    } 
 }

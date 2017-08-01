@@ -1,35 +1,37 @@
-﻿using System;
-
-public class CubeProperties
+﻿namespace _10.CubeProperties
 {
-    public static void Main(string[] args)
-    {
-        double cubeSide = double.Parse(Console.ReadLine());
-        string parameter = Console.ReadLine();
-        CalculateCubeProperties(cubeSide, parameter);
-    }
+    using System;
 
-    private static void CalculateCubeProperties(double cubeSide, string parameter)
+    public class CubeProperties
     {
-        if (parameter == "face")
+        public static void Main(string[] args)
         {
-            double face = Math.Sqrt(Math.Pow(cubeSide, 2) * 2);
-            Console.WriteLine("{0:F2}", face);
+            var cubeSide = double.Parse(Console.ReadLine());
+            var parameter = Console.ReadLine();
+            CalculateCubeProperties(cubeSide, parameter);
         }
-        else if (parameter == "space")
+
+        private static void CalculateCubeProperties(double cubeSide, string parameter)
         {
-            double space = Math.Sqrt(Math.Pow(cubeSide, 2) * 3);
-            Console.WriteLine("{0:F2}", space);
+            switch (parameter)
+            {
+                case "face":
+                    var face = Math.Sqrt(Math.Pow(cubeSide, 2) * 2);
+                    Console.WriteLine($"{face:F2}");
+                    break;
+                case "space":
+                    var space = Math.Sqrt(Math.Pow(cubeSide, 2) * 3);
+                    Console.WriteLine($"{space:F2}");
+                    break;
+                case "volume":
+                    var volume = Math.Pow(cubeSide, 3);
+                    Console.WriteLine($"{volume:F2}");
+                    break;
+                case "area":
+                    var area = Math.Pow(cubeSide, 2) * 6;
+                    Console.WriteLine($"{area:F2}");
+                    break;
+            }
         }
-        else if (parameter == "volume")
-        {
-            double volume = Math.Pow(cubeSide, 3);
-            Console.WriteLine("{0:F2}", volume);
-        }
-        else if (parameter == "area")
-        {
-            double area = Math.Pow(cubeSide, 2) * 6;
-            Console.WriteLine("{0:F2}", area);
-        }
-    }
+    } 
 }

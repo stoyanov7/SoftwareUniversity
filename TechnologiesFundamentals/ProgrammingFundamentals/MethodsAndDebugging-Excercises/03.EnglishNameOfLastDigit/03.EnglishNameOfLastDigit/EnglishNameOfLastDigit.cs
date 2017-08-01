@@ -1,52 +1,55 @@
-﻿using System;
-
-public class EnglishNameOfLastDigit
+﻿namespace _03.EnglishNameOfLastDigit
 {
-    public static void Main(string[] args)
-    {
-        long number = long.Parse(Console.ReadLine());
-        Console.WriteLine(GetEnglishNameOfLastDigit(number));
-    }
+    using System;
 
-    private static string GetEnglishNameOfLastDigit(long number)
+    public class EnglishNameOfLastDigit
     {
-        long lastDigit = Math.Abs(number % 10);
-        string message = "";
-
-        switch (lastDigit)
+        public static void Main(string[] args)
         {
-            case 0:
-                message = "zero";
-                break;
-            case 1:
-                message = "one";
-                break;
-            case 2:
-                message = "two";
-                break;
-            case 3:
-                message = "tree";
-                break;
-            case 4:
-                message = "four";
-                break;
-            case 5:
-                message = "five";
-                break;
-            case 6:
-                message = "six";
-                break;
-            case 7:
-                message = "seven";
-                break;
-            case 8:
-                message = "eight";
-                break;
-            case 9:
-                message = "nine";
-                break;
+            var number = long.Parse(Console.ReadLine());
+            Console.WriteLine(GetEnglishNameOfLastDigit(number));
         }
 
-        return message;
-    }
+        private static string GetEnglishNameOfLastDigit(long number)
+        {
+            var lastDigit = Math.Abs(number % 10);
+            var message = string.Empty;
+
+            switch (lastDigit)
+            {
+                case 0:
+                    message = "zero";
+                    break;
+                case 1:
+                    message = "one";
+                    break;
+                case 2:
+                    message = "two";
+                    break;
+                case 3:
+                    message = "tree";
+                    break;
+                case 4:
+                    message = "four";
+                    break;
+                case 5:
+                    message = "five";
+                    break;
+                case 6:
+                    message = "six";
+                    break;
+                case 7:
+                    message = "seven";
+                    break;
+                case 8:
+                    message = "eight";
+                    break;
+                case 9:
+                    message = "nine";
+                    break;
+            }
+
+            return message;
+        }
+    } 
 }

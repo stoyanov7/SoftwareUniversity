@@ -1,11 +1,14 @@
-﻿using System;
-
-public class IntegerToHexAndBinary
+﻿namespace _14.IntegerToHexAndBinary
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class IntegerToHexAndBinary
     {
-        int n = int.Parse(Console.ReadLine());
-        Console.WriteLine(Convert.ToString(n, 16).ToUpper());
-        Console.WriteLine(Convert.ToString(n, 2));
-    }
+        public static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            Console.WriteLine(Convert.ToString(n, 16).ToUpper());
+            Console.WriteLine(Convert.ToString(n, 2));
+        }
+    } 
 }

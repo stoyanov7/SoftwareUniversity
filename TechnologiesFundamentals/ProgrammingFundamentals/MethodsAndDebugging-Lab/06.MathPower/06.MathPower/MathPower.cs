@@ -1,23 +1,26 @@
-﻿using System;
-
-public class MathPower
+﻿namespace _06.MathPower
 {
-    public static void Main(string[] args)
-    {
-        double number = double.Parse(Console.ReadLine());
-        double power = double.Parse(Console.ReadLine());
-        Console.WriteLine($"{RaiseToPower(number, power)}");
-    }
+    using System;
 
-    private static double RaiseToPower(double number, double power)
+    public class MathPower
     {
-        double result = 1;
-
-        for (int i = 0; i < power; i++)
+        public static void Main(string[] args)
         {
-            result *= number;
+            var number = double.Parse(Console.ReadLine());
+            var power = double.Parse(Console.ReadLine());
+            Console.WriteLine($"{RaiseToPower(number, power)}");
         }
 
-        return result;
-    }
+        private static double RaiseToPower(double number, double power)
+        {
+            var result = 1D;
+
+            for (var i = 0; i < power; i++)
+            {
+                result *= number;
+            }
+
+            return result;
+        }
+    } 
 }

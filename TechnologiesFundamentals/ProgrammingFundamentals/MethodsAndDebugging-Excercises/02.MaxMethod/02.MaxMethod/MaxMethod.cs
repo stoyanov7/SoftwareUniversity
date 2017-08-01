@@ -1,21 +1,21 @@
-﻿using System;
-
-public class MaxMethod
+﻿namespace _02.MaxMethod
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class MaxMethod
     {
-        int firstNumber = int.Parse(Console.ReadLine());
-        int secondNumber = int.Parse(Console.ReadLine());
-        int thirdNumber = int.Parse(Console.ReadLine());
+        public static void Main(string[] args)
+        {
+            var firstNumber = int.Parse(Console.ReadLine());
+            var secondNumber = int.Parse(Console.ReadLine());
+            var thirdNumber = int.Parse(Console.ReadLine());
 
-        int firstAndSecond = GetMax(firstNumber, secondNumber);
-        int biggest = GetMax(firstAndSecond, thirdNumber);
+            var firstAndSecond = GetMax(firstNumber, secondNumber);
+            var biggest = GetMax(firstAndSecond, thirdNumber);
 
-        Console.WriteLine(biggest);
-    }
+            Console.WriteLine(biggest);
+        }
 
-    private static int GetMax(int a, int b)
-    {
-        return Math.Max(a, b);
-    }
+        private static int GetMax(int a, int b) => Math.Max(a, b);
+    } 
 }

@@ -1,45 +1,54 @@
-﻿using System;
-using System.Linq;
-
-public class Program
+﻿namespace _03.FoldAndSum
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class Program
     {
-        int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        int[] arrFoldA = new int[array.Length / 2];
-        int[] arrFoldB = new int[array.Length / 2];
-        int n = 0;
-
-        for (int i = array.Length / 4 - 1; i >= 0; i--)
+        public static void Main(string[] args)
         {
-            arrFoldA[n] = array[i];
-            n++;
+            var array = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
+
+            var arrFoldA = new int[array.Length / 2];
+            var arrFoldB = new int[array.Length / 2];
+            var n = 0;
+
+            for (var i = array.Length / 4 - 1; i >= 0; i--)
+            {
+                arrFoldA[n] = array[i];
+                n++;
+            }
+
+            n = array.Length / 2 - 1;
+
+            for (var i = array.Length - array.Length / 4; i < array.Length; i++)
+            {
+                arrFoldA[n] = array[i];
+                n--;
+            }
+
+            n = 0;
+
+            var start = array.Length / 4;
+            var end = array.Length - array.Length / 4;
+
+            for (var i = start; i < end; i++)
+            {
+                arrFoldB[n] = array[i];
+                n++;
+            }
+
+            var sum = new int[arrFoldA.Length];
+
+            for (var i = 0; i < arrFoldA.Length; i++)
+            {
+                sum[i] = arrFoldA[i] + arrFoldB[i];
+            }
+
+            Console.WriteLine(string.Join(" ", sum));
         }
-        n = array.Length / 2 - 1;
-
-        for (int i = array.Length - array.Length / 4; i < array.Length; i++)
-        {
-            arrFoldA[n] = array[i];
-            n--;
-        }
-        n = 0;
-
-        int start = array.Length / 4;
-        int end = array.Length - array.Length / 4;
-
-        for (int i = start; i < end; i++)
-        {
-            arrFoldB[n] = array[i];
-            n++;
-        }
-
-        int[] sum = new int[arrFoldA.Length];
-
-        for (int i = 0; i < arrFoldA.Length; i++)
-        {
-            sum[i] = arrFoldA[i] + arrFoldB[i];
-        }
-
-        Console.WriteLine(string.Join(" ", sum));
-    }
+    } 
 }

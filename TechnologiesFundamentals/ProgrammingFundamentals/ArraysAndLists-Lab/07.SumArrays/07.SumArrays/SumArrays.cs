@@ -1,27 +1,32 @@
-﻿using System;
-using System.Linq;
-
-public class SumArrays
+﻿namespace _07.SumArrays
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class SumArrays
     {
-        int[] arrayOne = Console.ReadLine()
-            .Split(' ')
-            .Select(int.Parse).
-            ToArray();
-
-        int[] arrayTwo = Console.ReadLine()
-            .Split(' ')
-            .Select(int.Parse).
-            ToArray();
-
-        int[] sumArray = new int[Math.Max(arrayOne.Length, arrayTwo.Length)];
-
-        for (int i = 0; i < sumArray.Length; i++)
+        public static void Main(string[] args)
         {
-            sumArray[i] = arrayOne[i % arrayOne.Length] + arrayTwo[i % arrayTwo.Length];
-        }
+            var arrayOne = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
 
-        sumArray.ToList().ForEach(e => Console.WriteLine(e));
-    }
+            var arrayTwo = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
+
+            var sumArray = new int[Math.Max(arrayOne.Length, arrayTwo.Length)];
+
+            for (var i = 0; i < sumArray.Length; i++)
+            {
+                sumArray[i] = arrayOne[i % arrayOne.Length] + arrayTwo[i % arrayTwo.Length];
+            }
+
+            sumArray
+                .ToList()
+                .ForEach(Console.WriteLine);
+        }
+    } 
 }

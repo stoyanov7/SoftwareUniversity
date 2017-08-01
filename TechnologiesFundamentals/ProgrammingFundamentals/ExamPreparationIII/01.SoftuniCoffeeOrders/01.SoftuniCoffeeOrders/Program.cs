@@ -1,25 +1,28 @@
-﻿using System;
-using System.Globalization;
-
-public class SoftuniCoffeeOrders
+﻿namespace _01.SoftuniCoffeeOrders
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Globalization;
+
+    public class SoftuniCoffeeOrders
     {
-        var countOfOrders = int.Parse(Console.ReadLine());
-        var totalPrice = 0m;
-
-        for (int i = 0; i < countOfOrders; i++)
+        public static void Main(string[] args)
         {
-            var pricePerCapsule = decimal.Parse(Console.ReadLine());
-            var orderDate = DateTime.ParseExact(Console.ReadLine(), "d/M/yyyy", CultureInfo.InvariantCulture);
-            var capsulesCount = long.Parse(Console.ReadLine());
+            var countOfOrders = int.Parse(Console.ReadLine());
+            var totalPrice = 0m;
 
-            var daysInMonth = DateTime.DaysInMonth(orderDate.Year, orderDate.Month);
-            var price = ((daysInMonth * capsulesCount) * pricePerCapsule);
-            Console.WriteLine($"The price for the coffee is: ${price:F2}");
-            totalPrice += price;
+            for (var i = 0; i < countOfOrders; i++)
+            {
+                var pricePerCapsule = decimal.Parse(Console.ReadLine());
+                var orderDate = DateTime.ParseExact(Console.ReadLine(), "d/M/yyyy", CultureInfo.InvariantCulture);
+                var capsulesCount = long.Parse(Console.ReadLine());
+
+                var daysInMonth = DateTime.DaysInMonth(orderDate.Year, orderDate.Month);
+                var price = ((daysInMonth * capsulesCount) * pricePerCapsule);
+                Console.WriteLine($"The price for the coffee is: ${price:F2}");
+                totalPrice += price;
+            }
+
+            Console.WriteLine($"Total: ${totalPrice:F2}");
         }
-
-        Console.WriteLine($"Total: ${totalPrice:F2}");
-    }
+    } 
 }

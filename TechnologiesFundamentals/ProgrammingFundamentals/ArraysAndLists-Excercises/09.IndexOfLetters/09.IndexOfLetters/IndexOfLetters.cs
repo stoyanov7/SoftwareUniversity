@@ -1,14 +1,17 @@
-﻿using System;
-
-public class IndexOfLetters
+﻿namespace _09.IndexOfLetters
 {
-    public static void Main(string[] args)
-    {
-        string input = Console.ReadLine();
+    using System;
 
-        for (int i = 0; i < input.Length; i++)
+    public class IndexOfLetters
+    {
+        public static void Main(string[] args)
         {
-            Console.WriteLine($"{input[i]} -> {input[i] - 'a'}");
+            var input = Console.ReadLine();
+
+            for (var i = 0; i < input.Length; i++)
+            {
+                Console.WriteLine($"{input[i]} -> {input[i] - 'a'}");
+            }
         }
-    }
+    } 
 }

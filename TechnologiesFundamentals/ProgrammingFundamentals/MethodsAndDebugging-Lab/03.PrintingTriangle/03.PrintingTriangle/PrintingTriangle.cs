@@ -1,30 +1,34 @@
-﻿using System;
-
-public class PrintingTriangle
+﻿namespace _03.PrintingTriangle
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class PrintingTriangle
     {
-        int n = int.Parse(Console.ReadLine());
-
-        for (int i = 0; i < n; i++)
+        public static void Main(string[] args)
         {
-            PrintLine(1, i);
+            var n = int.Parse(Console.ReadLine());
+
+            for (var i = 0; i < n; i++)
+            {
+                PrintLine(1, i);
+            }
+
+            PrintLine(1, n);
+
+            for (var j = n - 1; j >= 0; j--)
+            {
+                PrintLine(1, j);
+            }
         }
 
-        PrintLine(1, n);
-
-        for (int j = n - 1; j >= 0; j--)
+        private static void PrintLine(int start, int end)
         {
-            PrintLine(1, j);
-        }
-    }
+            for (var i = start; i <= end; i++)
+            {
+                Console.Write(i + " ");
+            }
 
-    private static void PrintLine(int start, int end)
-    {
-        for (int i = start; i <= end; i++)
-        {
-            Console.Write(i + " ");
+            Console.WriteLine();
         }
-        Console.WriteLine();
-    }
+    } 
 }

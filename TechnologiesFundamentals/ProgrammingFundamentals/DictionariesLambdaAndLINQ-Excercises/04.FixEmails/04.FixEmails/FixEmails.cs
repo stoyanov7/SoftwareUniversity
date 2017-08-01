@@ -1,32 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-
-public class FixEmails
+﻿namespace _04.FixEmails
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+
+    public class FixEmails
     {
-        var nameAndEmail = new Dictionary<string, string>();
-
-        while (true)
+        public static void Main(string[] args)
         {
-            var name = Console.ReadLine();
+            var nameAndEmail = new Dictionary<string, string>();
 
-            if (name.Equals("stop"))
+            while (true)
             {
-                break;
+                var name = Console.ReadLine();
+
+                if (name.Equals("stop"))
+                {
+                    break;
+                }
+
+                var email = Console.ReadLine();
+
+                if (!nameAndEmail.ContainsKey(name) && !(email.EndsWith("uk") || email.EndsWith("us")))
+                {
+                    nameAndEmail[name] = email;
+                }
             }
 
-            var email = Console.ReadLine();
-
-            if (!nameAndEmail.ContainsKey(name) && !(email.EndsWith("uk") || email.EndsWith("us")))
+            foreach (var element in nameAndEmail)
             {
-                nameAndEmail[name] = email;
+                Console.WriteLine($"{element.Key} -> {element.Value}");
             }
-        }
-
-        foreach (var element in nameAndEmail)
-        {
-            Console.WriteLine($"{element.Key} -> {element.Value}");
         }
     }
+
 }

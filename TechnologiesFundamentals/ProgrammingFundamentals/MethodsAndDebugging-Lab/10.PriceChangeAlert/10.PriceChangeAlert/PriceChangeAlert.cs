@@ -1,53 +1,51 @@
-﻿using System;
-
-public class PriceChangeAlert
+﻿namespace _10.PriceChangeAlert
 {
-    public static void Main()
-    {
-        int n = int.Parse(Console.ReadLine());
-        double priceThreshold = double.Parse(Console.ReadLine());
-        double lastAvailablePrice = double.Parse(Console.ReadLine());
+    using System;
 
-        for (int i = 0; i < n - 1; i++)
-        {
-            double currentPrice = double.Parse(Console.ReadLine());
-            double difference = PercentageCalculation(lastAvailablePrice, currentPrice);
-            bool isSignificantDifference = isSignificantDifferences(difference, priceThreshold);
-            string message = GetMessage(currentPrice, lastAvailablePrice, difference, isSignificantDifference);
-            Console.WriteLine(message);
-            lastAvailablePrice = currentPrice;
-        }
-    }
-
-    private static string GetMessage(double newestPrice, double lastAvailablePrice, double difference, bool hasSignificantDifference)
+    public class PriceChangeAlert
     {
-        string result = "";
-        if (difference == 0)
+        public static void Main(string[] args)
         {
-            result = string.Format("NO CHANGE: {0}", newestPrice);
-        }
-        else if (!hasSignificantDifference)
-        {
-            result = string.Format("MINOR CHANGE: {0} to {1} ({2:F2}%)", lastAvailablePrice, newestPrice, difference * 100);
-        }
-        else if (hasSignificantDifference && difference > 0)
-        {
-            result = string.Format("PRICE UP: {0} to {1} ({2:F2}%)", lastAvailablePrice, newestPrice, difference * 100);
-        }
-        else if (hasSignificantDifference && difference < 0)
-        {
-            result = string.Format("PRICE DOWN: {0} to {1} ({2:F2}%)", lastAvailablePrice, newestPrice, difference * 100);
-        }
-        return result;
-    }
+            var n = int.Parse(Console.ReadLine());
+            var priceThreshold = double.Parse(Console.ReadLine());
+            var lastAvailablePrice = double.Parse(Console.ReadLine());
 
-    private static bool isSignificantDifferences(double difference, double threshold)
-    {
-        return Math.Abs(difference) >= threshold ? true : false;
-    }
+            for (var i = 0; i < n - 1; i++)
+            {
+                var currentPrice = double.Parse(Console.ReadLine());
+                var difference = PercentageCalculation(lastAvailablePrice, currentPrice);
+                var isSignificantDifference = isSignificantDifferences(difference, priceThreshold);
+                var message = GetMessage(currentPrice, lastAvailablePrice, difference, isSignificantDifference);
+                Console.WriteLine(message);
+                lastAvailablePrice = currentPrice;
+            }
+        }
 
-    private static double PercentageCalculation(double oldPrice, double newPrice)
-    {
-        return (newPrice - oldPrice) / oldPrice;
-    }
+        private static string GetMessage(double newestPrice, double lastAvailablePrice, double difference, bool hasSignificantDifference)
+        {
+            var result = string.Empty;
+
+            if (difference == 0)
+            {
+                result = $"NO CHANGE: {newestPrice}";
+            }
+            else if (!hasSignificantDifference)
+            {
+                result = $"MINOR CHANGE: {lastAvailablePrice} to {newestPrice} ({difference * 100:F2}%)";
+            }
+            else if (hasSignificantDifference && difference > 0)
+            {
+                result = $"PRICE UP: {lastAvailablePrice} to {newestPrice} ({difference * 100:F2}%)";
+            }
+            else if (hasSignificantDifference && difference < 0)
+            {
+                result = $"PRICE DOWN: {lastAvailablePrice} to {newestPrice} ({difference * 100:F2}%)";
+            }
+            return result;
+        }
+
+        private static bool isSignificantDifferences(double difference, double threshold) => Math.Abs(difference) >= threshold ? true : false;
+
+        private static double PercentageCalculation(double oldPrice, double newPrice) => (newPrice - oldPrice) / oldPrice;
+    } 
 }

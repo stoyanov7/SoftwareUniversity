@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
-
-public class Event
+﻿namespace _04.RoliTheCoder
 {
-    public string Name { get; set; }
+    using System.Collections.Generic;
 
-    public List<string> Participants { get; set; }
+    public class Event
+    {
+        public string Name { get; set; }
+
+        public List<string> Participants { get; set; }
+    } 
 }

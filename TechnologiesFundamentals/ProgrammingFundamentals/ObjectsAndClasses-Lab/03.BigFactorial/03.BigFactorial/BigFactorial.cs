@@ -1,19 +1,22 @@
-﻿using System;
-using System.Numerics;
-
-public class BigFactorial
+﻿namespace _03.BigFactorial
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Numerics;
+
+    public class BigFactorial
     {
-        var num = int.Parse(Console.ReadLine());
-
-        BigInteger factorial = 1;
-
-        for (int i = 1; i <= num; i++)
+        public static void Main(string[] args)
         {
-            factorial = factorial * i;
-        }
+            var num = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(factorial);
-    }
+            BigInteger factorial = 1;
+
+            for (var i = 1; i <= num; i++)
+            {
+                factorial = factorial * i;
+            }
+
+            Console.WriteLine(factorial);
+        }
+    } 
 }

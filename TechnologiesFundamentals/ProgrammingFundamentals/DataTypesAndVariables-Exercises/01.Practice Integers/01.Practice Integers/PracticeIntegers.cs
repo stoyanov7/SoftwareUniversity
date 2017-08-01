@@ -1,18 +1,20 @@
-﻿using System;
-
-public class PracticeIntegerNumbers
+﻿namespace _01.Practice_Integers
 {
-    public static void Main()
-    {
-        sbyte firstNumber = sbyte.Parse(Console.ReadLine());
-        byte secondNumber = byte.Parse(Console.ReadLine());
-        short thirdNumber = short.Parse(Console.ReadLine());
-        ushort forthNumber = ushort.Parse(Console.ReadLine());
-        uint fifthNumber = uint.Parse(Console.ReadLine());
-        int sixtNumber = int.Parse(Console.ReadLine());
-        long seventhNumber = long.Parse(Console.ReadLine());
+    using System;
 
-        Console.WriteLine("{0}\n{1}\n{2}\n{3}\n{4}\n{5}\n{6}",
-            firstNumber, secondNumber, thirdNumber, forthNumber, fifthNumber, sixtNumber, seventhNumber);
-    }
+    public class PracticeIntegers
+    {
+        public static void Main(string[] args)
+        {
+            var firstNumber = sbyte.Parse(Console.ReadLine());
+            var secondNumber = byte.Parse(Console.ReadLine());
+            var thirdNumber = short.Parse(Console.ReadLine());
+            var forthNumber = ushort.Parse(Console.ReadLine());
+            var fifthNumber = uint.Parse(Console.ReadLine());
+            var sixtNumber = int.Parse(Console.ReadLine());
+            var seventhNumber = long.Parse(Console.ReadLine());
+
+            Console.WriteLine($"{firstNumber}\n{secondNumber}\n{thirdNumber}\n{forthNumber}\n{fifthNumber}\n{sixtNumber}\n{seventhNumber}");
+        }
+    } 
 }

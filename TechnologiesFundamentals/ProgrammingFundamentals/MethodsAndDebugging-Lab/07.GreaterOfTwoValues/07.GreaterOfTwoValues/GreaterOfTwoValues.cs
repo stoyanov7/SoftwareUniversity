@@ -1,48 +1,37 @@
-﻿using System;
-
-public class GreaterOfTwoValues
+﻿namespace _07.GreaterOfTwoValues
 {
-    public static void Main(string[] args)
-    {
-        string type = Console.ReadLine();
+    using System;
 
-        switch (type)
+    public class GreaterOfTwoValues
+    {
+        public static void Main(string[] args)
         {
-            case "int":
-                int firstInt = int.Parse(Console.ReadLine());
-                int secondInt = int.Parse(Console.ReadLine());
-                Console.WriteLine(GetMax(firstInt, secondInt));
-                break;
+            var type = Console.ReadLine();
 
-            case "char":
-                char firstChar = char.Parse(Console.ReadLine());
-                char secondChar = char.Parse(Console.ReadLine());
-                Console.WriteLine(GetMax(firstChar, secondChar));
-                break;
-
-            case "string":
-                string firstString = Console.ReadLine();
-                string secondString = Console.ReadLine();
-                Console.WriteLine(GetMax(firstString, secondString));
-                break;
-
-            default:
-                break;
+            switch (type)
+            {
+                case "int":
+                    var firstInt = int.Parse(Console.ReadLine());
+                    var secondInt = int.Parse(Console.ReadLine());
+                    Console.WriteLine(GetMax(firstInt, secondInt));
+                    break;
+                case "char":
+                    var firstChar = char.Parse(Console.ReadLine());
+                    var secondChar = char.Parse(Console.ReadLine());
+                    Console.WriteLine(GetMax(firstChar, secondChar));
+                    break;
+                case "string":
+                    var firstString = Console.ReadLine();
+                    var secondString = Console.ReadLine();
+                    Console.WriteLine(GetMax(firstString, secondString));
+                    break;
+            }
         }
-    }
 
-    private static int GetMax(int first, int second)
-    {
-        return first >= second ? first : second;
-    }
+        private static int GetMax(int first, int second) => first >= second ? first : second;
 
-    private static char GetMax(char first, char second)
-    {
-        return (char)GetMax((int)first, (int)second);
-    }
+        private static char GetMax(char first, char second) => (char)GetMax((int)first, (int)second);
 
-    private static string GetMax(string first, string second)
-    {
-        return first.CompareTo(second) >= 0 ? first : second;
-    }
+        private static string GetMax(string first, string second) => first.CompareTo(second) >= 0 ? first : second;
+    } 
 }

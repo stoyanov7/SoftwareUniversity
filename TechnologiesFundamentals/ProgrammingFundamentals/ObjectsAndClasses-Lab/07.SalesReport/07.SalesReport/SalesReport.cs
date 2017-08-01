@@ -1,57 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public class Sale
+﻿namespace _07.SalesReport
 {
-    public decimal Price { get; set; }
+    using System;
+    using System.Collections.Generic;
 
-    public string Town { get; set; }
-
-    public string Product { get; set; }
-
-    public decimal Quantity { get; set; }
-}
-
-public class SalesReport
-{
-    public static void Main(string[] args)
+    public class SalesReport
     {
-        var n = int.Parse(Console.ReadLine());
-        var sales = new List<Sale>();
-
-        for (int i = 0; i < n; i++)
+        public static void Main(string[] args)
         {
-            var currentSaleInput = Console.ReadLine().Split(' ');
+            var n = int.Parse(Console.ReadLine());
+            var sales = new List<Sale>();
 
-            var currentSale = new Sale
+            for (var i = 0; i < n; i++)
             {
-                Town = currentSaleInput[0],
-                Product = currentSaleInput[1],
-                Price = decimal.Parse(currentSaleInput[2]),
-                Quantity = decimal.Parse(currentSaleInput[3])
-            };
+                var currentSaleInput = Console.ReadLine().Split(' ');
 
-            sales.Add(currentSale);
-        }
+                var currentSale = new Sale
+                {
+                    Town = currentSaleInput[0],
+                    Product = currentSaleInput[1],
+                    Price = decimal.Parse(currentSaleInput[2]),
+                    Quantity = decimal.Parse(currentSaleInput[3])
+                };
 
-        var result = new SortedDictionary<string, decimal>();
-
-        foreach (var sale in sales)
-        {
-            if (!result.ContainsKey(sale.Town))
-            {
-                result[sale.Town] = 0;
+                sales.Add(currentSale);
             }
 
-            result[sale.Town] += sale.Price * sale.Quantity;
-        }
+            var result = new SortedDictionary<string, decimal>();
 
-        foreach (var kvp in result)
-        {
-            Console.WriteLine($"{kvp.Key} -> {kvp.Value:F2}");
+            foreach (var sale in sales)
+            {
+                if (!result.ContainsKey(sale.Town))
+                {
+                    result[sale.Town] = 0;
+                }
+
+                result[sale.Town] += sale.Price * sale.Quantity;
+            }
+
+            foreach (var kvp in result)
+            {
+                Console.WriteLine($"{kvp.Key} -> {kvp.Value:F2}");
+            }
         }
-    }
+    } 
 }

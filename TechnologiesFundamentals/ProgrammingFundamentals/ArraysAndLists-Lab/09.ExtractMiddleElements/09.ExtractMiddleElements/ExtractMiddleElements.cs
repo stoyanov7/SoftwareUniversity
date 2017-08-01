@@ -1,41 +1,44 @@
-﻿using System;
-using System.Linq;
-
-public class ExtractMiddleElements
+﻿namespace _09.ExtractMiddleElements
 {
-    public static void Main(string[] args)
-    {
-        int[] array = Console.ReadLine()
-            .Split(' ')
-            .Select(int.Parse)
-            .ToArray();
+    using System;
+    using System.Linq;
 
-        if (array.Length == 1)
+    public class ExtractMiddleElements
+    {
+        public static void Main(string[] args)
         {
-            extractOne(array);
+            var array = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
+
+            if (array.Length == 1)
+            {
+                ExtractOne(array);
+            }
+            else if (array.Length % 2 == 0)
+            {
+                ExtractEven(array);
+            }
+            else
+            {
+                ExtractOdd(array);
+            }
         }
-        else if (array.Length % 2 == 0)
+
+        private static void ExtractOne(int[] arr)
         {
-            extractEven(array);
+            Console.WriteLine(arr[0]);
         }
-        else
+
+        private static void ExtractEven(int[] arr)
         {
-            extractOdd(array);
+            Console.WriteLine(($"{arr[arr.Length / 2 - 1]}, {arr[arr.Length / 2]}"));
         }
-    }
 
-    private static void extractOne(int[] arr)
-    {
-        Console.WriteLine(arr[0]);
-    }
-
-    private static void extractEven(int[] arr)
-    {
-        Console.WriteLine(($"{arr[arr.Length / 2 - 1]}, {arr[arr.Length / 2]}"));
-    }
-
-    private static void extractOdd(int[] arr)
-    {
-        Console.WriteLine($"{arr[arr.Length / 2 - 1]}, {arr[arr.Length / 2]}, {arr[arr.Length / 2 + 1]}");
-    }
+        private static void ExtractOdd(int[] arr)
+        {
+            Console.WriteLine($"{arr[arr.Length / 2 - 1]}, {arr[arr.Length / 2]}, {arr[arr.Length / 2 + 1]}");
+        }
+    } 
 }

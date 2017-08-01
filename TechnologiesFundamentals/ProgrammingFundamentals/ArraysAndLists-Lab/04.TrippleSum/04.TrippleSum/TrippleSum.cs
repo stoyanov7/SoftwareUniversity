@@ -1,33 +1,37 @@
-﻿using System;
-using System.Linq;
-
-public class TrippleSum
+﻿namespace _04.TrippleSum
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class TrippleSum
     {
-        int[] array = Console.ReadLine()
-            .Split(' ')
-            .Select(int.Parse).
-            ToArray();
-        int counter = 0;
-
-        for (int i = 0; i < array.Length; i++)
+        public static void Main(string[] args)
         {
-            for (int j = i + 1; j < array.Length; j++)
-            {
-                int sum = array[i] + array[j];
+            var array = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse).
+                ToArray();
 
-                if (array.Contains(sum))
+            var counter = 0;
+
+            for (var i = 0; i < array.Length; i++)
+            {
+                for (var j = i + 1; j < array.Length; j++)
                 {
-                    Console.WriteLine($"{array[i]} + {array[j]} == {sum}");
-                    counter++;
+                    var sum = array[i] + array[j];
+
+                    if (array.Contains(sum))
+                    {
+                        Console.WriteLine($"{array[i]} + {array[j]} == {sum}");
+                        counter++;
+                    }
                 }
             }
-        }
 
-        if (counter == 0)
-        {
-            Console.WriteLine("No");
+            if (counter == 0)
+            {
+                Console.WriteLine("No");
+            }
         }
-    }
+    } 
 }

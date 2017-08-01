@@ -1,18 +1,21 @@
-﻿using System;
-
-public class ReverseString
+﻿namespace _01.ReverseString
 {
-    public static void Main(string[] args)
-    {
-        var input = Console.ReadLine();
-        Console.WriteLine(Reverse(input));
-    }
+    using System;
 
-    public static string Reverse(string s)
+    public class ReverseString
     {
-        var array = s.ToCharArray();
-        Array.Reverse(array);
+        public static void Main(string[] args)
+        {
+            var input = Console.ReadLine();
+            Console.WriteLine(Reverse(input));
+        }
 
-        return new string(array);
-    }
+        private static string Reverse(string s)
+        {
+            var array = s.ToCharArray();
+            Array.Reverse(array);
+
+            return new string(array);
+        }
+    } 
 }

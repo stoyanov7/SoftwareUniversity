@@ -1,33 +1,40 @@
-﻿using System;
-using System.Linq;
-
-public class MostFrequentNumber
+﻿namespace _08.MostFrequentNumber
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class MostFrequentNumber
     {
-        int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        int maxFrequentNumber = 0;
-        int maxCounter = 0;
-
-        for (int i = 0; i < numbers.Length; i++)
+        public static void Main(string[] args)
         {
-            int counter = 0;
+            var numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
 
-            for (int j = i; j < numbers.Length; j++)
+            var maxFrequentNumber = 0;
+            var maxCounter = 0;
+
+            for (var i = 0; i < numbers.Length; i++)
             {
-                if (numbers[i] == numbers[j])
-                {
-                    counter++;
+                var counter = 0;
 
-                    if (counter > maxCounter)
+                for (var j = i; j < numbers.Length; j++)
+                {
+                    if (numbers[i] == numbers[j])
                     {
-                        maxCounter = counter;
-                        maxFrequentNumber = numbers[i];
+                        counter++;
+
+                        if (counter > maxCounter)
+                        {
+                            maxCounter = counter;
+                            maxFrequentNumber = numbers[i];
+                        }
                     }
                 }
             }
-        }
 
-        Console.WriteLine(maxFrequentNumber);
-    }
+            Console.WriteLine(maxFrequentNumber);
+        }
+    } 
 }

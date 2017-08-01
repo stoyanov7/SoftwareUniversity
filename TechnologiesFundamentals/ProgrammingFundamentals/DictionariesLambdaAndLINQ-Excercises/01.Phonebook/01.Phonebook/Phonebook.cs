@@ -1,45 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class Phonebook
+﻿namespace _01.Phonebook
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class Phonebook
     {
-        var input = Console.ReadLine()
-            .Split(' ')
-           .ToArray();
-
-        var phonebook = new Dictionary<string, string>();
-        
-
-        while (!input[0].Equals("END"))
+        public static void Main(string[] args)
         {
-            var command = input[0];
-            var name = input[1];
+            var input = Console.ReadLine()
+                .Split(' ')
+               .ToArray();
 
-            switch (command)
+            var phonebook = new Dictionary<string, string>();
+
+            while (input[0] != "END")
             {
-                case "A":
-                    var telephoneNumber = input[2];
-                    phonebook[name] = telephoneNumber;
-                    break;
-                     
-                case "S":
-                    if (phonebook.ContainsKey(name))
-                    {
-                        Console.WriteLine("{0} -> {1}", name, phonebook[name]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Contact {0} does not exist.", name);
-                    }
-                    break;
-                default:
-                    break;
-            }
+                var command = input[0];
+                var name = input[1];
 
-            input = Console.ReadLine().Split(' ');
+                switch (command)
+                {
+                    case "A":
+                        var telephoneNumber = input[2];
+                        phonebook[name] = telephoneNumber;
+                        break;
+
+                    case "S":
+                        Console.WriteLine(phonebook.ContainsKey(name)
+                            ? $"{name} -> {phonebook[name]}"
+                            : $"Contact {name} does not exist.");
+                        break;
+                }
+
+                input = Console.ReadLine()
+                    .Split(' ')
+                    .ToArray();
+            }
         }
-    }
+    } 
 }

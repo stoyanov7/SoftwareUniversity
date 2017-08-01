@@ -1,27 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class CountRealNumbers
+﻿namespace _01.CountRealNumbers
 {
-    public static void Main(string[] args)
-    {
-        var inputNumbers = Console.ReadLine().Split(' ').Select(double.Parse).ToArray();
-        var countsDictionary = new SortedDictionary<double, int>();
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-        foreach (var number in inputNumbers)
+    public class CountRealNumbers
+    {
+        public static void Main(string[] args)
         {
-            if (!countsDictionary.ContainsKey(number))
+            var inputNumbers = Console.ReadLine()
+                .Split(' ')
+                .Select(double.Parse)
+                .ToArray();
+
+            var countsDictionary = new SortedDictionary<double, int>();
+
+            foreach (var number in inputNumbers)
             {
-                countsDictionary[number] = 0;
+                if (!countsDictionary.ContainsKey(number))
+                {
+                    countsDictionary[number] = 0;
+                }
+
+                countsDictionary[number]++;
             }
 
-            countsDictionary[number]++;
+            foreach (var element in countsDictionary)
+            {
+                Console.WriteLine($"{element.Key} -> {element.Value}");
+            }
         }
-
-        foreach (var element in countsDictionary)
-        {
-            Console.WriteLine($"{element.Key} -> {element.Value}");
-        }
-    }
+    } 
 }

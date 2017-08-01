@@ -1,45 +1,53 @@
-﻿using System;
-using System.Linq;
-
-public class MaxSequenceOfIncreasingElements
+﻿namespace _07.MaxSequenceOfIncreasingElements
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class MaxSequenceOfIncreasingElements
     {
-        int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        int length = numbers.Length;
-
-        MaxIncSequence(numbers, length);
-    }
-
-    static void MaxIncSequence(int[] numbers, int length)
-    {
-        int countCurrentSequence = 0;
-        int countMaxSequence = 0;
-        int startCurrentSequence = 0;
-        int startMaxSequence = 0;
-
-        for (int i = 1; i < length; i++)
+        public static void Main(string[] args)
         {
-            if (numbers[i] - numbers[i - 1] >= 1)
-            {
-                countCurrentSequence++;
-                startCurrentSequence = i - countCurrentSequence;
+            var numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
 
-                if (countCurrentSequence > countMaxSequence)
+            var length = numbers.Length;
+
+            MaxIncSequence(numbers, length);
+        }
+
+        private static void MaxIncSequence(int[] numbers, int length)
+        {
+            var countCurrentSequence = 0;
+            var countMaxSequence = 0;
+            var startMaxSequence = 0;
+
+            for (var i = 1; i < length; i++)
+            {
+                if (numbers[i] - numbers[i - 1] >= 1)
                 {
-                    countMaxSequence = countCurrentSequence;
-                    startMaxSequence = startCurrentSequence;
+                    countCurrentSequence++;
+                    var startCurrentSequence = i - countCurrentSequence;
+
+                    if (countCurrentSequence > countMaxSequence)
+                    {
+                        countMaxSequence = countCurrentSequence;
+                        startMaxSequence = startCurrentSequence;
+                    }
+                }
+                else
+                {
+                    countCurrentSequence = 0;
                 }
             }
-            else
+
+            for (var iWrite = startMaxSequence; iWrite <= (startMaxSequence + countMaxSequence); iWrite++)
             {
-                countCurrentSequence = 0;
+                Console.Write(numbers[iWrite] + " ");
             }
+
+            Console.WriteLine();
         }
-        for (int iWrite = startMaxSequence; iWrite <= (startMaxSequence + countMaxSequence); iWrite++)
-        {
-            Console.Write(numbers[iWrite] + " ");
-        }
-        Console.WriteLine();
-    }
+    } 
 }

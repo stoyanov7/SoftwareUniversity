@@ -1,20 +1,23 @@
-﻿using System;
-
-public class ReverseArrayOfIntegers
+﻿namespace _02.ReverseArrayOfIntegers
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class ReverseArrayOfIntegers
     {
-        int n = int.Parse(Console.ReadLine());
-        var arr = new int[n];
-
-        for (int i = 0; i < arr.Length; i++)
+        public static void Main(string[] args)
         {
-            arr[i] = int.Parse(Console.ReadLine());
-        }
+            var n = int.Parse(Console.ReadLine());
+            var arr = new int[n];
 
-        for (int i = arr.Length - 1; i >= 0; i--)
-        {
-            Console.WriteLine(arr[i]);
+            for (var i = 0; i < arr.Length; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (var i = arr.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(arr[i]);
+            }
         }
-    }
+    } 
 }

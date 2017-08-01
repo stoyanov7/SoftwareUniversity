@@ -1,22 +1,23 @@
-﻿using System;
-
-public class FibonacciNumbers
+﻿namespace _05.FibonacciNumbers
 {
-    public static void Main(string[] args)
-    {
-        int number = int.Parse(Console.ReadLine());
-        Console.WriteLine(Fibonacci(number));
-    }
+    using System;
 
-    private static long Fibonacci(int number)
+    public class FibonacciNumbers
     {
-        if (number == 0 || number == 1)
+        public static void Main(string[] args)
         {
-            return 1;
+            var number = int.Parse(Console.ReadLine());
+            Console.WriteLine(Fibonacci(number));
         }
-        else
+
+        private static long Fibonacci(int number)
         {
+            if (number == 0 || number == 1)
+            {
+                return 1;
+            }
+
             return Fibonacci(number - 1) + Fibonacci(number - 2);
         }
-    }
+    } 
 }

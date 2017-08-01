@@ -1,21 +1,25 @@
-﻿using System.IO;
-
-public class FolderSize
+﻿namespace _05.FolderSize
 {
-    public static void Main(string[] args)
+    using System.IO;
+
+    public class FolderSize
     {
-        var folder = "TestFolder";
-        var outputTxt = "Result.txt";
-        var inputFile = Directory.GetFiles(folder);
-        double sum = 0;
-
-        foreach (var file in inputFile)
+        public static void Main(string[] args)
         {
-            FileInfo fileInfo = new FileInfo(file);
-            sum += fileInfo.Length;
-        }
-        sum = sum / 1024.0 / 1024.0;
+            var folder = "TestFolder";
+            var outputTxt = "Result.txt";
+            var inputFile = Directory.GetFiles(folder);
+            var sum = 0D;
 
-        File.WriteAllText(outputTxt, sum.ToString());
-    }
+            foreach (var file in inputFile)
+            {
+                var fileInfo = new FileInfo(file);
+                sum += fileInfo.Length;
+            }
+
+            sum = sum / 1024.0 / 1024.0;
+
+            File.WriteAllText(outputTxt, sum.ToString());
+        }
+    } 
 }

@@ -1,57 +1,60 @@
-﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
-
-public class WinningTicket
+﻿namespace _04.WinningTicket
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+
+    public class WinningTicket
     {
-        var tickets = Console.ReadLine()
-            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(t => t.Trim())
-            .ToArray();
-
-        foreach (var ticket in tickets)
+        public static void Main(string[] args)
         {
-            if (ticket.Length != 20)
+            var tickets = Console.ReadLine()
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(t => t.Trim())
+                .ToArray();
+
+            foreach (var ticket in tickets)
             {
-                Console.WriteLine("invalid ticket");
-                continue;
-            }
-
-            var left = new string(ticket.Take(10).ToArray());
-            var right = new string(ticket.Skip(10).ToArray());
-
-            var winingSymbows = new string[] { "@", "#", "\\$", "\\^" };
-            var winingTicket = false;
-
-            foreach (var winingSymbol in winingSymbows)
-            {
-                var regex = new Regex($"{winingSymbol}{{6,}}");
-                var leftMatch = regex.Match(left);
-
-                if (leftMatch.Success)
+                if (ticket.Length != 20)
                 {
-                    var rightMatch = regex.Match(right);
+                    Console.WriteLine("invalid ticket");
+                    continue;
+                }
 
-                    if (rightMatch.Success)
+                var left = new string(ticket.Take(10).ToArray());
+                var right = new string(ticket.Skip(10).ToArray());
+
+                var winingSymbows = new[] { "@", "#", "\\$", "\\^" };
+                var winingTicket = false;
+
+                foreach (var winingSymbol in winingSymbows)
+                {
+                    var regex = new Regex($"{winingSymbol}{{6,}}");
+                    var leftMatch = regex.Match(left);
+
+                    if (leftMatch.Success)
                     {
-                        winingTicket = true;
+                        var rightMatch = regex.Match(right);
 
-                        var symbolsLength = leftMatch.Value.Length;
-                        var jackpot = symbolsLength == 10 ?
-                            " Jackpot!" : string.Empty;
+                        if (rightMatch.Success)
+                        {
+                            winingTicket = true;
 
-                        Console.WriteLine($"ticket \"{ticket}\" - {symbolsLength}{winingSymbol.Trim('\\')}{jackpot}");
-                        break;
+                            var symbolsLength = leftMatch.Value.Length;
+                            var jackpot = symbolsLength == 10 ?
+                                " Jackpot!" : string.Empty;
+
+                            Console.WriteLine($"ticket \"{ticket}\" - {symbolsLength}{winingSymbol.Trim('\\')}{jackpot}");
+                            break;
+                        }
                     }
                 }
-            }
 
-            if (!winingTicket)
-            {
-                Console.WriteLine($"ticket \"{ticket}\" - no match");
+                if (!winingTicket)
+                {
+                    Console.WriteLine($"ticket \"{ticket}\" - no match");
+                }
             }
         }
-    }
+    } 
 }

@@ -1,12 +1,15 @@
-﻿using System;
-
-public class BooleanVariable
+﻿namespace _05.BooleanVariable
 {
-    public static void Main(string[] args)
-    {
-        string input = Console.ReadLine();
-        bool result = Convert.ToBoolean(input);
+    using System;
 
-        Console.WriteLine(result ? "Yes" : "No");
-    }
+    public class BooleanVariable
+    {
+        public static void Main(string[] args)
+        {
+            var input = Console.ReadLine();
+            var result = Convert.ToBoolean(input);
+
+            Console.WriteLine(result ? "Yes" : "No");
+        }
+    } 
 }

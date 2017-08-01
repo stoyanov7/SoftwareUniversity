@@ -1,31 +1,37 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-
-public class RageQuit
+﻿namespace _03.RageQuit
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
+    public class RageQuit
     {
-        var input = Console.ReadLine().ToUpper();
-        var patern = @"(\D+)(\d+)";
-
-        var regex = new Regex(patern);
-        var collection = regex.Matches(input);
-        var count = 0;
-        var output = new StringBuilder();
-
-        foreach (Match match in collection)
+        public static void Main(string[] args)
         {
-            for (var i = 0; i < int.Parse(match.Groups[2].ToString()); i++)
+            var input = Console.ReadLine().ToUpper();
+            const string patern = @"(\D+)(\d+)";
+
+            var regex = new Regex(patern);
+            var collection = regex.Matches(input);
+            var count = 0;
+            var output = new StringBuilder();
+
+            foreach (Match match in collection)
             {
-                output.Append(match.Groups[1]);
+                for (var i = 0; i < int.Parse(match.Groups[2].ToString()); i++)
+                {
+                    output.Append(match.Groups[1]);
+                }
             }
+
+            count = output
+                .ToString()
+                .Distinct()
+                .Count();
+
+            Console.WriteLine($"Unique symbols used: {count}");
+            Console.WriteLine($"{output}");
         }
-
-        count = output.ToString().Distinct().Count();
-
-        Console.WriteLine($"Unique symbols used: {count}");
-        Console.WriteLine($"{output}");
-    }
+    } 
 }

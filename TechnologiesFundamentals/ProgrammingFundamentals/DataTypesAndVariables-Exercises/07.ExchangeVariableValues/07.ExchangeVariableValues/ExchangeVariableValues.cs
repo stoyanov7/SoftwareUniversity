@@ -1,13 +1,16 @@
-﻿using System;
-
-public class ExchangeVariableValues
+﻿namespace _07.ExchangeVariableValues
 {
-    static void Main(string[] args)
-    {
-        int firstNumber = int.Parse(Console.ReadLine());
-        int secondNumber = int.Parse(Console.ReadLine());
+    using System;
 
-        Console.WriteLine($"Before:\na = {firstNumber}\nb = {secondNumber}");
-        Console.WriteLine($"After:\na = {secondNumber}\nb = {firstNumber}");
-    }
+    public class ExchangeVariableValues
+    {
+        public static void Main(string[] args)
+        {
+            var firstNumber = int.Parse(Console.ReadLine());
+            var secondNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Before:\na = {firstNumber}\nb = {secondNumber}");
+            Console.WriteLine($"After:\na = {secondNumber}\nb = {firstNumber}");
+        }
+    } 
 }

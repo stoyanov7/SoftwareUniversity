@@ -1,18 +1,21 @@
-﻿using System;
-
-class ExactSumOfRealNumbers
+﻿namespace _03.ExactSumOfRealNumbers
 {
-    static void Main(string[] args)
+    using System;
+
+    public class ExactSumOfRealNumbers
     {
-        int n = int.Parse(Console.ReadLine());
-        decimal sum = 0;
-
-        for (int i = 0; i < n; i++)
+        public static void Main(string[] args)
         {
-            decimal value = decimal.Parse(Console.ReadLine());
-            sum += value;
-        }
+            var n = int.Parse(Console.ReadLine());
+            var sum = 0m;
 
-        Console.WriteLine(sum);
+            for (var i = 0; i < n; i++)
+            {
+                var value = decimal.Parse(Console.ReadLine());
+                sum += value;
+            }
+
+            Console.WriteLine(sum);
+        }
     }
 }

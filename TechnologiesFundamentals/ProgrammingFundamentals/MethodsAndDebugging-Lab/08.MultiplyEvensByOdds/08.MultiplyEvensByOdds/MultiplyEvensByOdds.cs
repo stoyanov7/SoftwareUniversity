@@ -1,41 +1,36 @@
-﻿using System;
-
-public class MultiplyEvensByOdds
+﻿namespace _08.MultiplyEvensByOdds
 {
-    public static void Main(string[] args)
-    {
-        int number = int.Parse(Console.ReadLine());
-        Console.WriteLine(GetMultiplyOfEvenAndOdds(number));
-    }
+    using System;
 
-    private static int GetMultiplyOfEvenAndOdds(int number)
+    public class MultiplyEvensByOdds
     {
-        return Math.Abs(GetSumOfOddDigits(number) * GetSumOfEvenGidits(number));
-    }
-
-    private static int GetSumOfOddDigits(int number)
-    {
-        return GetSumOfDigits(number, 1);
-    }
-
-    private static int GetSumOfEvenGidits(int number)
-    {
-        return GetSumOfDigits(number, 0);
-    }
-
-    private static int GetSumOfDigits(int number, int remainder)
-    {
-        var result = 0;
-
-        foreach (var symbol in number.ToString())
+        public static void Main(string[] args)
         {
-            var digit = symbol - '0';
-            if (digit % 2 == remainder)
-            {
-                result += digit;
-            }
+            var number = int.Parse(Console.ReadLine());
+            Console.WriteLine(GetMultiplyOfEvenAndOdds(number));
         }
 
-        return result;
-    }
+        private static int GetMultiplyOfEvenAndOdds(int number) => Math.Abs(GetSumOfOddDigits(number) * GetSumOfEvenGidits(number));
+
+        private static int GetSumOfOddDigits(int number) => GetSumOfDigits(number, 1);
+
+        private static int GetSumOfEvenGidits(int number) => GetSumOfDigits(number, 0);
+
+        private static int GetSumOfDigits(int number, int remainder)
+        {
+            var result = 0;
+
+            foreach (var symbol in number.ToString())
+            {
+                var digit = symbol - '0';
+
+                if (digit % 2 == remainder)
+                {
+                    result += digit;
+                }
+            }
+
+            return result;
+        }
+    } 
 }

@@ -1,31 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-
-public class AMinerTask
+﻿namespace _03.AMinerTask
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+
+    public class AMinerTask
     {
-        var products = new Dictionary<string, decimal>();
-        var input = Console.ReadLine();
-
-        while (!input.Equals("stop"))
+        public static void Main(string[] args)
         {
-            var resource = input;
-            var quantity = decimal.Parse(Console.ReadLine());
+            var products = new Dictionary<string, decimal>();
+            var input = Console.ReadLine();
 
-            if (!products.ContainsKey(resource))
+            while (input != "stop")
             {
-                products[resource] = 0;
+                var resource = input;
+                var quantity = decimal.Parse(Console.ReadLine());
+
+                if (!products.ContainsKey(resource))
+                {
+                    products[resource] = 0;
+                }
+
+                products[resource] += quantity;
+
+                input = Console.ReadLine();
             }
 
-            products[resource] += quantity;
-
-            input = Console.ReadLine();
+            foreach (var element in products)
+            {
+                Console.WriteLine($"{element.Key} -> {element.Value}");
+            }
         }
-
-        foreach (var element in products)
-        {
-            Console.WriteLine($"{element.Key} -> {element.Value}");
-        }
-    }
+    } 
 }

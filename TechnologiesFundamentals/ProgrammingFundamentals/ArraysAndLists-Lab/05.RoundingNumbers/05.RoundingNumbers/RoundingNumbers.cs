@@ -1,20 +1,23 @@
-﻿using System;
-using System.Linq;
-
-public class RoundingNumbers
+﻿namespace _05.RoundingNumbers
 {
-    public static void Main(string[] args)
-    {
-        double[] numbers = Console.ReadLine()
-            .Split(' ')
-            .Select(double.Parse).
-            ToArray();
+    using System;
+    using System.Linq;
 
-        for (int i = 0; i < numbers.Length; i++)
+    public class RoundingNumbers
+    {
+        public static void Main(string[] args)
         {
-            Console.Write($"{numbers[i]} => ");
-            numbers[i] = Math.Round(numbers[i], MidpointRounding.AwayFromZero);
-            Console.WriteLine(numbers[i]);
+            var numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(double.Parse).
+                ToArray();
+
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                Console.Write($"{numbers[i]} => ");
+                numbers[i] = Math.Round(numbers[i], MidpointRounding.AwayFromZero);
+                Console.WriteLine(numbers[i]);
+            }
         }
-    }
+    } 
 }

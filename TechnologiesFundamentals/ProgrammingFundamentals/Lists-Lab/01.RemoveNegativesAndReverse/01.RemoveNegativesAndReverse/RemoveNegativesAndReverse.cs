@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class RemoveNegativesAndReverse
+﻿namespace _01.RemoveNegativesAndReverse
 {
-    public static void Main(string[] args)
-    {
-        var numberList = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-        numberList.RemoveAll(x => x < 0);
-        numberList.Reverse();
+    using System;
+    using System.Linq;
 
-        if (numberList.Count <= 0)
+    public class RemoveNegativesAndReverse
+    {
+        public static void Main(string[] args)
         {
-            Console.WriteLine("empty");
+            var numberList = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+
+            numberList.RemoveAll(x => x < 0);
+            numberList.Reverse();
+
+            Console.WriteLine(numberList.Count <= 0 ? "empty" : string.Join(" ", numberList));
         }
-        else
-        {
-            Console.WriteLine(string.Join(" ", numberList));
-        }
-    }
+    } 
 }

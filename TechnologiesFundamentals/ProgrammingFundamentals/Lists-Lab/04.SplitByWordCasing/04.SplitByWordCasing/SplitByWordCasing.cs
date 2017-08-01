@@ -1,62 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-public class SplitByWordCasing
+﻿namespace _04.SplitByWordCasing
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class SplitByWordCasing
     {
-        char[] separators = new char[]
-        { ' ', ',', ';', ':', '.', '!', '(', ')', '"', '\'', '/', '\\', '[', ']' };
-
-        var inputList = Console.ReadLine().Split(separators, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-        var lowerCase = new List<string>();
-        var mixedCase = new List<string>();
-        var upperCase = new List<string>();
-
-        for (int i = 0; i < inputList.Count; i++)
+        public static void Main(string[] args)
         {
-            var currentWord = inputList[i];
-            bool isAllLowerCase = true;
-            bool isAllUpperCase = true;
-
-            for (int j = 0; j < currentWord.Length; j++)
+            var separators = new[]
             {
-                if (char.IsLower(currentWord[j]))
+                ' ', ',', ';', ':', '.', '!', '(', ')', '"', '\'', '/', '\\', '[', ']'
+            };
+
+            var inputList = Console.ReadLine()
+                .Split(separators, StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
+
+            var lowerCase = new List<string>();
+            var mixedCase = new List<string>();
+            var upperCase = new List<string>();
+
+            foreach (var currentWord in inputList)
+            {
+                var isAllLowerCase = true;
+                var isAllUpperCase = true;
+
+                foreach (var t in currentWord)
                 {
-                    isAllUpperCase = false;
+                    if (char.IsLower(t))
+                    {
+                        isAllUpperCase = false;
+                    }
+                    else if (char.IsUpper(t))
+                    {
+                        isAllLowerCase = false;
+                    }
+                    else
+                    {
+                        isAllLowerCase = false;
+                        isAllUpperCase = false;
+                    }
                 }
-                else if (char.IsUpper(currentWord[j]))
+
+                if (isAllLowerCase)
                 {
-                    isAllLowerCase = false;
+                    lowerCase.Add(currentWord);
+                }
+                else if (isAllUpperCase)
+                {
+                    upperCase.Add(currentWord);
                 }
                 else
                 {
-                    isAllLowerCase = false;
-                    isAllUpperCase = false;
+                    mixedCase.Add(currentWord);
                 }
             }
 
-            if (isAllLowerCase)
-            {
-                lowerCase.Add(currentWord);
-            }
-            else if (isAllUpperCase)
-            {
-                upperCase.Add(currentWord);
-            }
-            else
-            {
-                mixedCase.Add(currentWord);
-            }
+            Console.WriteLine($"Lower-case: {string.Join(", ", lowerCase)}");
+            Console.WriteLine($"Mixed-case: {string.Join(", ", mixedCase)}");
+            Console.WriteLine($"Upper-case: {string.Join(", ", upperCase)}");
         }
-
-        Console.WriteLine("Lower-case: {0}", string.Join(", ", lowerCase));
-        Console.WriteLine("Mixed-case: {0}", string.Join(", ", mixedCase));
-        Console.WriteLine("Upper-case: {0}", string.Join(", ", upperCase));
-    }
+    } 
 }

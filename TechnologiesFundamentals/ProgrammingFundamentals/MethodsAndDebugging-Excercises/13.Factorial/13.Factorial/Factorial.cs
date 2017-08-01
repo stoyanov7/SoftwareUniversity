@@ -1,22 +1,26 @@
-﻿using System;
-using System.Numerics;
-
-public class Factorial
+﻿namespace _13.Factorial
 {
-    public static void Main(string[] args)
-    {
-        int number = int.Parse(Console.ReadLine());
-        Console.WriteLine(Factorials(number));
-    }
+    using System;
+    using System.Numerics;
 
-    private static BigInteger Factorials(int number)
+    public class Factorial
     {
-        BigInteger factorial = 1;
-        for (int i = 2; i <= number; i++)
+        public static void Main(string[] args)
         {
-            factorial *= i;
+            var number = int.Parse(Console.ReadLine());
+            Console.WriteLine(Factorials(number));
         }
 
-        return factorial;
-    }
+        private static BigInteger Factorials(int number)
+        {
+            BigInteger factorial = 1;
+
+            for (var i = 2; i <= number; i++)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
+        }
+    } 
 }

@@ -8,7 +8,6 @@
         {
             var text = Console.ReadLine();
             var jump = int.Parse(Console.ReadLine());
-
             const char Search = 'p';
             var hasMatch = false;
 

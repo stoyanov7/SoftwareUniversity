@@ -1,23 +1,26 @@
-﻿using System;
-using System.Linq;
-
-public class ShortWordsSorted
+﻿namespace _05.ShortWordsSorted
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class ShortWordsSorted
     {
-        var separators = new char[]
+        public static void Main(string[] args)
         {
+            var separators = new char[]
+            {
             ' ', '.', ',', ':', ';', '(', ')', '[', ']', '\"', '\'', '/', '\\', '!', '?'
-        };
+            };
 
-        var input = Console.ReadLine()
-            .ToLower()
-            .Split(separators, StringSplitOptions.RemoveEmptyEntries)
-            .Where(w => w.Length < 5)
-            .OrderBy(w => w)
-            .Distinct()
-            .ToList();
+            var input = Console.ReadLine()
+                .ToLower()
+                .Split(separators, StringSplitOptions.RemoveEmptyEntries)
+                .Where(w => w.Length < 5)
+                .OrderBy(w => w)
+                .Distinct()
+                .ToList();
 
-        Console.WriteLine(string.Join(", ", input));
-    }
+            Console.WriteLine(string.Join(", ", input));
+        }
+    } 
 }

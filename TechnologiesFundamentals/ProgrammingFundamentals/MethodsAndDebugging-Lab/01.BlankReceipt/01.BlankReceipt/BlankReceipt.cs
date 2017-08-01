@@ -1,29 +1,32 @@
-﻿using System;
-
-public class BlankReceipt
+﻿namespace _01.BlankReceipt
 {
-    public static void Main(string[] args)
-    {
-        PrintReceiptHeader();
-        PrintReceiptBody();
-        PrintReceiptFooter();
-    }
+    using System;
 
-    private static void PrintReceiptHeader()
+    public class BlankReceipt
     {
-        Console.WriteLine("CASH RECEIPT");
-        Console.WriteLine("------------------------------");
-    }
+        public static void Main(string[] args)
+        {
+            PrintReceiptHeader();
+            PrintReceiptBody();
+            PrintReceiptFooter();
+        }
 
-    private static void PrintReceiptBody()
-    {
-        Console.WriteLine("Charged to____________________");
-        Console.WriteLine("Received by___________________");
-    }
+        private static void PrintReceiptHeader()
+        {
+            Console.WriteLine("CASH RECEIPT");
+            Console.WriteLine("------------------------------");
+        }
 
-    private static void PrintReceiptFooter()
-    {
-        Console.WriteLine("------------------------------");
-        Console.WriteLine("© SoftUni");
-    }
+        private static void PrintReceiptBody()
+        {
+            Console.WriteLine("Charged to____________________");
+            Console.WriteLine("Received by___________________");
+        }
+
+        private static void PrintReceiptFooter()
+        {
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("© SoftUni");
+        }
+    } 
 }

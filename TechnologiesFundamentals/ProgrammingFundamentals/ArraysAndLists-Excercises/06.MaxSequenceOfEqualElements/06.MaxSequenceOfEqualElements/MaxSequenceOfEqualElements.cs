@@ -1,46 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class MaxSequenceOfEqualElements
+﻿namespace _06.MaxSequenceOfEqualElements
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class MaxSequenceOfEqualElements
     {
-        List<int> numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-        int maxnumbers = 0;
-        int count = 1;
-        int maxcount = 1;
-        int pos = 0;
-
-        while (pos < numbers.Count - 1)
+        public static void Main(string[] args)
         {
-            if (numbers[pos] == numbers[pos + 1])
-            {
-                count++;
+            var numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
 
-                if (count > maxcount)
+            var maxnumbers = 0;
+            var count = 1;
+            var maxcount = 1;
+            var pos = 0;
+
+            while (pos < numbers.Count - 1)
+            {
+                if (numbers[pos] == numbers[pos + 1])
                 {
-                    maxcount = count;
-                    maxnumbers = numbers[pos];
+                    count++;
+
+                    if (count > maxcount)
+                    {
+                        maxcount = count;
+                        maxnumbers = numbers[pos];
+                    }
+
+                }
+                else
+                {
+                    count = 1;
                 }
 
-            }
-            else
-            {
-                count = 1;
+                pos++;
+
+                if (maxcount == 1)
+                {
+                    maxnumbers = numbers[0];
+                }
             }
 
-            pos++;
-
-            if (maxcount == 1)
+            for (var i = 0; i < maxcount; i++)
             {
-                maxnumbers = numbers[0];
+                Console.Write(maxnumbers);
+                Console.Write(" ");
             }
         }
-        for (int i = 0; i < maxcount; i++)
-        {
-            Console.Write(maxnumbers);
-            Console.Write(" ");
-        }
-    }
+    } 
 }

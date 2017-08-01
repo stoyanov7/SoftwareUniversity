@@ -1,36 +1,45 @@
-﻿using System;
-
-public class LargestCommonEnd
+﻿namespace _01.LargestCommonEnd
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class LargestCommonEnd
     {
-        string[] arrayOne = Console.ReadLine().Split(' ');
-        string[] arrayTwo = Console.ReadLine().Split(' ');
-
-        int leftCounter = CheckArray(arrayOne, arrayTwo);
-        Array.Reverse(arrayOne);
-        Array.Reverse(arrayTwo);
-        int rightCounter = CheckArray(arrayOne, arrayTwo);
-
-        Console.WriteLine(Math.Max(leftCounter, rightCounter));
-    }
-
-    private static int CheckArray(string[] arrOne, string[] arrTwo)
-    {
-        int minArray = Math.Min(arrOne.Length, arrTwo.Length);
-        int count = 0;
-
-        for (int i = 0; i < minArray; i++)
+        public static void Main(string[] args)
         {
-            if (arrOne[i] == arrTwo[i])
-            {
-                count++;
-                continue;
-            }
-            
-            break;
+            var arrayOne = Console.ReadLine()
+                .Split(' ')
+                .ToArray();
+
+            var arrayTwo = Console.ReadLine()
+                .Split(' ')
+                .ToArray();
+
+            var leftCounter = CheckArray(arrayOne, arrayTwo);
+            Array.Reverse(arrayOne);
+            Array.Reverse(arrayTwo);
+            var rightCounter = CheckArray(arrayOne, arrayTwo);
+
+            Console.WriteLine(Math.Max(leftCounter, rightCounter));
         }
 
-        return count;
+        private static int CheckArray(string[] arrOne, string[] arrTwo)
+        {
+            var minArray = Math.Min(arrOne.Length, arrTwo.Length);
+            var count = 0;
+
+            for (var i = 0; i < minArray; i++)
+            {
+                if (arrOne[i] == arrTwo[i])
+                {
+                    count++;
+                    continue;
+                }
+
+                break;
+            }
+
+            return count;
+        }
     }
 }

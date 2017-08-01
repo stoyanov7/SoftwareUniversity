@@ -1,21 +1,28 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-public class MergeFiles
+﻿namespace _04.MergeFiles
 {
-    public static void Main(string[] args)
+    using System.IO;
+    using System.Linq;
+
+    public class MergeFiles
     {
-        var inputOneTxt = "FileOne.txt";
-        var inputTwoTxt = "FileTwo.txt";
-        var outputTxt = "Result.txt";
+        public static void Main(string[] args)
+        {
+            var inputOneTxt = "FileOne.txt";
+            var inputTwoTxt = "FileTwo.txt";
+            var outputTxt = "Result.txt";
 
-        List<string> textOne = File.ReadAllLines(inputOneTxt).ToList();
-        List<string> textTwo = File.ReadAllLines(inputTwoTxt).ToList();
+            var textOne = File
+                .ReadAllLines(inputOneTxt)
+                .ToList();
 
-        textOne.AddRange(textTwo);
-        textOne.Sort();
+            var textTwo = File
+                .ReadAllLines(inputTwoTxt)
+                .ToList();
 
-        File.AppendAllLines(outputTxt, textOne);
-    }
+            textOne.AddRange(textTwo);
+            textOne.Sort();
+
+            File.AppendAllLines(outputTxt, textOne);
+        }
+    } 
 }

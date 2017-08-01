@@ -1,13 +1,22 @@
-﻿using System;
-using System.Linq;
-
-public class LargestThreeNumbers
+﻿namespace _04.LargestThreeNumbers
 {
-    public static void Main(string[] args)
-    {
-        var inputNumbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-        var largestThreeNumbers = inputNumbers.OrderByDescending(n => n).Take(3);
+    using System;
+    using System.Linq;
 
-        Console.WriteLine(string.Join(", ", largestThreeNumbers));
-    }
+    public class LargestThreeNumbers
+    {
+        public static void Main(string[] args)
+        {
+            var inputNumbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+
+            var largestThreeNumbers = inputNumbers
+                .OrderByDescending(n => n)
+                .Take(3);
+
+            Console.WriteLine(string.Join(", ", largestThreeNumbers));
+        }
+    } 
 }

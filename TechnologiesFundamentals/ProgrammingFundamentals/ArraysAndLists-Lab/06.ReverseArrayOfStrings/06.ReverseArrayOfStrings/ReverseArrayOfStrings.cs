@@ -1,14 +1,20 @@
-﻿using System;
-
-public class ReverseArrayOfStrings
+﻿namespace _06.ReverseArrayOfStrings
 {
-    public static void Main(string[] args)
-    {
-        string[] stringArray = Console.ReadLine().Split(' ');
+    using System;
+    using System.Linq;
 
-        for (int i = stringArray.Length - 1; i >= 0; i--)
+    public class ReverseArrayOfStrings
+    {
+        public static void Main(string[] args)
         {
-            Console.WriteLine(stringArray[i] + " ");
+            var stringArray = Console.ReadLine()
+                .Split(' ')
+                .ToArray();
+
+            for (var i = stringArray.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(stringArray[i] + " ");
+            }
         }
-    }
+    } 
 }

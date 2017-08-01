@@ -1,25 +1,32 @@
-﻿using System;
-
-public class RandomizeWords
+﻿namespace _02.RandomizeWords
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class RandomizeWords
     {
-        var words = Console.ReadLine().Split(' ');
-        var random = new Random();
-
-        for (int i = 0; i < words.Length; i++)
+        public static void Main(string[] args)
         {
-            var currentWord = words[i];
-            var randomIndex = random.Next(0, words.Length);
+            var words = Console.ReadLine()
+                .Split(' ')
+                .ToArray();
 
-            var temp = words[randomIndex];
-            words[i] = temp;
-            words[randomIndex] = currentWord;
-        }
+            var random = new Random();
 
-        foreach (var word in words)
-        {
-            Console.WriteLine(word);
+            for (var i = 0; i < words.Length; i++)
+            {
+                var currentWord = words[i];
+                var randomIndex = random.Next(0, words.Length);
+
+                var temp = words[randomIndex];
+                words[i] = temp;
+                words[randomIndex] = currentWord;
+            }
+
+            foreach (var word in words)
+            {
+                Console.WriteLine(word);
+            }
         }
-    }
+    } 
 }

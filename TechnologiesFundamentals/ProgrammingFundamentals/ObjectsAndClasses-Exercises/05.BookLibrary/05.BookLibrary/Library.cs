@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
-
-public class Library
+﻿namespace _05.BookLibrary
 {
-    public string name { get; set; }
+    using System.Collections.Generic;
 
-    public List<Book> Books { get; set; }
+    public class Library
+    {
+        public string Name { get; set; }
+
+        public List<Book> Books { get; set; }
+    } 
 }

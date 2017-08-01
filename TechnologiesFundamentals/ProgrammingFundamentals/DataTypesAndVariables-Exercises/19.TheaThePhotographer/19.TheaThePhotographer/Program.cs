@@ -1,26 +1,29 @@
-﻿using System;
-
-public class TheaThePhotographer
+﻿namespace _19.TheaThePhotographer
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class TheaThePhotographer
     {
-        long n = long.Parse(Console.ReadLine());
-        long filterTime = long.Parse(Console.ReadLine());
-        long filterFactor = long.Parse(Console.ReadLine());
-        long uploadTime = long.Parse(Console.ReadLine());
+        public static void Main(string[] args)
+        {
+            var n = long.Parse(Console.ReadLine());
+            var filterTime = long.Parse(Console.ReadLine());
+            var filterFactor = long.Parse(Console.ReadLine());
+            var uploadTime = long.Parse(Console.ReadLine());
 
-        long totalFilteringTime = n * filterTime;
-        long goodPictures = (long)(Math.Ceiling(n * filterFactor / 100d));
-        long totalUploadTime = goodPictures * uploadTime;
+            var totalFilteringTime = n * filterTime;
+            var goodPictures = (long)(Math.Ceiling(n * filterFactor / 100d));
+            var totalUploadTime = goodPictures * uploadTime;
 
-        long totalTime = totalFilteringTime + totalUploadTime;
+            var totalTime = totalFilteringTime + totalUploadTime;
 
-        TimeSpan projectTime = TimeSpan.FromSeconds(totalTime);
+            var projectTime = TimeSpan.FromSeconds(totalTime);
 
-        Console.WriteLine("{0:D1}:{1:D2}:{2:D2}:{3:D2}",
-            projectTime.Days,
-            projectTime.Hours,
-            projectTime.Minutes,
-            projectTime.Seconds);
-    }
+            Console.WriteLine("{0:D1}:{1:D2}:{2:D2}:{3:D2}",
+                projectTime.Days,
+                projectTime.Hours,
+                projectTime.Minutes,
+                projectTime.Seconds);
+        }
+    } 
 }

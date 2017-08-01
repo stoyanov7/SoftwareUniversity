@@ -1,73 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class SoftUniKaraoke
+﻿namespace _02.SoftUniKaraoke
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class SoftUniKaraoke
     {
-        var participants = Console.ReadLine()
-            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(p => p.Trim())
-            .ToArray();
-
-        var songs = Console.ReadLine()
-            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(s => s.Trim())
-            .ToArray();
-
-        var result = new Dictionary<string, HashSet<string>>();
-
-        var line = Console.ReadLine();
-
-        while (!line.Equals("dawn"))
+        public static void Main(string[] args)
         {
-            var performance = line
+            var participants = Console.ReadLine()
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(p => p.Trim())
+                .ToArray();
+
+            var songs = Console.ReadLine()
                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(s => s.Trim())
                 .ToArray();
 
-            var participant = performance[0];
-            var song = performance[1];
-            var award = performance[2];
+            var result = new Dictionary<string, HashSet<string>>();
 
-            if (participants.Contains(participant))
+            var line = Console.ReadLine();
+
+            while (line != "dawn")
             {
-                if (!result.ContainsKey(participant))
+                var performance = line
+                    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => s.Trim())
+                    .ToArray();
+
+                var participant = performance[0];
+                var song = performance[1];
+                var award = performance[2];
+
+                if (participants.Contains(participant))
                 {
-                    result[participant] = new HashSet<string>();
+                    if (!result.ContainsKey(participant))
+                    {
+                        result[participant] = new HashSet<string>();
+                    }
+
+                    var awards = result[participant];
+
+                    if (songs.Contains(song))
+                    {
+                        awards.Add(award);
+                    }
                 }
 
-                var awards = result[participant];
-                if (songs.Contains(song))
-                {
-                    awards.Add(award);
-                }
+                line = Console.ReadLine();
             }
 
-            line = Console.ReadLine();
-        }
-
-        if (result.Any())
-        {
-            foreach (var kvp in result
-                .OrderByDescending(p => p.Value.Count)
-                .ThenBy(p => p.Key))
+            if (result.Any())
             {
-                var participant = kvp.Key;
-                var awards = kvp.Value;
-
-                Console.WriteLine($"{participant}: {awards.Count} awards");
-
-                foreach (var award in awards.OrderBy(a => a))
+                foreach (var kvp in result
+                    .OrderByDescending(p => p.Value.Count)
+                    .ThenBy(p => p.Key))
                 {
-                    Console.WriteLine($"--{award}");
+                    var participant = kvp.Key;
+                    var awards = kvp.Value;
+
+                    Console.WriteLine($"{participant}: {awards.Count} awards");
+
+                    foreach (var award in awards.OrderBy(a => a))
+                    {
+                        Console.WriteLine($"--{award}");
+                    }
                 }
             }
+            else
+            {
+                Console.WriteLine("No awards");
+            }
         }
-        else
-        {
-            Console.WriteLine("No awards");
-        }
-    }
+    } 
 }

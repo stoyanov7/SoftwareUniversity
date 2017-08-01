@@ -1,30 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public class AppendLists
+﻿namespace _02.AppendLists
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class AppendLists
     {
-        var input = Console.ReadLine().Split('|').ToList();
-        input.Reverse();
-        var result = new List<string>();
-
-        foreach (var lines in input)
+        public static void Main(string[] args)
         {
-            var numbers = lines.Split(' ').ToList();
+            var input = Console.ReadLine()
+                .Split('|')
+                .ToList();
 
-            foreach (var number in numbers)
+            input.Reverse();
+            var result = new List<string>();
+
+            foreach (var lines in input)
             {
-                if (number != "")
+                var numbers = lines
+                    .Split(' ')
+                    .ToList();
+
+                foreach (var number in numbers)
                 {
-                    result.Add(number);
+                    if (number != "")
+                    {
+                        result.Add(number);
+                    }
                 }
             }
-        }
 
-        Console.WriteLine(string.Join(" ", result));
-    }
+            Console.WriteLine(string.Join(" ", result));
+        }
+    } 
 }

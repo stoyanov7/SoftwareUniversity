@@ -1,30 +1,33 @@
-﻿using System;
-
-public class PrimeChecker
+﻿namespace _06.PrimeChecker
 {
-    public static void Main(string[] args)
-    {
-        long number = long.Parse(Console.ReadLine());
-        Console.WriteLine(IsPrime(number));
-    }
+    using System;
 
-    private static bool IsPrime(long number)
+    public class PrimeChecker
     {
-        if (number < 2)
+        public static void Main(string[] args)
         {
-            return false;
+            var number = long.Parse(Console.ReadLine());
+            Console.WriteLine(IsPrime(number));
         }
-        else
+
+        private static bool IsPrime(long number)
         {
-            for (int i = 2; i <= Math.Sqrt(number); i++)
+            if (number < 2)
             {
-                if (number % i == 0)
+                return false;
+            }
+            else
+            {
+                for (var i = 2; i <= Math.Sqrt(number); i++)
                 {
-                    return false;
+                    if (number % i == 0)
+                    {
+                        return false;
+                    }
                 }
             }
-        }
 
-        return true;
-    }
+            return true;
+        }
+    } 
 }

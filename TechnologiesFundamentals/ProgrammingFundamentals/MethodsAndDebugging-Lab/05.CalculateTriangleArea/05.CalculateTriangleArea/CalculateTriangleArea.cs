@@ -1,17 +1,17 @@
-﻿using System;
-
-class CalculateTriangleArea
+﻿namespace _05.CalculateTriangleArea
 {
-    public static void Main(string[] args)
-    {
-        double width = double.Parse(Console.ReadLine());
-        double height = double.Parse(Console.ReadLine());
-        double area = GetTriangleArea(width, height);
-        Console.WriteLine(area);
-    }
+    using System;
 
-    private static double GetTriangleArea(double width, double height)
+    public class CalculateTriangleArea
     {
-        return width * height / 2;
-    }
+        public static void Main(string[] args)
+        {
+            var width = double.Parse(Console.ReadLine());
+            var height = double.Parse(Console.ReadLine());
+            var area = GetTriangleArea(width, height);
+            Console.WriteLine(area);
+        }
+
+        private static double GetTriangleArea(double width, double height) => width * height / 2;
+    } 
 }

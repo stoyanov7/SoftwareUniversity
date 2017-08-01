@@ -1,84 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-
-public class RoliTheCoder
+﻿namespace _04.RoliTheCoder
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+
+    public class RoliTheCoder
     {
-        var inputLine = Console.ReadLine();
-        var events = new Dictionary<int, Event>();
-        const string EVENT_PATERN = @"(?<id>\d+)\s+#(?<eventName>[\w\d]+)(\s+(?:@\w+\s*)+)?";
-
-        while (inputLine != "Time for Code")
+        public static void Main(string[] args)
         {
-            var matchEventDetails = Regex.Match(inputLine, EVENT_PATERN);
+            var inputLine = Console.ReadLine();
+            var events = new Dictionary<int, Event>();
+            const string eventPatern = @"(?<id>\d+)\s+#(?<eventName>[\w\d]+)(\s+(?:@\w+\s*)+)?";
 
-            if (matchEventDetails.Success)
+            while (inputLine != "Time for Code")
             {
-                var id = int.Parse(matchEventDetails.Groups["id"].Value);
-                var eventName = matchEventDetails.Groups["eventName"].Value;
+                var matchEventDetails = Regex.Match(inputLine, eventPatern);
 
-                var participants = new string[0];
-                var eventHasPatricipants = inputLine.Contains("@");
-
-                if (eventHasPatricipants)
+                if (matchEventDetails.Success)
                 {
-                    participants = inputLine
-                        .Substring(inputLine.IndexOf("@"))
-                        .Split();
-                }
+                    var id = int.Parse(matchEventDetails.Groups["id"].Value);
+                    var eventName = matchEventDetails
+                        .Groups["eventName"]
+                        .Value;
 
-                if (!events.ContainsKey(id))
-                {
-                    events[id] = new Event()
+                    var participants = new string[0];
+                    var eventHasPatricipants = inputLine.Contains("@");
+
+                    if (eventHasPatricipants)
                     {
-                        Name = eventName,
-                        Participants = new List<string>()
-                    };
+                        participants = inputLine
+                            .Substring(inputLine.IndexOf("@"))
+                            .Split();
+                    }
+
+                    if (!events.ContainsKey(id))
+                    {
+                        events[id] = new Event()
+                        {
+                            Name = eventName,
+                            Participants = new List<string>()
+                        };
+                    }
+
+                    if (events[id].Name == eventName)
+                    {
+                        events[id]
+                            .Participants
+                            .AddRange(participants);
+
+                        events[id].Participants = events[id]
+                            .Participants
+                            .Distinct()
+                            .ToList();
+                    }
                 }
 
-                if (events[id].Name == eventName)
-                {
-                    events[id].Participants.AddRange(participants);
-                    events[id].Participants = events[id]
-                        .Participants
-                        .Distinct()
-                        .ToList();
-                }
+                inputLine = Console.ReadLine();
             }
 
-            inputLine = Console.ReadLine();
-        }
+            var sortedEvents = events
+                .OrderByDescending(e => e.Value.Participants.Count)
+                .ThenBy(e => e.Value.Name)
+                .ToArray();
 
-        var sortedEvents = events
-            .OrderByDescending(e => e.Value.Participants.Count)
-            .ThenBy(e => e.Value.Name)
-            .ToArray();
-
-        foreach (var @event in sortedEvents)
-        {
-            var eventName = @event
-                .Value
-                .Name;
-
-            var participantsCount = @event
-                .Value
-                .Participants
-                .Count();
-
-            var sortedParticipants = @event
-                .Value
-                .Participants
-                .OrderBy(p => p);
-
-            Console.WriteLine($"{eventName} - {participantsCount}");
-
-            foreach (var participants in sortedParticipants)
+            foreach (var @event in sortedEvents)
             {
-                Console.WriteLine(participants);
+                var eventName = @event
+                    .Value
+                    .Name;
+
+                var participantsCount = @event
+                    .Value
+                    .Participants
+                    .Count();
+
+                var sortedParticipants = @event
+                    .Value
+                    .Participants
+                    .OrderBy(p => p);
+
+                Console.WriteLine($"{eventName} - {participantsCount}");
+
+                foreach (var participants in sortedParticipants)
+                {
+                    Console.WriteLine(participants);
+                }
             }
         }
-    }
+    } 
 }

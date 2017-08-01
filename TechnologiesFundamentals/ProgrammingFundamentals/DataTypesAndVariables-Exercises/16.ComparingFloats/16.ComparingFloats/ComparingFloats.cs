@@ -1,13 +1,16 @@
-﻿using System;
-
-public class ComparingFloats
+﻿namespace _16.ComparingFloats
 {
-    public static void Main(string[] args)
-    {
-        double firstNumber = double.Parse(Console.ReadLine());
-        double secondNumber = double.Parse(Console.ReadLine());
-        double eps = 0.000001;
+    using System;
 
-        Console.WriteLine(Math.Abs(firstNumber - secondNumber) < eps ? "True" : "False");
-    }
+    public class ComparingFloats
+    {
+        public static void Main(string[] args)
+        {
+            var firstNumber = double.Parse(Console.ReadLine());
+            var secondNumber = double.Parse(Console.ReadLine());
+            const double eps = 0.000001;
+
+            Console.WriteLine(Math.Abs(firstNumber - secondNumber) < eps ? "True" : "False");
+        }
+    } 
 }

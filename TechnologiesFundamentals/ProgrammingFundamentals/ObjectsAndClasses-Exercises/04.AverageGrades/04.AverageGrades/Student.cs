@@ -1,17 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-public class Student
+﻿namespace _04.AverageGrades
 {
-    public Student(string name, List<double> grades)
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class Student
     {
-        this.Name = name;
-        this.Grades = grades;
-    }
+        public Student(string name, List<double> grades)
+        {
+            this.Name = name;
+            this.Grades = grades;
+        }
 
-    public string Name { get; set; }
+        public string Name { get; set; }
 
-    public List<double> Grades { get; set; }
+        public List<double> Grades { get; set; }
 
-    public double AverageGrades => this.Grades.Average();
+        public double AverageGrades => this.Grades.Average();
+    } 
 }

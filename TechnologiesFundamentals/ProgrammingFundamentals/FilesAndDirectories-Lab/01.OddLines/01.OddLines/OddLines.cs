@@ -1,30 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-public class OddLines
+﻿namespace _01.OddLines
 {
-    public static void Main(string[] args)
+    using System.Collections.Generic;
+    using System.IO;
+
+    public class OddLines
     {
-        var inputFile = "Input.txt";
-        var resultFile = "Result.txt";
-        var inputText = File.ReadAllLines(inputFile);
-
-        if (!File.Exists(resultFile))
+        public static void Main(string[] args)
         {
-            File.Create(resultFile);
-        }
+            var inputFile = "Input.txt";
+            var resultFile = "Result.txt";
+            var inputText = File.ReadAllLines(inputFile);
 
-        var oddLines = new List<string>();
-
-        for (int i = 0; i < inputText.Length; i++)
-        {
-            if (i % 2 != 0)
+            if (!File.Exists(resultFile))
             {
-                oddLines.Add(inputText[i]);
+                File.Create(resultFile);
             }
-        }
 
-        File.WriteAllLines(resultFile, oddLines);
-    }
+            var oddLines = new List<string>();
+
+            for (var i = 0; i < inputText.Length; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    oddLines.Add(inputText[i]);
+                }
+            }
+
+            File.WriteAllLines(resultFile, oddLines);
+        }
+    } 
 }

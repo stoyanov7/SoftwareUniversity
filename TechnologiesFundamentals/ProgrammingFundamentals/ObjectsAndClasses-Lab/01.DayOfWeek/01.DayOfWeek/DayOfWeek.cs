@@ -1,13 +1,16 @@
-﻿using System;
-using System.Globalization;
-
-public class DayOfWeek
+﻿namespace _01.DayOfWeek
 {
-    public static void Main(string[] args)
-    {
-        DateTime dateTime = DateTime.ParseExact(Console.ReadLine(),
-            "d-M-yyyy", CultureInfo.InvariantCulture);
+    using System;
+    using System.Globalization;
 
-        Console.WriteLine(dateTime.DayOfWeek);
-    }
+    public class DayOfWeek
+    {
+        public static void Main(string[] args)
+        {
+            var dateTime = DateTime.ParseExact(Console.ReadLine(),
+                "d-M-yyyy", CultureInfo.InvariantCulture);
+
+            Console.WriteLine(dateTime.DayOfWeek);
+        }
+    } 
 }

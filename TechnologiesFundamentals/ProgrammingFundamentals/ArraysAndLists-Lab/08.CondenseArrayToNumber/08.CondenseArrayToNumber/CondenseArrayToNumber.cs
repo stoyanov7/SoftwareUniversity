@@ -1,26 +1,32 @@
-﻿using System;
-using System.Linq;
-
-public class CondenseArrayToNumber
+﻿namespace _08.CondenseArrayToNumber
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class CondenseArrayToNumber
     {
-        int[] numberArray = Console.ReadLine()
-            .Split(' ')
-            .Select(int.Parse)
-            .ToArray();
-
-        while (numberArray.Length > 1)
+        public static void Main(string[] args)
         {
-            int[] condensed = new int[numberArray.Length - 1];
+            var numberArray = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
 
-            for (int j = 0; j < numberArray.Length - 1; j++)
+            while (numberArray.Length > 1)
             {
-                condensed[j] = numberArray[j] + numberArray[j + 1];
-            }
-            numberArray = condensed;
-        }
+                var condensed = new int[numberArray.Length - 1];
 
-        numberArray.ToList().ForEach(e => Console.WriteLine(e));
-    }
+                for (var j = 0; j < numberArray.Length - 1; j++)
+                {
+                    condensed[j] = numberArray[j] + numberArray[j + 1];
+                }
+
+                numberArray = condensed;
+            }
+
+            numberArray
+                .ToList()
+                .ForEach(Console.WriteLine);
+        }
+    } 
 }

@@ -1,5 +1,9 @@
-﻿public class Circle
+﻿namespace _03.CirclesIntersection
 {
-    public Point Center { get; set; }
-    public int Radius { get; set; }
+    public class Circle
+    {
+        public Point Center { get; set; }
+
+        public int Radius { get; set; }
+    } 
 }

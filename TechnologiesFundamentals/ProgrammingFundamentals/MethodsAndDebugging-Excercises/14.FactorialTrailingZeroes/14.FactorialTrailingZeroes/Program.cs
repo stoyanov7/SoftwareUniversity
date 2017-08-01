@@ -1,36 +1,39 @@
-﻿using System;
-using System.Numerics;
-
-public class FactorialTrailingZeroes
+﻿namespace _14.FactorialTrailingZeroes
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Numerics;
+
+    public class FactorialTrailingZeroes
     {
-        int n = int.Parse(Console.ReadLine());
-
-        GetTrailingZeroes(Factorial(n));
-    }
-
-    private static BigInteger Factorial(int n)
-    {
-        BigInteger factorial = 1;
-
-        for (int i = 1; i <= n; i++)
+        public static void Main(string[] args)
         {
-            factorial *= i;
+            var n = int.Parse(Console.ReadLine());
+            GetTrailingZeroes(Factorial(n));
         }
 
-        return factorial;
-    }
-
-    private static void GetTrailingZeroes(BigInteger number)
-    {
-        BigInteger zeroCount = 0;
-        while (number % 10 == 0)
+        private static BigInteger Factorial(int n)
         {
-            number /= 10;
-            zeroCount++;
+            BigInteger factorial = 1;
+
+            for (var i = 1; i <= n; i++)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
         }
 
-        Console.WriteLine(zeroCount);
-    }
+        private static void GetTrailingZeroes(BigInteger number)
+        {
+            BigInteger zeroCount = 0;
+
+            while (number % 10 == 0)
+            {
+                number /= 10;
+                zeroCount++;
+            }
+
+            Console.WriteLine(zeroCount);
+        }
+    } 
 }

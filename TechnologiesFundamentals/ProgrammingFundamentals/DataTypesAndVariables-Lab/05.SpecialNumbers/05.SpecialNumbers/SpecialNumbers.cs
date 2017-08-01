@@ -1,24 +1,27 @@
-﻿using System;
-
-public class SpecialNumbers
+﻿namespace _05.SpecialNumbers
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class SpecialNumbers
     {
-        var n = int.Parse(Console.ReadLine());
-
-        for (var i = 1; i <= n; i++)
+        public static void Main(string[] args)
         {
-            var sumOfDigits = 0;
-            var number = i;
+            var n = int.Parse(Console.ReadLine());
 
-            while (number > 0)
+            for (var i = 1; i <= n; i++)
             {
-                sumOfDigits += number % 10;
-                number = number / 10;
-            }
+                var sumOfDigits = 0;
+                var number = i;
 
-            bool isSpecial = (sumOfDigits == 5) || (sumOfDigits == 7) || (sumOfDigits == 11);
-            Console.WriteLine($"{i} -> {isSpecial}");
+                while (number > 0)
+                {
+                    sumOfDigits += number % 10;
+                    number = number / 10;
+                }
+
+                var isSpecial = (sumOfDigits == 5) || (sumOfDigits == 7) || (sumOfDigits == 11);
+                Console.WriteLine($"{i} -> {isSpecial}");
+            }
         }
     }
 }

@@ -1,22 +1,28 @@
-﻿using System;
-
-public class FastPrimeChecker
+﻿namespace _15.FastPrimeChecker
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class FastPrimeChecker
     {
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 2; i <= n; i++)
+        public static void Main(string[] args)
         {
-            bool isPrime = true;
-            for (int divisor = 2; divisor <= Math.Sqrt(i); divisor++)
+            var n = int.Parse(Console.ReadLine());
+
+            for (var i = 2; i <= n; i++)
             {
-                if (i % divisor == 0)
+                var isPrime = true;
+
+                for (var divisor = 2; divisor <= Math.Sqrt(i); divisor++)
                 {
-                    isPrime = false;
-                    break;
+                    if (i % divisor == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
                 }
+
+                Console.WriteLine(isPrime ? ($"{i} -> True") : ($"{i} -> False"));
             }
-            Console.WriteLine(isPrime ? ($"{i} -> True") : ($"{i} -> False"));
         }
-    }
+    } 
 }

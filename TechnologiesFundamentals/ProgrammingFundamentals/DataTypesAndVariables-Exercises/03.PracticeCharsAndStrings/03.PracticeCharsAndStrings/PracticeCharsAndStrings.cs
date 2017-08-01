@@ -1,15 +1,18 @@
-﻿using System;
-
-public class PracticeCharsAndStrings
+﻿namespace _03.PracticeCharsAndStrings
 {
-    public static void Main(string[] args)
-    {
-        string firstInput = Console.ReadLine();
-        char secondInput = char.Parse(Console.ReadLine());
-        char thirdInput = char.Parse(Console.ReadLine());
-        char fourthInput = char.Parse(Console.ReadLine());
-        string fifthInput = Console.ReadLine();
+    using System;
 
-        Console.WriteLine($"{firstInput}\n{secondInput}\n{thirdInput}\n{fourthInput}\n{fifthInput}");
-    }
+    public class PracticeCharsAndStrings
+    {
+        public static void Main(string[] args)
+        {
+            var firstInput = Console.ReadLine();
+            var secondInput = char.Parse(Console.ReadLine());
+            var thirdInput = char.Parse(Console.ReadLine());
+            var fourthInput = char.Parse(Console.ReadLine());
+            var fifthInput = Console.ReadLine();
+
+            Console.WriteLine($"{firstInput}\n{secondInput}\n{thirdInput}\n{fourthInput}\n{fifthInput}");
+        }
+    } 
 }

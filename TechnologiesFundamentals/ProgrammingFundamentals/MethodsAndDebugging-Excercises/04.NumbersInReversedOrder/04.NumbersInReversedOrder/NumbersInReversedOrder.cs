@@ -1,19 +1,21 @@
-﻿using System;
-using System.Text;
-
-public class NumbersInReversedOrder
+﻿namespace _04.NumbersInReversedOrder
 {
-    public static void Main(string[] args)
-    {
-        string number = Console.ReadLine();
-        ReverseNumber(number);
-    }
+    using System;
 
-    private static void ReverseNumber(string number)
+    public class NumbersInReversedOrder
     {
-        for (int i = number.Length - 1; i >= 0; i--)
+        public static void Main(string[] args)
         {
-            Console.Write(number[i]);
+            var number = Console.ReadLine();
+            ReverseNumber(number);
         }
-    }
+
+        private static void ReverseNumber(string number)
+        {
+            for (var i = number.Length - 1; i >= 0; i--)
+            {
+                Console.Write(number[i]);
+            }
+        }
+    } 
 }

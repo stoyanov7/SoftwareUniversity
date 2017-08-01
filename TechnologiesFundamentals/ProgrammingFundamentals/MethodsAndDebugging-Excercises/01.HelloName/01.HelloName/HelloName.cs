@@ -1,15 +1,15 @@
-﻿using System;
-
-public class HelloName
+﻿namespace _01.HelloName
 {
-    public static void Main(string[] args)
-    {
-        string name = Console.ReadLine();
-        PrintName(name);
-    }
+    using System;
 
-    private static void PrintName(string name)
+    public class HelloName
     {
-        Console.WriteLine($"Hello, {name}!");
-    }
+        public static void Main(string[] args)
+        {
+            var name = Console.ReadLine();
+            PrintName(name);
+        }
+
+        private static void PrintName(string name) => Console.WriteLine($"Hello, {name}!");
+    } 
 }

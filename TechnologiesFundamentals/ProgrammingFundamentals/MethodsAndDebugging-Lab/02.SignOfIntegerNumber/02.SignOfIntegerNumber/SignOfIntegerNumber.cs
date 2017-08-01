@@ -1,27 +1,29 @@
-﻿using System;
-
-public class SignOfIntegerNumber
+﻿namespace _02.SignOfIntegerNumber
 {
-    public static void Main(string[] args)
-    {
-        int number = int.Parse(Console.ReadLine());
-        PrintSign(number);
-    }
+    using System;
 
-    private static void PrintSign(int num)
+    public class SignOfIntegerNumber
     {
-        if (num > 0)
+        public static void Main(string[] args)
         {
-            Console.WriteLine($"The number {num} is positive.");
+            var number = int.Parse(Console.ReadLine());
+            PrintSign(number);
         }
 
-        else if (num < 0)
+        private static void PrintSign(int num)
         {
-            Console.WriteLine($"The number {num} is negative.");
+            if (num > 0)
+            {
+                Console.WriteLine($"The number {num} is positive.");
+            }
+            else if (num < 0)
+            {
+                Console.WriteLine($"The number {num} is negative.");
+            }
+            else if (num == 0)
+            {
+                Console.WriteLine($"The number {num} is zero.");
+            }
         }
-        else if (num == 0)
-        {
-            Console.WriteLine($"The number {num} is zero.");
-        }
-    }
+    } 
 }

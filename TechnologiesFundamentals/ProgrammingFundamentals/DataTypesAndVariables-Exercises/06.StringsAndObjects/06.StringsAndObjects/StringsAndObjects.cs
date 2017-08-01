@@ -1,13 +1,16 @@
-﻿using System;
-
-public class StringsAndObjects
+﻿namespace _06.StringsAndObjects
 {
-    public static void Main(string[] args)
-    {
-        string firstInput = Console.ReadLine();
-        string secondInput = Console.ReadLine();
-        string text = firstInput + " " + secondInput;
+    using System;
 
-        Console.WriteLine(text);
-    }
+    public class StringsAndObjects
+    {
+        public static void Main(string[] args)
+        {
+            var firstInput = Console.ReadLine();
+            var secondInput = Console.ReadLine();
+            var text = firstInput + " " + secondInput;
+
+            Console.WriteLine(text);
+        }
+    } 
 }

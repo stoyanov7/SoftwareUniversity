@@ -1,39 +1,44 @@
-﻿using System;
-using System.Linq;
-
-public class DistanceBetweenPoints
+﻿namespace _04.DistanceBetweenPoints
 {
-    public static void Main(string[] args)
+    using System;
+    using System.Linq;
+
+    public class DistanceBetweenPoints
     {
-        var firstPont = ReadPoint();
-        var secondPoint = ReadPoint();
-
-        var result = CalculateDistance(firstPont, secondPoint);
-
-        Console.WriteLine($"{result:F3}");
-    }
-
-    public static Point ReadPoint()
-    {
-        var inputCoordinats = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
-        var point = new Point
+        public static void Main(string[] args)
         {
-            X = inputCoordinats[0],
-            Y = inputCoordinats[1]
-        };
+            var firstPont = ReadPoint();
+            var secondPoint = ReadPoint();
+            var result = CalculateDistance(firstPont, secondPoint);
 
-        return point;
-    }
+            Console.WriteLine($"{result:F3}");
+        }
 
-    public static double CalculateDistance(Point firstPoint, Point secondPoint)
-    {
-        var diffX = firstPoint.X - secondPoint.X;
-        var diffY = firstPoint.Y - secondPoint.Y;
+        private static Point ReadPoint()
+        {
+            var inputCoordinats = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToArray();
 
-        var powX = Math.Pow(diffX, 2);
-        var powY = Math.Pow(diffY, 2);
+            var point = new Point
+            {
+                X = inputCoordinats[0],
+                Y = inputCoordinats[1]
+            };
 
-        return Math.Sqrt(powX + powY);
-    }
+            return point;
+        }
+
+        private static double CalculateDistance(Point firstPoint, Point secondPoint)
+        {
+            var diffX = firstPoint.X - secondPoint.X;
+            var diffY = firstPoint.Y - secondPoint.Y;
+
+            var powX = Math.Pow(diffX, 2);
+            var powY = Math.Pow(diffY, 2);
+
+            return Math.Sqrt(powX + powY);
+        }
+    } 
 }

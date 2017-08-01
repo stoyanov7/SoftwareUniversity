@@ -1,10 +1,13 @@
-﻿using System;
-
-public class VariableInHexFormat
+﻿namespace _04.VariableInHexFormat
 {
-    public static void Main(string[] args)
+    using System;
+
+    public class VariableInHexFormat
     {
-        string variable = Console.ReadLine();
-        Console.WriteLine(Convert.ToInt32(variable, 16));
-    }
+        public static void Main(string[] args)
+        {
+            var variable = Console.ReadLine();
+            Console.WriteLine(Convert.ToInt32(variable, 16));
+        }
+    } 
 }
