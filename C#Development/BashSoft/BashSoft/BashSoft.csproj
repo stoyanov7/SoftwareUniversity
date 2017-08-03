@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFCD3C85-B184-4A9F-8AA3-0185AFE0D59F}</ProjectGuid>
+    <ProjectGuid>{FB2263F7-480D-429E-96E7-5FEC268D6969}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>BashSoft</RootNamespace>
     <AssemblyName>BashSoft</AssemblyName>
@@ -42,22 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IO\CommandInterpreter.cs" />
-    <Compile Include="IO\InputReader.cs" />
-    <Compile Include="Repositories\RepositoryFilters.cs" />
-    <Compile Include="Repositories\RepositorySorters.cs" />
-    <Compile Include="StaticData\ExceptionMessages.cs" />
-    <Compile Include="IO\IOManager.cs" />
+    <Compile Include="IO\IoManager .cs" />
     <Compile Include="IO\OutputWriter.cs" />
     <Compile Include="Judge\Tester.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\StudentsRepository.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="StartUp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticData\ExceptionMessages.cs" />
     <Compile Include="StaticData\SessionData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
