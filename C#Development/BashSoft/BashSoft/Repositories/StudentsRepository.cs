@@ -2,25 +2,34 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
-    using System.Text.RegularExpressions;
+    using IO;
     using StaticData;
     using IO;
 
+    /// <summary>
+    /// Student data stucture.
+    /// </summary>
     public static class StudentsRepository
     {
         private static bool isDataInitialized = false;
-
+        //// Dictionary<courseName, Dictionary<student, scoresOnTask
         private static Dictionary<string, Dictionary<string, List<int>>> studentsByCourse;
 
-        public static void InitializeData(string fileName)
-        {
+        /// <summary>
+        /// Initialize data stucture and fill it.
+        /// </summary>
+        /// <seealso cref="ReadData()">If it is not initialized yet,
+        /// reads the data</seealso>
+        /// <seealso cref="ExceptionMessages.DataAlreadyInitialisedException">
+        /// If data is initialized print message.</seealso>
+        public static void InitializeData()
+        {         
             if (!isDataInitialized)
             {
                 OutputWriter.WriteMessageOnNewLine("Reading data...");
                 studentsByCourse = new Dictionary<string, Dictionary<string, List<int>>>();
-                ReadData(fileName);
+                ReadData();
             }
             else
             {
@@ -28,129 +37,89 @@
             }
         }
 
+        /// <summary>
+        /// Get given student from a given couse if the query for student is possible.
+        /// </summary>
+        /// <param name="courseName">Given course name.</param>
+        /// <param name="username">Given student user name.</param>
+        public static void GetStudentScoreFromCourese(string courseName, string username)
+        {
+            if (IsQueryForStudentPossiblе(courseName, username))
             {
         {
                 OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(username, studentsByCourse[courseName][username]));
             }
 
+        /// <summary>
+        /// Gets all students and marks from a given course if the query for course is possible.
+        /// </summary>
+        /// <param name="courseName">Given course name.</param>
+        /// <seealso cref="OutputWriter.PrintStudent"/>
+        public static void GetAllStudentsFromCourse(string courseName)
         {
-                OutputWriter.WriteMessageOnNewLine($"{courseName}:");
+            if (IsQueryForCoursePossible(courseName))
+            {
+                OutputWriter.WriteMessageOnNewLine($"Course {courseName}:");
+
+                // TODO: Print students and marks
                 foreach (var studentMarkEntry in studentsByCourse[courseName])
         }
             }
                 RepositorySorters.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
 
-                }
-                    studentsToTake = studentsByCourse[courseName].Count;
-                {
-                if (studentsToTake == null)
-            {
-            if (IsQueryForCoursePossible(courseName))
-        {
-        public static void OrderAndTake(string courseName, string comparison, int? studentsToTake = null)
-
-        }
-            }
-
-                RepositoryFilters.FilterAndTake(studentsByCourse[courseName], givenFilter, studentsToTake.Value);
-                }
-                    studentsToTake = studentsByCourse[courseName].Count;
-                {
-                if (studentsToTake == null)
-            {
-            if (IsQueryForCoursePossible(courseName))
-        {
-        public static void FilterAndTake(string courseName, string givenFilter, int? studentsToTake = null)
-
-        }
-            }
-                }
-                    OutputWriter.PrintStudent(studentMarkEntry);
-                {
-
-            {
-            if (IsQueryForCoursePossible(courseName))
-        public static void GetAllStudentsFromCourse(string courseName)
-        }
-            if (IsQueryForStudentPossiblе(courseName, username))
+        /// <summary>
+        /// Read data from the console until an empty line is read.
+        /// </summary>
+        /// <remarks>
+        /// Format of reading data:
+        /// [course name] [student user name] [mark]
+        /// </remarks>
         private static void ReadData()
         {
-            var input = Console.ReadLine();
+            var line = Console.ReadLine();
 
-            while (!string.IsNullOrEmpty(input))
+            while (!string.IsNullOrEmpty(line))
             {
-                // TODO: Split input and initilize variables
-                var inputTokens = input
-                    .Split(' ')
+                // TODO: Read the data
+                var lineTokens = line
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
 
-                var course = inputTokens[0];
-                var student = inputTokens[1];
-                var mark = int.Parse(inputTokens[2]);
+                var course = lineTokens[0];
+                var student = lineTokens[1];
+                var mark = int.Parse(lineTokens[2]);
 
-                // TODO: Add the cource and the student if they don't exist
+                // TODO: Add the course if they don't exist
                 if (!studentsByCourse.ContainsKey(course))
                 {
                     studentsByCourse.Add(course, new Dictionary<string, List<int>>());
                 }
 
+                // TODO: Add the student if the don't exist
                 if (!studentsByCourse[course].ContainsKey(student))
                 {
                     studentsByCourse[course].Add(student, new List<int>());
                 }
 
-                // TODO: Add mark
+                // TODO: Add the mark
                 studentsByCourse[course][student].Add(mark);
 
-                input = Console.ReadLine(); 
+                line = Console.ReadLine();
+                isDataInitialized = true;
             }
 
-            isDataInitialized = true;
             OutputWriter.WriteMessageOnNewLine("Data read!");
         }
 
-        private static void ReadData(string fileName)
-        {
-            var path = SessionData.CurrentPath + "\\" + fileName;
-
-            if (File.Exists(path))
-            {
-                var pattern = @"([A-Z][a-zA-Z#+]*_[A-Z][a-z]{2}_\d{4})\s+([A-Z][a-z]{0,3}\d{2}_\d{2,4})\s+(\d+)";
-                var rgx = new Regex(pattern);
-                var allInputLines = File.ReadAllLines(path);
-
-                for (int line = 0; line < allInputLines.Length; line++)
-                {
-                    if (!string.IsNullOrEmpty(allInputLines[line]) && rgx.IsMatch(allInputLines[line]))
-                    {
-                        var currentMatch = rgx.Match(allInputLines[line]);
-                        var courseName = currentMatch.Groups[1].Value;
-                        var username = currentMatch.Groups[2].Value;
-                        bool hasParsedScore = int.TryParse(currentMatch.Groups[3].Value, out int studentScoreOnTask);
-
-                        if (hasParsedScore && studentScoreOnTask >= 0 && studentScoreOnTask <= 100)
-                        {
-                            if (!studentsByCourse.ContainsKey(courseName))
-                            {
-                                studentsByCourse.Add(courseName, new Dictionary<string, List<int>>());
-                            }
-
-                            if (!studentsByCourse[courseName].ContainsKey(username))
-                            {
-                                studentsByCourse[courseName].Add(username, new List<int>());
-                            }
-
-                            studentsByCourse[courseName][username].Add(studentScoreOnTask);
-                        }
-                    }
-                }
-
-                isDataInitialized = true;
-
-                OutputWriter.WriteMessageOnNewLine("Data read!");
-            }
-        }
-
+        /// <summary>
+        /// Check for given course name is wheather in data stucture
+        /// is actually initialized.
+        /// </summary>
+        /// <param name="courseName"></param>
+        /// <returns>Return true if data structure has been initialized and
+        /// database contains course name (bool).</returns>
+        /// <seealso cref="ExceptionMessages.DataNotInitializedExceptionMessage"> 
+        /// In other case display an exception.</seealso>
         private static bool IsQueryForCoursePossible(string courseName)
         {
             if (isDataInitialized)
@@ -158,10 +127,6 @@
                 if (studentsByCourse.ContainsKey(courseName))
                 {
                     return true;
-                }
-                else
-                {
-                    OutputWriter.DisplayException(ExceptionMessages.InexistingCourseInDataBase);
                 }
             }
             else
@@ -172,6 +137,15 @@
             return false;
         }
 
+        /// <summary>
+        /// Checks for whether the given student username exists in
+        /// the data structure.
+        /// </summary>
+        /// <param name="courseName"></param>
+        /// <param name="studentUserName"></param>
+        /// <returns>If it present return true (bool).</returns>
+        /// <seealso cref="ExceptionMessages.InexistingStudentInDataBase"> 
+        /// If it is not present.</seealso>
         private static bool IsQueryForStudentPossiblе(string courseName, string studentUserName)
         {
             if (IsQueryForCoursePossible(courseName) && studentsByCourse[courseName].ContainsKey(studentUserName))
