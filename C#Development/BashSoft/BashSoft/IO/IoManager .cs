@@ -118,7 +118,7 @@
         /// <param name="absolutePath">Absolute path to go there.</param>
         /// <seealso cref="Directory.Exists"/>
         /// <seealso cref="SessionData.CurrentPath"/>
-        private static void ChangeCurrentDirectoryAbsolute(string absolutePath)
+        public static void ChangeCurrentDirectoryAbsolute(string absolutePath)
         {
             if (!Directory.Exists(absolutePath))
             {

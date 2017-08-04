@@ -2,10 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using IO;
     using StaticData;
-    using IO;
 
     /// <summary>
     /// Student data stucture.
@@ -19,17 +20,18 @@
         /// <summary>
         /// Initialize data stucture and fill it.
         /// </summary>
+        /// <param name="fileName"></param>
         /// <seealso cref="ReadData()">If it is not initialized yet,
         /// reads the data</seealso>
         /// <seealso cref="ExceptionMessages.DataAlreadyInitialisedException">
         /// If data is initialized print message.</seealso>
-        public static void InitializeData()
+        public static void InitializeData(string fileName)
         {         
             if (!isDataInitialized)
             {
                 OutputWriter.WriteMessageOnNewLine("Reading data...");
                 studentsByCourse = new Dictionary<string, Dictionary<string, List<int>>>();
-                ReadData();
+                ReadData(fileName);
             }
             else
             {
@@ -46,9 +48,9 @@
         {
             if (IsQueryForStudentPossiblе(courseName, username))
             {
-        {
                 OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(username, studentsByCourse[courseName][username]));
             }
+        }
 
         /// <summary>
         /// Gets all students and marks from a given course if the query for course is possible.
@@ -63,9 +65,11 @@
 
                 // TODO: Print students and marks
                 foreach (var studentMarkEntry in studentsByCourse[courseName])
-        }
+                {
+                    OutputWriter.PrintStudent(studentMarkEntry);
+                }
             }
-                RepositorySorters.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
+        }
 
         /// <summary>
         /// Read data from the console until an empty line is read.
@@ -109,6 +113,32 @@
             }
 
             OutputWriter.WriteMessageOnNewLine("Data read!");
+        }
+
+        private static void ReadData(string fileName)
+        {
+            var path = SessionData.CurrentPath + "\\" + fileName;
+
+            if (File.Exists(path))
+            {
+                var allInputLines = File.ReadAllLines(path);
+
+                for (var line = 0; line < allInputLines.Length; line++)
+                {
+                    if (!string.IsNullOrEmpty(allInputLines[line]))
+                    {
+                        var data = allInputLines[line]
+                            .Split(' ')
+                            .ToArray();
+
+                        var fileNames = data[1];
+                        StudentsRepository.InitializeData(fileNames);
+                    }
+                }
+
+                isDataInitialized = true;
+                OutputWriter.WriteMessageOnNewLine("Data read!");
+            }
         }
 
         /// <summary>

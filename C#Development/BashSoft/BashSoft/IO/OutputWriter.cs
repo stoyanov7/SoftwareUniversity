@@ -9,6 +9,32 @@
     public static class OutputWriter
     {
         /// <summary>
+        /// Print logo in console.
+        /// </summary>
+        public static void PrintLogo()
+        {
+            var newLine = Environment.NewLine;
+            var logo = new[]
+            {
+                @" ____            _      _____        __ _ ",
+                @"|  _ \          | |    / ____|      / _| |",
+                @"| |_) | ____ ___| |__ | (___   ___ | |_| |_",
+                @"|  _ < / _` / __| '_ \ \___ \ / _ \|  _| __|",
+                @"| |_) | (_| \__ \ | | |____) | (_) | | | |",
+                @"|____/ \__,_|___/_| |_|_____/ \___/|_|  \__|"
+            };
+
+            Console.WindowWidth = 100;
+
+            foreach (var line in logo)
+            {
+                Console.WriteLine(line);
+            }
+
+            Console.WriteLine(newLine, newLine);
+        }
+
+        /// <summary>
         /// Print message on line.
         /// </summary>
         /// <param name="message">Message to be printed.</param>
