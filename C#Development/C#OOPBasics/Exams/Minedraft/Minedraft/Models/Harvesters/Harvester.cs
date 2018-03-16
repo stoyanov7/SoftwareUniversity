@@ -1,47 +1,53 @@
-﻿using System;
-
-public abstract class Harvester : Unit
+﻿namespace Minedraft.Models.Harvesters
 {
-    private const int MinEnergyRequirement = 0;
-    private const int MaxEnergyRequirement = 20000;
-    private const string EnergyRequirementMessage = "Harvester is not registered, because of it's EnergyRequirement";
+    using System;
+    using Common;
 
-    private double oreOutput;
-    private double energyRequirement;
-
-    protected Harvester(string id, double oreOutput, double energyRequirement)
-        :base(id)
+    public abstract class Harvester : Unit
     {
-        this.OreOutput = oreOutput;
-        this.EnergyRequirement = energyRequirement;
-    }
+        private const int MinEnergyRequirement = 0;
+        private const int MaxEnergyRequirement = 20000;
 
-    public double OreOutput
-    {
-        get => this.oreOutput;
+        private const string EnergyRequirementMessage =
+            "Harvester is not registered, because of it's EnergyRequirement";
 
-        protected set
+        private double oreOutput;
+        private double energyRequirement;
+
+        protected Harvester(string id, double oreOutput, double energyRequirement)
+            : base(id)
         {
-            Validator.CheckIfNegative(value);
-            this.oreOutput = value;
+            this.OreOutput = oreOutput;
+            this.EnergyRequirement = energyRequirement;
         }
-    }
 
-    public double EnergyRequirement
-    {
-        get => this.energyRequirement;
-
-        protected set
+        public double OreOutput
         {
-            Validator.CheckGivenRange(value, MinEnergyRequirement, MaxEnergyRequirement, EnergyRequirementMessage);
-            this.energyRequirement = value;
-        }
-    }
+            get => this.oreOutput;
 
-    public override string ToString()
-    {
-        return $"{this.Type} Harvester - {this.Id}{Environment.NewLine}" +
-               $"Ore Output: {this.OreOutput}{Environment.NewLine}" +
-               $"Energy Requirement: {this.EnergyRequirement}";
+            protected set
+            {
+                Validator.CheckIfNegative(value);
+                this.oreOutput = value;
+            }
+        }
+
+        public double EnergyRequirement
+        {
+            get => this.energyRequirement;
+
+            protected set
+            {
+                Validator.CheckGivenRange(value, MinEnergyRequirement, MaxEnergyRequirement, EnergyRequirementMessage);
+                this.energyRequirement = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Type} Harvester - {this.Id}{Environment.NewLine}" +
+                   $"Ore Output: {this.OreOutput}{Environment.NewLine}" +
+                   $"Energy Requirement: {this.EnergyRequirement}";
+        }
     }
 }

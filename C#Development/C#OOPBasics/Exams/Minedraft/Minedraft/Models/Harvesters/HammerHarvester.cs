@@ -1,11 +1,14 @@
-﻿public class HammerHarvester : Harvester
+﻿namespace Minedraft.Models.Harvesters
 {
-    public HammerHarvester(string id, double oreOutput, double energyRequirement)
-        : base(id, oreOutput, energyRequirement)
+    public class HammerHarvester : Harvester
     {
-        this.OreOutput += this.OreOutput * 2;
-        this.EnergyRequirement += this.EnergyRequirement * 1;
-    }
+        public HammerHarvester(string id, double oreOutput, double energyRequirement)
+            : base(id, oreOutput, energyRequirement)
+        {
+            this.OreOutput += this.OreOutput * 2;
+            this.EnergyRequirement += this.EnergyRequirement * 1;
+        }
 
-    public override string Type => "Hammer";
+        public override string Type => "Hammer";
+    }
 }

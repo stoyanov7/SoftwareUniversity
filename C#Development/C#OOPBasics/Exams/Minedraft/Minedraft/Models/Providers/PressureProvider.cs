@@ -1,10 +1,13 @@
-﻿public class PressureProvider : Provider
+﻿namespace Minedraft.Models.Providers
 {
-    public PressureProvider(string id, double energyOutput) 
-        : base(id, energyOutput)
+    public class PressureProvider : Provider
     {
-        this.EnergyOutput += this.EnergyOutput * 0.5;
-    }
+        public PressureProvider(string id, double energyOutput)
+            : base(id, energyOutput)
+        {
+            this.EnergyOutput += this.EnergyOutput * 0.5;
+        }
 
-    public override string Type => "Pressure";
+        public override string Type => "Pressure";
+    }
 }

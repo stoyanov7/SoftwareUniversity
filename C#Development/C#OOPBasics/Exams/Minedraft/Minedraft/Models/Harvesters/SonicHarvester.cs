@@ -1,13 +1,16 @@
-﻿public class SonicHarvester : Harvester
+﻿namespace Minedraft.Models.Harvesters
 {
-    public SonicHarvester(string id, double oreOutput, double energyRequirement, int sonicFactor)
-        : base(id, oreOutput, energyRequirement)
+    public class SonicHarvester : Harvester
     {
-        this.SonicFactor = sonicFactor;
-        this.EnergyRequirement /= this.SonicFactor;
-    }
-    
-    public int SonicFactor { get; set; }
+        public SonicHarvester(string id, double oreOutput, double energyRequirement, int sonicFactor)
+            : base(id, oreOutput, energyRequirement)
+        {
+            this.SonicFactor = sonicFactor;
+            this.EnergyRequirement /= this.SonicFactor;
+        }
 
-    public override string Type => "Sonic";
+        public int SonicFactor { get; private set; }
+
+        public override string Type => "Sonic";
+    }
 }

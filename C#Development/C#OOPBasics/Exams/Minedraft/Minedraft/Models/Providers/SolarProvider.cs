@@ -1,9 +1,12 @@
-﻿public class SolarProvider : Provider
+﻿namespace Minedraft.Models.Providers
 {
-    public SolarProvider(string id, double energyOutput) 
-        : base(id, energyOutput)
+    public class SolarProvider : Provider
     {
-    }
+        public SolarProvider(string id, double energyOutput)
+            : base(id, energyOutput)
+        {
+        }
 
-    public override string Type => "Solar";
+        public override string Type => "Solar";
+    }
 }

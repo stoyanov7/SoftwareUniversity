@@ -1,34 +1,39 @@
-﻿using System;
-
-public abstract class Provider : Unit
+﻿namespace Minedraft.Models.Providers
 {
-    private const int MinEnergyOutput = 0;
-    private const int MaxEnergyOutput = 10000;
-    private const string EnergyOutputMessage =
-        "Provider is not registered, because of it's EnergyOutput";
+    using System;
+    using Common;
 
-    private double energyOutput;
-
-    protected Provider(string id, double energyOutput)
-        :base(id)
+    public abstract class Provider : Unit
     {
-        this.EnergyOutput = energyOutput;
-    }
+        private const int MinEnergyOutput = 0;
+        private const int MaxEnergyOutput = 10000;
 
-    public double EnergyOutput
-    {
-        get => this.energyOutput;
+        private const string EnergyOutputMessage =
+            "Provider is not registered, because of it's EnergyOutput";
 
-        protected set
+        private double energyOutput;
+
+        protected Provider(string id, double energyOutput)
+            : base(id)
         {
-            Validator.CheckGivenRange(value, MinEnergyOutput, MaxEnergyOutput, EnergyOutputMessage);
-            this.energyOutput = value;
+            this.EnergyOutput = energyOutput;
         }
-    }
 
-    public override string ToString()
-    {
-        return $"{this.Type} Provider - {this.Id}{Environment.NewLine}" +
-               $"Energy Output: {this.EnergyOutput}";
+        public double EnergyOutput
+        {
+            get => this.energyOutput;
+
+            protected set
+            {
+                Validator.CheckGivenRange(value, MinEnergyOutput, MaxEnergyOutput, EnergyOutputMessage);
+                this.energyOutput = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Type} Provider - {this.Id}{Environment.NewLine}" +
+                   $"Energy Output: {this.EnergyOutput}";
+        }
     }
 }

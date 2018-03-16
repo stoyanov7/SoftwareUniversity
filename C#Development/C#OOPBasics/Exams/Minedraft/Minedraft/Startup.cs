@@ -1,10 +1,14 @@
-﻿using System;
-
-public class Startup
+﻿namespace Minedraft
 {
-    public static void Main(string[] args)
+    using System;
+    using Controller;
+
+    public class Startup
     {
-        var engine = new Engine();
-        Console.WriteLine(engine.Run());
+        public static void Main(string[] args)
+        {
+            var engine = new Engine();
+            Console.WriteLine(engine.Run());
+        }
     }
 }

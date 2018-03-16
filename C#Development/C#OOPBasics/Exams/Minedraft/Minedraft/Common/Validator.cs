@@ -1,20 +1,23 @@
-﻿using System;
-
-public static class Validator
+﻿namespace Minedraft.Common
 {
-    public static void CheckIfNegative(double value)
-    {
-        if (value < 0)
-        {
-            throw new ArgumentException();
-        }
-    }
+    using System;
 
-    public static void CheckGivenRange(double value, int minRange, int maxRange, string message)
+    public static class Validator
     {
-        if (value < minRange || value >= maxRange)
+        public static void CheckIfNegative(double value)
         {
-            throw new ArgumentException(message);
+            if (value < 0)
+            {
+                throw new ArgumentException();
+            }
+        }
+
+        public static void CheckGivenRange(double value, int minRange, int maxRange, string message)
+        {
+            if (value < minRange || value >= maxRange)
+            {
+                throw new ArgumentException(message);
+            }
         }
     }
 }
