@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BoatRacingSimulator.Database\BoatRacingSimulator.Database.csproj" />
+    <ProjectReference Include="..\BoatRacingSimulator.Enumerations\BoatRacingSimulator.Enumerations.csproj" />
+    <ProjectReference Include="..\BoatRacingSimulator.Factories\BoatRacingSimulator.Factories.csproj" />
+    <ProjectReference Include="..\BoatRacingSimulator.Loggers\BoatRacingSimulator.Loggers.csproj" />
+    <ProjectReference Include="..\BoatRacingSimulator.Models\BoatRacingSimulator.Models.csproj" />
+  </ItemGroup>
+
+</Project>

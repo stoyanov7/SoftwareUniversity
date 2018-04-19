@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator", "BoatRacingSimulator\BoatRacingSimulator.csproj", "{C50B5A4B-BFF2-4C46-91AF-B97333FF7EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Models", "BoatRacingSimulator.Models\BoatRacingSimulator.Models.csproj", "{6CFC90A2-5705-4EE0-80DB-B6336947E3B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Utility", "BoatRacingSimulator.Utility\BoatRacingSimulator.Utility.csproj", "{3D4D115C-A05D-407E-A937-3FEAFB01A9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Exceptions", "BoatRacingSimulator.Exceptions\BoatRacingSimulator.Exceptions.csproj", "{0886D107-808F-43EE-9EFD-19F4844779AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Loggers", "BoatRacingSimulator.Loggers\BoatRacingSimulator.Loggers.csproj", "{D75114B3-1378-443D-8EAF-FD24B1603755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Enumerations", "BoatRacingSimulator.Enumerations\BoatRacingSimulator.Enumerations.csproj", "{0A4454CB-B66E-4088-AF49-FEDAF8788FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Controllers", "BoatRacingSimulator.Controllers\BoatRacingSimulator.Controllers.csproj", "{F1611B65-8F21-4569-ADB6-1F3EB7339BBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Database", "BoatRacingSimulator.Database\BoatRacingSimulator.Database.csproj", "{F3539FE6-B34B-41CF-814B-801E92A04D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatRacingSimulator.Factories", "BoatRacingSimulator.Factories\BoatRacingSimulator.Factories.csproj", "{D88E894E-724E-49BB-A7ED-CC9A2CD56740}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C50B5A4B-BFF2-4C46-91AF-B97333FF7EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50B5A4B-BFF2-4C46-91AF-B97333FF7EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50B5A4B-BFF2-4C46-91AF-B97333FF7EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50B5A4B-BFF2-4C46-91AF-B97333FF7EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFC90A2-5705-4EE0-80DB-B6336947E3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFC90A2-5705-4EE0-80DB-B6336947E3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFC90A2-5705-4EE0-80DB-B6336947E3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFC90A2-5705-4EE0-80DB-B6336947E3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4D115C-A05D-407E-A937-3FEAFB01A9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4D115C-A05D-407E-A937-3FEAFB01A9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4D115C-A05D-407E-A937-3FEAFB01A9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4D115C-A05D-407E-A937-3FEAFB01A9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0886D107-808F-43EE-9EFD-19F4844779AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0886D107-808F-43EE-9EFD-19F4844779AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0886D107-808F-43EE-9EFD-19F4844779AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0886D107-808F-43EE-9EFD-19F4844779AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75114B3-1378-443D-8EAF-FD24B1603755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75114B3-1378-443D-8EAF-FD24B1603755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75114B3-1378-443D-8EAF-FD24B1603755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75114B3-1378-443D-8EAF-FD24B1603755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4454CB-B66E-4088-AF49-FEDAF8788FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4454CB-B66E-4088-AF49-FEDAF8788FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4454CB-B66E-4088-AF49-FEDAF8788FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4454CB-B66E-4088-AF49-FEDAF8788FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1611B65-8F21-4569-ADB6-1F3EB7339BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1611B65-8F21-4569-ADB6-1F3EB7339BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1611B65-8F21-4569-ADB6-1F3EB7339BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1611B65-8F21-4569-ADB6-1F3EB7339BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3539FE6-B34B-41CF-814B-801E92A04D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3539FE6-B34B-41CF-814B-801E92A04D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3539FE6-B34B-41CF-814B-801E92A04D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3539FE6-B34B-41CF-814B-801E92A04D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88E894E-724E-49BB-A7ED-CC9A2CD56740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88E894E-724E-49BB-A7ED-CC9A2CD56740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88E894E-724E-49BB-A7ED-CC9A2CD56740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88E894E-724E-49BB-A7ED-CC9A2CD56740}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13CCB0CD-0D7B-4607-B3FB-1DFBF7180350}
+	EndGlobalSection
+EndGlobal
