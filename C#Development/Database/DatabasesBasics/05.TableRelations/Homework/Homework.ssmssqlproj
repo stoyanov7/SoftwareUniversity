@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Homework">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-A1PUQG9:DESKTOP-A1PUQG9\Georgi">
+          <Created>2018-04-27T14:49:48.7609144+03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-A1PUQG9</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>RelationsDemo</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01.OneToOneRelationship.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01.OneToOneRelationship.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02.OneToManyRelationship.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02.OneToManyRelationship.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03.ManyToManyRelationship.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03.ManyToManyRelationship.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04.SelfReferencing.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04.SelfReferencing.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05.OnlineStore.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05.OnlineStore.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06.UniversityDatabase.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06.UniversityDatabase.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07.PeaksInRila.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A1PUQG9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A1PUQG9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>07.PeaksInRila.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
