@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6F0BB9B-0B33-41AB-82EA-6C3E6F844B00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AirConditionerTesterSystem.Core</RootNamespace>
+    <AssemblyName>AirConditionerTesterSystem.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="Contracts\IAction.cs" />
+    <Compile Include="Contracts\IController.cs" />
+    <Compile Include="Contracts\IDispatcher.cs" />
+    <Compile Include="Contracts\IEngine.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Dispatcher.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AirConditionerTesterSystem.Exceptions\AirConditionerTesterSystem.Exceptions.csproj">
+      <Project>{ED710240-0D49-47D0-AB41-39BEE9E53819}</Project>
+      <Name>AirConditionerTesterSystem.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AirConditionerTesterSystem.Loggers\AirConditionerTesterSystem.Loggers.csproj">
+      <Project>{324C51C8-B2DE-4E63-83B3-B1317BEEB020}</Project>
+      <Name>AirConditionerTesterSystem.Loggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AirConditionerTesterSystem.Models\AirConditionerTesterSystem.Models.csproj">
+      <Project>{C61C70AC-79B4-4027-AA16-7B02C3EDAC32}</Project>
+      <Name>AirConditionerTesterSystem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AirConditionerTesterSystem.Repositories\AirConditionerTesterSystem.Repositories.csproj">
+      <Project>{1ABC297B-D3AE-421F-953D-D5763C8D34E1}</Project>
+      <Name>AirConditionerTesterSystem.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AirConditionerTesterSystem.Utilities\AirConditionerTesterSystem.Utilities.csproj">
+      <Project>{75C88024-1269-49F7-A330-4F45A24BC5DD}</Project>
+      <Name>AirConditionerTesterSystem.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
