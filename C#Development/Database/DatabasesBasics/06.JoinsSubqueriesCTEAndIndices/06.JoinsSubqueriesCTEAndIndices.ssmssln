@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 14.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "06.JoinsSubqueriesCTEAndIndices", "06.JoinsSubqueriesCTEAndIndices\06.JoinsSubqueriesCTEAndIndices.ssmssqlproj", "{B4057F95-77F1-4BE1-B3B9-0AD2953B2FBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4057F95-77F1-4BE1-B3B9-0AD2953B2FBD}.Default|Default.ActiveCfg = Default
+		{8DFB05E7-9428-4003-83E3-BBE5B606D10F}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
