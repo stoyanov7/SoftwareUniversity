@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica", "Banicharnica\Banicharnica.csproj", "{5B0A69E0-1906-4939-8A28-35B22C4F9EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica.Models", "Banicharnica.Models\Banicharnica.Models.csproj", "{1542BE42-EBA1-4E7F-B459-6F114C48DF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica.Data", "Banicharnica.Data\Banicharnica.Data.csproj", "{6A030FB3-3386-4293-AEDF-61C58BB71501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica.Services", "Banicharnica.Services\Banicharnica.Services.csproj", "{D34F7B6D-C415-4E83-B774-1990045F8A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica.ModelsDto", "Banicharnica.ModelsDto\Banicharnica.ModelsDto.csproj", "{39B3E25F-4573-4DBE-AE0E-5907C0279D9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banicharnica.Core", "Banicharnica.Core\Banicharnica.Core.csproj", "{AF562DC7-4DCD-4ABC-943E-B52BD337FB0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B0A69E0-1906-4939-8A28-35B22C4F9EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0A69E0-1906-4939-8A28-35B22C4F9EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0A69E0-1906-4939-8A28-35B22C4F9EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0A69E0-1906-4939-8A28-35B22C4F9EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1542BE42-EBA1-4E7F-B459-6F114C48DF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1542BE42-EBA1-4E7F-B459-6F114C48DF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1542BE42-EBA1-4E7F-B459-6F114C48DF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1542BE42-EBA1-4E7F-B459-6F114C48DF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A030FB3-3386-4293-AEDF-61C58BB71501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A030FB3-3386-4293-AEDF-61C58BB71501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A030FB3-3386-4293-AEDF-61C58BB71501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A030FB3-3386-4293-AEDF-61C58BB71501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34F7B6D-C415-4E83-B774-1990045F8A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34F7B6D-C415-4E83-B774-1990045F8A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34F7B6D-C415-4E83-B774-1990045F8A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34F7B6D-C415-4E83-B774-1990045F8A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B3E25F-4573-4DBE-AE0E-5907C0279D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B3E25F-4573-4DBE-AE0E-5907C0279D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B3E25F-4573-4DBE-AE0E-5907C0279D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B3E25F-4573-4DBE-AE0E-5907C0279D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF562DC7-4DCD-4ABC-943E-B52BD337FB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF562DC7-4DCD-4ABC-943E-B52BD337FB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF562DC7-4DCD-4ABC-943E-B52BD337FB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF562DC7-4DCD-4ABC-943E-B52BD337FB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B61842-13F2-4B53-9AE1-E19B5D23ED93}
+	EndGlobalSection
+EndGlobal
