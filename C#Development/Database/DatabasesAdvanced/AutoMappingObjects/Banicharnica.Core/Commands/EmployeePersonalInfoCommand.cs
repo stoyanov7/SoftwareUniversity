@@ -19,7 +19,7 @@
 
             var sb = new StringBuilder();
             sb.AppendLine($"ID: {employeeDto.Id} - {employeeDto.FirstName} {employeeDto.LastName} - ${employeeDto.Salary:F2}")
-                .AppendLine($"Birthday: {employeeDto.Birtdate}")
+                .AppendLine($"Birthday: {employeeDto.Birtdate.Value:dd-MM-yyyy}")
                 .AppendLine($"Address: {employeeDto.Address}");
 
             var result = sb.ToString().TrimEnd();

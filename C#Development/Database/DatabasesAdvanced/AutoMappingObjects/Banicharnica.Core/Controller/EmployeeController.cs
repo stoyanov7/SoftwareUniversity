@@ -1,9 +1,7 @@
 ﻿namespace Banicharnica.Core.Controller
 {
     using System;
-    using System.Linq;
     using AutoMapper;
-    using AutoMapper.QueryableExtensions;
     using Contracts;
     using Data;
     using Models;
