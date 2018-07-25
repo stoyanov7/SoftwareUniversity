@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Data.Configurations
+﻿namespace PhotoShare.Data.Configuration
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -11,16 +11,16 @@
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Name)
-                .HasMaxLength(50)
-                .IsRequired()
-                .IsUnicode();
+                   .IsRequired()
+                   .IsUnicode()
+                   .HasMaxLength(50);
 
             builder.Property(e => e.BackgroundColor)
-                .IsRequired(false);
+                   .IsRequired(false);
 
             builder.Property(e => e.IsPublic)
-                .IsRequired()
-                .HasDefaultValue(false);
+                   .IsRequired()
+                   .HasDefaultValue(false);
         }
     }
 }

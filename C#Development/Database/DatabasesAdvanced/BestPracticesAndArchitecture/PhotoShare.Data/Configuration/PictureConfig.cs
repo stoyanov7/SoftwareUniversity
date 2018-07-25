@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Data.Configurations
+﻿namespace PhotoShare.Data.Configuration
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -11,18 +11,18 @@
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Title)
-                .IsRequired()
-                .HasMaxLength(50);
+                   .IsRequired()
+                   .HasMaxLength(50);
 
             builder.Property(e => e.Caption)
-                .HasMaxLength(250);
+                   .HasMaxLength(250);
 
             builder.Property(e => e.Path)
-                .IsRequired();
+                   .IsRequired(true);
 
             builder.HasOne(e => e.Album)
-                .WithMany(a => a.Pictures)
-                .HasForeignKey(e => e.AlbumId);
+                   .WithMany(a => a.Pictures)
+                   .HasForeignKey(e => e.AlbumId);
 
             builder.Ignore(e => e.UserProfileId);
         }

@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.ModelsDto
+﻿namespace PhotoShare.Utilities.ValidationAttributes
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -17,38 +17,34 @@
             this.maxLength = maxLength;
         }
 
-        private bool ContainsLowercase { get; set; }
+        public bool ContainsLowercase { get; set; }
 
-        private bool ContainsUppercase { get; set; }
+        public bool ContainsUppercase { get; set; }
 
-        private bool ContainsDigit { get; set; }
+        public bool ContainsDigit { get; set; }
 
-        private bool ContainsSpecialSymbol { get; set; }
+        public bool ContainsSpecialSymbol { get; set; }
 
         public override bool IsValid(object value)
         {
-            var password = value as string;
+            var password = value.ToString();
 
-            if (password?.Length < this.minLength || 
-                password?.Length > this.maxLength)
+            if (password.Length < this.minLength || password.Length > this.maxLength)
             {
                 return false;
             }
 
-            if (this.ContainsLowercase && 
-                !password.Any(char.IsLower))
+            if (this.ContainsLowercase && !password.Any(char.IsLower))
             {
                 return false;
             }
 
-            if (this.ContainsUppercase && 
-                !password.Any(char.IsUpper))
+            if (this.ContainsUppercase && !password.Any(char.IsUpper))
             {
                 return false;
             }
 
-            if (this.ContainsDigit && 
-                !password.Any(char.IsDigit))
+            if (this.ContainsDigit && !password.Any(char.IsDigit))
             {
                 return false;
             }

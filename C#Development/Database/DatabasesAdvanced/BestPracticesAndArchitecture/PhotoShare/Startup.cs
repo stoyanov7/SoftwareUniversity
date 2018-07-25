@@ -30,16 +30,17 @@
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            serviceCollection.AddDbContext<PhotoShareContext>(o =>
-                o.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            serviceCollection.AddDbContext<PhotoShareContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             serviceCollection.AddAutoMapper(cfg => cfg.AddProfile<PhotoShareProfile>());
 
             serviceCollection.AddTransient<ICommandInterpreter, CommandInterpreter>();
             serviceCollection.AddTransient<IDatabaseInitializerService, DatabaseInitializerService>();
 
-            //serviceCollection.AddTransient<IAlbumRoleService, AlbumRoleService>();
-            //serviceCollection.AddTransient<IPictureService, PictureService>();
+            serviceCollection.AddTransient<IAlbumRoleService, AlbumRoleService>();
+            serviceCollection.AddTransient<IPictureService, PictureService>();
+            serviceCollection.AddTransient<ITownService, TownService>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 

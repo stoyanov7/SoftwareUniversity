@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Data.Configurations
+﻿namespace PhotoShare.Data.Configuration
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -11,12 +11,12 @@
             builder.HasKey(e => new { e.AlbumId, e.TagId });
 
             builder.HasOne(e => e.Album)
-                .WithMany(a => a.AlbumTags)
-                .HasForeignKey(e => e.AlbumId);
+                   .WithMany(a => a.AlbumTags)
+                   .HasForeignKey(e => e.AlbumId);
 
             builder.HasOne(e => e.Tag)
-                .WithMany(a => a.AlbumTags)
-                .HasForeignKey(e => e.TagId);
+                   .WithMany(a => a.AlbumTags)
+                   .HasForeignKey(e => e.TagId);
         }
     }
 }
