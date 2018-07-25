@@ -5,10 +5,10 @@
 
     public class ExitCommand : ICommand
     {
-        public string Execute(string[] args)
+        public string Execute(string[] data)
         {
             Environment.Exit(0);
-            return string.Empty;
+            return "Bye-bye!";
         }
     }
 }

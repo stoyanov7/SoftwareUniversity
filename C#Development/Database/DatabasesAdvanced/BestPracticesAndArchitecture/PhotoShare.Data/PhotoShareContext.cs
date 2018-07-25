@@ -1,21 +1,19 @@
-﻿namespace PhotoShare.Data
+namespace PhotoShare.Data
 {
-    using Configurations;
     using Microsoft.EntityFrameworkCore;
     using Models;
+    using Configuration;
 
     public class PhotoShareContext : DbContext
-    {
-        public PhotoShareContext()
-        {
-        }
+    { 
+        public PhotoShareContext() { }
 
-        public PhotoShareContext(DbContextOptions options)
-            : base(options)
-        {
-        }
-
-        public DbSet<User> Users { get; set; }
+	    public PhotoShareContext(DbContextOptions options)
+		    : base(options)
+	    {
+	    }
+        
+        public DbSet<User> Users { get; set; }   
 
         public DbSet<Album> Albums { get; set; }
 
@@ -25,9 +23,9 @@
 
         public DbSet<AlbumRole> AlbumRoles { get; set; }
 
-        public DbSet<Town> Towns { get; set; }
+        public DbSet<Town> Towns { get; set; }	
 
-        public DbSet<AlbumTag> AlbumTags { get; set; }
+	    public DbSet<AlbumTag> AlbumTags { get; set; }
 
         public DbSet<Friendship> Friendships { get; set; }
 

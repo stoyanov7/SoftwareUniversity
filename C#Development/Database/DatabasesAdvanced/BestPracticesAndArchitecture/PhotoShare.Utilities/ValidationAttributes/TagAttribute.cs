@@ -11,9 +11,8 @@
         {
             const string pattern = "#[a-zA-Z0-9]{2,20}";
             var regex = new Regex(pattern);
-            var result = regex.IsMatch(value.ToString());
 
-            return result;
+            return regex.IsMatch(value.ToString());
         }
     }
 }

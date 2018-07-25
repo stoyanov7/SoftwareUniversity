@@ -12,6 +12,6 @@
 
         bool Exists(string name);
 
-        Album Create(int userId, string albumTitle, string bgColor, string[] tags);
+        Album Create(int userId, string albumTitle, string BgColor, string[] tags);
     }
 }

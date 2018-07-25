@@ -1,7 +1,7 @@
 ﻿namespace PhotoShare.Services
 {
-    public class UserService 
-	{
-	
+	public class AlbumService
+    {
+
     }
 }

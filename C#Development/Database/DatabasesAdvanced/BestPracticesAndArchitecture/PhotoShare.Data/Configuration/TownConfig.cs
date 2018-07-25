@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Data.Configurations
+﻿namespace PhotoShare.Data.Configuration
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -11,11 +11,11 @@
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Name)
-                .HasMaxLength(60)
-                .IsRequired();
+                   .HasMaxLength(60)
+                   .IsRequired();
 
             builder.Property(e => e.Country)
-                .HasMaxLength(60);
+                   .HasMaxLength(60);
         }
     }
 }

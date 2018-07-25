@@ -7,9 +7,9 @@
     {
         public Album()
         {
-            this.AlbumRoles = new HashSet<AlbumRole>();
             this.Pictures = new HashSet<Picture>();
             this.AlbumTags = new HashSet<AlbumTag>();
+            this.AlbumRoles = new HashSet<AlbumRole>();
         }
 
         public int Id { get; set; }

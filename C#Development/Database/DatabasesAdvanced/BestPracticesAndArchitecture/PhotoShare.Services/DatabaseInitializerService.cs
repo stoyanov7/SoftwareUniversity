@@ -1,8 +1,7 @@
 ﻿namespace PhotoShare.Services
 {
-    using System;
-    using Contracts;
     using Data;
+    using Contracts;
     using Microsoft.EntityFrameworkCore;
 
     public class DatabaseInitializerService : IDatabaseInitializerService
@@ -17,7 +16,6 @@
         public void InitializeDatabase()
         {
             this.context.Database.Migrate();
-            Console.WriteLine("Database initialized!");
         }
     }
 }

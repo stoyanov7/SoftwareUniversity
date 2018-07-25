@@ -10,7 +10,7 @@ using PhotoShare.Data;
 namespace PhotoShare.Data.Migrations
 {
     [DbContext(typeof(PhotoShareContext))]
-    [Migration("20180724121522_Initial")]
+    [Migration("20180725131937_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

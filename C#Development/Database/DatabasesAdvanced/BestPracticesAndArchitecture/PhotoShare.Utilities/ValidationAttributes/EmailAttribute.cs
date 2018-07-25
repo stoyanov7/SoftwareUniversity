@@ -9,9 +9,8 @@
         public override bool IsValid(object value)
         {
             var email = value as string;
-            var result = !string.IsNullOrEmpty(email) && email.Contains("@");
 
-            return result;
+            return !string.IsNullOrEmpty(email) && email.Contains("@");
         }
     }
 }
