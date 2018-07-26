@@ -19,9 +19,9 @@
         // UploadPicture <albumName> <pictureTitle> <pictureFilePath>
         public string Execute(string[] data)
         {
-            var albumName = data[0];
-            var pictureTitle = data[1];
-            var path = data[2];
+            string albumName = data[0];
+            string pictureTitle = data[1];
+            string path = data[2];
 
             var albumExists = this.albumService.Exists(albumName);
 
@@ -31,6 +31,7 @@
             }
 
             var albumId = this.albumService.ByName<AlbumDto>(albumName).Id;
+
             var picture = this.pictureService.Create(albumId, pictureTitle, path);
 
             return $"Picture {pictureTitle} added to {albumName}!";

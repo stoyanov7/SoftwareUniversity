@@ -9,10 +9,7 @@
     {
         private readonly IServiceProvider serviceProvider;
 
-        public CommandInterpreter(IServiceProvider serviceProvider)
-        {
-            this.serviceProvider = serviceProvider;
-        }
+        public CommandInterpreter(IServiceProvider serviceProvider) => this.serviceProvider = serviceProvider;
 
         public string Read(string[] input)
         {
@@ -40,7 +37,7 @@
 
             var command = (ICommand)constructor.Invoke(service);
 
-            string result = command.Execute(args);
+            var result = command.Execute(args);
 
             return result;
         }

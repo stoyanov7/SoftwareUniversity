@@ -1,6 +1,6 @@
 ﻿namespace PhotoShare.ModelsDto
 {
-    using Utilities.ValidationAttributes;
+    using Utilities;
 
     public class TagDto
     {

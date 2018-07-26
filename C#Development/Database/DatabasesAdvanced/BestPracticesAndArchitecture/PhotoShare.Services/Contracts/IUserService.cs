@@ -22,7 +22,7 @@
 
         void ChangePassword(int userId, string password);
 
-        void SetBornTown(int userId, int townIde);
+        void SetBornTown(int userId, int townId);
 
         void SetCurrentTown(int userId, int townId);
     }

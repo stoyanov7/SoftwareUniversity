@@ -10,22 +10,23 @@
 	{
 		private readonly IServiceProvider serviceProvider;
 
-		public Engine(IServiceProvider serviceProvider)
-		{
-			this.serviceProvider = serviceProvider;
-		}
+		public Engine(IServiceProvider serviceProvider) => this.serviceProvider = serviceProvider;
 
-		public void Run()
+	    public void Run()
 		{
-			var initializeService = this.serviceProvider.GetService<IDatabaseInitializerService>();
+            var initializeService = this.serviceProvider
+                .GetService<IDatabaseInitializerService>();
+
 			initializeService.InitializeDatabase();
 
-			var commandInterpreter = this.serviceProvider.GetService<ICommandInterpreter>();
+			var commandInterpreter = this.serviceProvider
+			    .GetService<ICommandInterpreter>();
 
 			while (true)
 			{
 				try
 				{
+				    Console.WriteLine("Enter command:");
 					var input = Console.ReadLine()
 					    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
 					var result = commandInterpreter.Read(input);

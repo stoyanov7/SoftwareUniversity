@@ -2,35 +2,51 @@
 {
     using System;
     using System.Collections.Generic;
-    using Contracts;
+    using System.Linq;
+    using AutoMapper.QueryableExtensions;
     using Data;
     using Models;
+    using Contracts;
 
-    public class TagService : ITownService
+    public class TagService : ITagService
     {
-       public TModel ById<TModel>(int id)
+        private readonly PhotoShareContext context;
+
+        public TagService(PhotoShareContext context) => this.context = context;
+
+        public TModel ById<TModel>(int id)
         {
-            throw new System.NotImplementedException();
+            return this.By<TModel>(i => i.Id == id)
+                       .SingleOrDefault();
         }
 
         public TModel ByName<TModel>(string name)
         {
-            throw new System.NotImplementedException();
+            return this.By<TModel>(i => i.Name == name)
+                       .SingleOrDefault();
         }
 
-        public bool Exists(int id)
+        public bool Exists(int id) => this.ById<Tag>(id) != null;
+
+        public bool Exists(string name) => this.ByName<Tag>(name) != null;
+
+        public Tag AddTag(string name)
         {
-            throw new System.NotImplementedException();
+            var tag = new Tag { Name = name };
+
+            this.context.Tags.Add(tag);
+            this.context.SaveChanges();
+
+            return tag;
         }
 
-        public bool Exists(string name)
+        private IEnumerable<TModel> By<TModel>(Func<Tag, bool> predicate)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Town Add(string townName, string countryName)
-        {
-            throw new System.NotImplementedException();
+            return this.context
+                .Tags
+                .Where(predicate)
+                .AsQueryable()
+                .ProjectTo<TModel>();
         }
     }
 }

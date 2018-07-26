@@ -1,6 +1,6 @@
 ﻿namespace PhotoShare.Models
 {
-    using Enums;
+    using Models.Enums;
 
     public class AlbumRole
     {

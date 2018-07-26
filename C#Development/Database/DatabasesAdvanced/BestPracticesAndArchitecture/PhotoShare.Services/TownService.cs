@@ -4,11 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using AutoMapper.QueryableExtensions;
-    using Contracts;
     using Data;
     using Models;
+    using Contracts;
 
-    public class TownService : ITownService
+    public class TownService:ITownService
     {
         private readonly PhotoShareContext context;
 
@@ -16,14 +16,14 @@
 
         public TModel ById<TModel>(int id)
         {
-            return this.By<TModel>(t => t.Id == id)
+            return this.By<TModel>(x => x.Id == id)
                        .SingleOrDefault();
         }
 
         public TModel ByName<TModel>(string name)
         {
-            return this.By<TModel>(t => t.Name == name)
-                .SingleOrDefault();
+            return this.By<TModel>(x => x.Name == name)
+                       .SingleOrDefault();
         }
 
         public bool Exists(int id) => this.ById<Town>(id) != null;
@@ -43,6 +43,7 @@
 
             return town;
         }
+
 
         private IEnumerable<TModel> By<TModel>(Func<Town, bool> predicate)
         {

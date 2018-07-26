@@ -2,7 +2,7 @@
 {
     using System;
     using Contracts;
-    
+
     public class AcceptFriendCommand : ICommand
     {
         public AcceptFriendCommand()
