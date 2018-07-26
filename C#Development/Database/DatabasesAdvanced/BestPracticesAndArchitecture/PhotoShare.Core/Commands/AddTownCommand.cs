@@ -13,14 +13,15 @@
             this.townService = townService;
         }
 
+        // AddTown <townName> <countryName>
         public string Execute(string[] data)
         {
-            var townName = data[0];
-            var country = data[1];
+            string townName = data[0];
+            string country = data[1];
 
             var townExists = this.townService.Exists(townName);
 
-            if (!townExists)
+            if (townExists)
             {
                 throw new ArgumentException($"Town {townName} was already added!");
             }

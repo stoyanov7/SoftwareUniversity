@@ -1,6 +1,7 @@
 ﻿namespace PhotoShare.Core.Commands
 {
     using System;
+
     using Contracts;
 
     public class AddFriendCommand : ICommand

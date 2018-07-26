@@ -12,28 +12,23 @@
     {
         private readonly PhotoShareContext context;
 
-        public PictureService(PhotoShareContext context)
-        {
-            this.context = context;
-        }
+        public PictureService(PhotoShareContext context) => this.context = context;
 
         public TModel ById<TModel>(int id)
-                => this.By<TModel>(a => a.Id == id).SingleOrDefault();
+        {
+            return this.By<TModel>(a => a.Id == id)
+                       .SingleOrDefault();
+        }
 
         public TModel ByTitle<TModel>(string name)
-            => this.By<TModel>(a => a.Title == name).SingleOrDefault();
-        
-        public bool Exists(int id)
-            => this.ById<Picture>(id) != null;
+        {
+            return this.By<TModel>(a => a.Title == name)
+                       .SingleOrDefault();
+        }
 
-        public bool Exists(string name)
-           => this.ByTitle<Picture>(name) != null;
+        public bool Exists(int id) => this.ById<Picture>(id) != null;
 
-        private IEnumerable<TModel> By<TModel>(Func<Picture, bool> predicate) =>
-            this.context.Pictures
-                .Where(predicate)
-                .AsQueryable()
-                .ProjectTo<TModel>();
+        public bool Exists(string name) => this.ByTitle<Picture>(name) != null;
 
         public Picture Create(int albumId, string pictureTitle, string pictureFilePath)
         {
@@ -45,10 +40,18 @@
             };
 
             this.context.Pictures.Add(picture);
-
             this.context.SaveChanges();
 
             return picture;
+        }
+
+        private IEnumerable<TModel> By<TModel>(Func<Picture, bool> predicate)
+        {
+            return this.context
+                .Pictures
+                .Where(predicate)
+                .AsQueryable()
+                .ProjectTo<TModel>();
         }
     }
 }

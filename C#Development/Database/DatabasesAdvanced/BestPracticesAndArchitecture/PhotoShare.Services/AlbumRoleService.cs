@@ -10,10 +10,7 @@
     {
         private readonly PhotoShareContext context;
 
-        public AlbumRoleService(PhotoShareContext context)
-        {
-            this.context = context;
-        }
+        public AlbumRoleService(PhotoShareContext context) => this.context = context;
 
         public AlbumRole PublishAlbumRole(int albumId, int userId, string role)
         {
@@ -27,7 +24,6 @@
             };
 
             this.context.AlbumRoles.Add(albumRole);
-
             this.context.SaveChanges();
 
             return albumRole;
