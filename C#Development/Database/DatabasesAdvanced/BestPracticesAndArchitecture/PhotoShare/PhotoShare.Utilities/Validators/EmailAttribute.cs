@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Utilities
+﻿namespace PhotoShare.Utilities.Validators
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -8,14 +8,9 @@
     {
         public override bool IsValid(object value)
         {
-            string email = value as string;
+            var email = value as string;
 
-            if (string.IsNullOrEmpty(email))
-            {
-                return false;
-            }
-
-            return email.Contains("@");
+            return !string.IsNullOrEmpty(email) && email.Contains("@");
         }
     }
 }

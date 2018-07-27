@@ -5,6 +5,7 @@
     using Contracts;
     using ModelsDto;
     using Services.Contracts;
+    using Utilities.Constants;
 
     public class ModifyUserCommand : ICommand
     {
@@ -17,43 +18,37 @@
             this.townService = townService;
         }
 
-        // ModifyUser <username> <property> <new value>
-        // For example:
-        // ModifyUser <username> Password <NewPassword>
-        // ModifyUser <username> BornTown <newBornTownName>
-        // ModifyUser <username> CurrentTown <newCurrentTownName>
-        // !!! Cannot change username
         public string Execute(string[] data)
         {
-            string username = data[0];
-            string property = data[1];
-            string value = data[2];
+            var username = data[0];
+            var property = data[1];
+            var value = data[2];
 
             var userExists = this.userService.Exists(username);
 
             if (!userExists)
             {
-               throw new ArgumentException($"User {username} not found!");
+               throw new ArgumentException(string.Format(Message.NotFound, "User", username));
             }
 
             var userId = this.userService.ByUsername<UserDto>(username).Id;
 
-            if (property == "Password")
+            switch (property)
             {
-                SetPassword(userId, value);
-            }else if (property == "BornTown")
-            {
-                SetBornTown(userId, value);
+                case "Password":
+                    this.SetPassword(userId, value);
+                    break;
+                case "BornTown":
+                    this.SetBornTown(userId, value);
+                    break;
+                case "CurrentTown":
+                    this.SetCurrentTown(userId, value);
+                    break;
+                default:
+                    throw new ArgumentException(Message.PropertyNotSupported, property);
             }
-            else if (property == "CurrentTown")
-            {
-                SetCurrentTown(userId, value);
-            }
-            else
-            {
-                throw new ArgumentException($"Property {property} not supported");
-            }
-            return $"User {username} {property} is {value}.";
+
+            return string.Format(Message.SuccessfullyModifiedUser, username, property, value);
         }
 
         private void SetCurrentTown(int userId, string name)
@@ -62,11 +57,10 @@
 
             if (!townExists)
             {
-                throw new ArgumentException(($"Value {name} not valid.\nTown {name} not found!"));
+                throw new ArgumentException(string.Format(Message.InvalidTown, name, name));
             }
 
             var townId = this.townService.ByName<TownDto>(name).Id;
-
             this.userService.SetCurrentTown(userId, townId);
         }
 
@@ -76,22 +70,21 @@
 
             if (!townExists)
             {
-                throw new ArgumentException(($"Value {name} not valid.\nTown {name} not found!"));
+                throw new ArgumentException(string.Format(Message.InvalidTown, name, name));
             }
 
             var townId = this.townService.ByName<TownDto>(name).Id;
-
             this.userService.SetBornTown(userId, townId);
         }
 
         private void SetPassword(int userId, string password)
         {
-            var isLower = password.Any(x => char.IsLower(x));
-            var isDigit = password.Any(x => char.IsDigit(x));
+            var isLower = password.Any(char.IsLower);
+            var isDigit = password.Any(char.IsDigit);
 
-            if (!isLower||!isDigit)
+            if (!isLower || !isDigit)
             {
-                throw new ArgumentException($"Value {password} not valid.\nInvalid Password");
+                throw new ArgumentException(string.Format(Message.InvalidPassword, password));
             }
 
             this.userService.ChangePassword(userId, password);

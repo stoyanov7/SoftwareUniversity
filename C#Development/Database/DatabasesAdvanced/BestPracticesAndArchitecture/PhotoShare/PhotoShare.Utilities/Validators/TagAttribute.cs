@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Utilities
+﻿namespace PhotoShare.Utilities.Validators
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -9,16 +9,10 @@
     {
         public override bool IsValid(object value)
         {
-            string pattern = "#[a-zA-Z0-9]{2,20}";
+            const string pattern = "#[a-zA-Z0-9]{2,20}";
+            var regex = new Regex(pattern);
 
-            Regex regex = new Regex(pattern);
-
-            if (!regex.IsMatch(value.ToString()))
-            {
-                return false;
-            }
-
-            return true;
+            return regex.IsMatch(value.ToString());
         }
     }
 }
