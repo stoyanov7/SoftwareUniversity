@@ -43,8 +43,7 @@
 
             return town;
         }
-
-
+        
         private IEnumerable<TModel> By<TModel>(Func<Town, bool> predicate)
         {
             return this.context

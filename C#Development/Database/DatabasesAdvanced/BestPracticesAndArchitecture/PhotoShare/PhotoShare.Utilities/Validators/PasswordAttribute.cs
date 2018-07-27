@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Utilities
+﻿namespace PhotoShare.Utilities.Validators
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -8,8 +8,8 @@
     public class PasswordAttribute : ValidationAttribute
     {
         private const string SpecialSymbols = "!@#$%^&*()_+<>,.?";
-        private int minLength;
-        private int maxLength;
+        private readonly int minLength;
+        private readonly int maxLength;
 
         public PasswordAttribute(int minLength, int maxLength)
         {
@@ -19,19 +19,19 @@
 
         public override bool IsValid(object value)
         {
-            string password = value.ToString();
+            var password = value.ToString();
 
             if (password.Length < this.minLength || password.Length > this.maxLength)
             {
                 return false;
             }
 
-            if (!password.Any(c => char.IsLower(c)))
+            if (!password.Any(char.IsLower))
             {
                 return false;
             }
 
-            if (!password.Any(c => char.IsDigit(c)))
+            if (!password.Any(char.IsDigit))
             {
                 return false;
             }

@@ -1,4 +1,4 @@
-﻿namespace PhotoShare.Utilities
+﻿namespace PhotoShare.Utilities.Validators
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -16,7 +16,7 @@
                 return true;
             }
 
-            int age = int.Parse(value.ToString());
+            var age = int.Parse(value.ToString());
 
             return age >= MinAge && age <= MaxAge;
         }

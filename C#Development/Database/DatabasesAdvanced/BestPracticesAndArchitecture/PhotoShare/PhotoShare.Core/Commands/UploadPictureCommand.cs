@@ -19,9 +19,9 @@
         // UploadPicture <albumName> <pictureTitle> <pictureFilePath>
         public string Execute(string[] data)
         {
-            string albumName = data[0];
-            string pictureTitle = data[1];
-            string path = data[2];
+            var albumName = data[0];
+            var pictureTitle = data[1];
+            var path = data[2];
 
             var albumExists = this.albumService.Exists(albumName);
 

@@ -9,7 +9,7 @@
     using Contracts;
     using Models.Enums;
 
-    public class AlbumService:IAlbumService
+    public class AlbumService : IAlbumService
     {
         private readonly PhotoShareContext context;
 

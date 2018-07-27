@@ -1,9 +1,9 @@
-﻿using PhotoShare.Data;
-using PhotoShare.Models;
-using PhotoShare.Services.Contracts;
-
-namespace PhotoShare.Services
+﻿namespace PhotoShare.Services
 {
+    using Data;
+    using Models;
+    using Contracts;
+
     public class AlbumTagService : IAlbumTagService
     {
         private readonly PhotoShareContext context;
