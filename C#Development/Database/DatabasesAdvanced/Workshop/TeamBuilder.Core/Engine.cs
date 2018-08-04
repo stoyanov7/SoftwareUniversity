@@ -38,7 +38,8 @@
                 catch (Exception exception) 
                     when (exception is SqlException || 
                           exception is ArgumentException ||
-                          exception is InvalidOperationException)
+                          exception is InvalidOperationException || 
+                          exception is FormatException)
                 {
                     Console.WriteLine(exception.Message);
                 }
