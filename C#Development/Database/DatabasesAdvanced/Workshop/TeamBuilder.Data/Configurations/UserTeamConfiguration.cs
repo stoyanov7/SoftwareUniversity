@@ -11,7 +11,7 @@
             builder.HasKey(e => new { e.TeamId, e.UserId });
 
             builder.HasOne(e => e.User)
-                .WithMany(u => u.UserTeams)
+                .WithMany(u => u.CreatedUserTeams)
                 .HasForeignKey(ut => ut.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 

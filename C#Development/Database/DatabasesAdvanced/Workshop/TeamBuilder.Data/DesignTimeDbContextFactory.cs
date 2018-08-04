@@ -11,7 +11,7 @@
         {
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile(@"bin\Debug\netcoreapp2.1\appsettings.json")
                 .Build();
 
             var builder = new DbContextOptionsBuilder<TeamBuilderContext>();
