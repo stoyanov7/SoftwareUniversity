@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TeamBuilder.Services\TeamBuilder.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Commands\" />
+    <ProjectReference Include="..\TeamBuilder.Utilities\TeamBuilder.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
