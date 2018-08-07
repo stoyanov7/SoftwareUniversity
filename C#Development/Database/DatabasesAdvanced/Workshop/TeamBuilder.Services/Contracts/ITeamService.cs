@@ -13,5 +13,13 @@
         bool IsAcronymValid(string acronym);
 
         bool IsMemberOfTeam(string teamName, string username);
+
+        bool IsUserCreatorOfTeam(string teamName, User user);
+
+        void KickMember(string teamName, string username);
+
+        void Disband(string teamName);
+
+        string PrintTeam(string teamName);
     }
 }

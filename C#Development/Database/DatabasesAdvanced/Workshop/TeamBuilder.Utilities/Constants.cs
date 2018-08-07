@@ -61,5 +61,13 @@
         public const string SuccessfullyAddedToTeam = "{0} added to team {1}!";
 
         public const string SuccessfullySentInvitation = "Team {0} invited {1}!";
+
+        public const string SuccessfullyAcceptedInvitation = "User {0} joined team {1}!";
+
+        public const string SuccessfullyJoinedTeam = "User {0} successfully joined team {1}!";
+
+        public const string KickedFromTeam = "User {0} was kicked from {1}!";
+
+        public const string SuccessfullyAddedTeamToEvent = "Team {0} added for {1}!";
     }
 }
