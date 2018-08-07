@@ -33,8 +33,14 @@
                 throw new ArgumentException(string.Format(Constants.InviteNotFound, teamName));
             }
 
-            var invitation = this.invitationService.GetInvitationByTeamName(teamName, currentUser.Id);
-        }
+            var invitation = this.invitationService.GetInvitationByTeamName(teamName, currentUser);
 
+            if (invitation == null)
+            {
+                throw new ArgumentException(string.Format(Constants.InviteNotFound, teamName));
+            }
+
+            return string.Format(Constants.SuccessfullyAcceptedInvitation, currentUser.Username, teamName);
+        }
     }
 }

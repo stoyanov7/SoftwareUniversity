@@ -41,5 +41,23 @@
                 .FirstOrDefault(i => i.Team.Name.ToLower() == teamName.ToLower() &&
                                      i.InvitedUserId == user.Id);
         }
+
+        public void DeactivateInvitation(User user, string teamName)
+        {
+            var invite = this.context
+                .Users
+                .FirstOrDefault(u => u.Id == user.Id)
+                ?.ReceivedInvitations
+                .FirstOrDefault(i => i.Team.Name == teamName);
+
+            this.context
+                .Users
+                .FirstOrDefault(u => u.Id == user.Id)
+                ?.ReceivedInvitations
+                .Remove(invite);
+
+            this.context.Invitations.Remove(invite);
+            this.context.SaveChanges();
+        }
     }
 }

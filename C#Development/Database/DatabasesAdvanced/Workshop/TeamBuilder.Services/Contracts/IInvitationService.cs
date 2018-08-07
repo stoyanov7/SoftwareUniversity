@@ -9,5 +9,7 @@
         void CreateInvitation(User user, Team team);
 
         Invitation GetInvitationByTeamName(string teamName, User user);
+
+        void DeactivateInvitation(User user, string teamName);
     }
 }
