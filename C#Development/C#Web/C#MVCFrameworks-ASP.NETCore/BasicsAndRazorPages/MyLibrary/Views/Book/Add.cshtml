@@ -1,0 +1,24 @@
+﻿@model AddBookBindingModel
+
+@{
+    ViewData["Title"] = "AddBook";
+}
+
+<h1>Add Book</h1>
+<form asp-page="/Book/Add" method="post">
+    <strong>Title:</strong> 
+    <input asp-for="Title" class="form-control" placeholder="Title"/> <br/>
+    
+    <strong>Author:</strong>
+    <input asp-for="Author" class="form-control" placeholder="Author"/> <br/>
+
+    <strong>Image URL</strong>
+    <input asp-for="ImageUrl" class="form-control" placeholder="Image URl"/>
+    <br /> 
+    <input type="submit" value="Add book" />
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-default"></a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
