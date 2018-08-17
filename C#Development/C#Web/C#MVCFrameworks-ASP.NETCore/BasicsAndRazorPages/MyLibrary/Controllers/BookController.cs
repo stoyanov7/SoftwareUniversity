@@ -1,6 +1,5 @@
 ﻿namespace MyLibrary.Controllers
 {
-    using System;
     using Microsoft.AspNetCore.Mvc;
     using Models;
     using Services.Contracts;
@@ -23,7 +22,7 @@
             if (this.ModelState.IsValid)
             {
                 this.bookService.AddBook(book);
-                return this.RedirectToAction("Index", "Home", new { id = book.Id });
+                return this.RedirectToAction("Details", "Book", new { id = book.Id });
             }
 
             return this.View();
@@ -31,7 +30,14 @@
 
         public IActionResult Details(int id)
         {
-            throw new NotImplementedException();
+            var book = this.bookService.FindBookById(id);
+
+            if (book == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(book);
         }
     }
 }

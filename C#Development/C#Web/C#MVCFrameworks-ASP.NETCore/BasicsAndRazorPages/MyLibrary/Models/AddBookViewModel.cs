@@ -1,14 +1,14 @@
-﻿namespace MyLibrary.Models
+﻿namespace MyLibrary.Models.ViewModels
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class AddBookBindingModel
+    public class AddBookViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Title is required!")]
         public string Title { get; set; }
 
-        [Required]
-        public Author Author { get; set; }
+        [Required(ErrorMessage = "Author name is required!")]
+        public AuthorViewModel Author { get; set; }
 
         [Required]
         [DataType(DataType.ImageUrl)]

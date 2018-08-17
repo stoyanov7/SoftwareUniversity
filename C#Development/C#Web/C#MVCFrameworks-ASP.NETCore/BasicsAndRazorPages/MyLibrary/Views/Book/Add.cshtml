@@ -1,4 +1,5 @@
-﻿@model AddBookBindingModel
+﻿@using MyLibrary.Models.ViewModels
+@model AddBookViewModel
 
 @{
     ViewData["Title"] = "AddBook";
@@ -6,17 +7,27 @@
 
 <h1>Add Book</h1>
 <form asp-page="/Book/Add" method="post">
-    <strong>Title:</strong> 
-    <input asp-for="Title" class="form-control" placeholder="Title"/> <br/>
-    
-    <strong>Author:</strong>
-    <input asp-for="Author" class="form-control" placeholder="Author"/> <br/>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" placeholder="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
 
-    <strong>Image URL</strong>
-    <input asp-for="ImageUrl" class="form-control" placeholder="Image URl"/>
-    <br /> 
-    <input type="submit" value="Add book" />
-    <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-default"></a>
+    <div class="form-group">
+        <label asp-for="Author.Name"></label>
+        <input asp-for="Author.Name" class="form-control" placeholder="Author" />
+        <span asp-validation-for="Author.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" placeholder="Image URl" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+
+    <br />
+    <input type="submit" value="Add book" class="btn btn-success" />
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-default">Cancel</a>
 </form>
 
 @section Scripts {

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "MyLibrary\MyLibrary.csproj", "{39D44F0E-8DA9-442C-B7F5-22A713570A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary", "MyLibrary\MyLibrary.csproj", "{39D44F0E-8DA9-442C-B7F5-22A713570A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Models", "MyLibrary.Models\MyLibrary.Models.csproj", "{FF27A1C4-9061-4655-9E0F-35C023855E6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Models", "MyLibrary.Models\MyLibrary.Models.csproj", "{FF27A1C4-9061-4655-9E0F-35C023855E6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Data", "MyLibrary.Data\MyLibrary.Data.csproj", "{968DB3F6-2BAB-4D1E-94EE-9644269BD472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Data", "MyLibrary.Data\MyLibrary.Data.csproj", "{968DB3F6-2BAB-4D1E-94EE-9644269BD472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Services", "MyLibrary.Services\MyLibrary.Services.csproj", "{94793E80-577D-4FFB-9003-30EB730AAED9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Services", "MyLibrary.Services\MyLibrary.Services.csproj", "{94793E80-577D-4FFB-9003-30EB730AAED9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

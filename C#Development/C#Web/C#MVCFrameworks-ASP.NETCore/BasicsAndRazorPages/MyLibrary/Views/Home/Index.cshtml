@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Book>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,4 +14,14 @@
         <th scope="col">Status</th>
     </tr>
     </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.IsBorrowed</td>
+            </tr>
+        }
+    </tbody>
 </table>

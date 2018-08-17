@@ -2,11 +2,24 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using Models;
+    using Models.ViewModels;
+    using Services.Contracts;
 
     public class HomeController : Controller
     {
-        public IActionResult Index() => this.View();
+        private readonly IBookService bookService;
+
+        public HomeController(IBookService bookService)
+        {
+            this.bookService = bookService;
+        }
+
+        public IActionResult Index()
+        {
+            var books = this.bookService.GetBooksList;
+
+            return this.View(books);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
