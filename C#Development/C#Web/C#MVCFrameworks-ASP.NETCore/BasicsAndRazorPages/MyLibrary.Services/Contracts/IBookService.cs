@@ -8,5 +8,7 @@
         void AddBook(Book book);
 
         IList<Book> GetBooksList { get; }
+
+        Book FindBookById(int id);
     }
 }

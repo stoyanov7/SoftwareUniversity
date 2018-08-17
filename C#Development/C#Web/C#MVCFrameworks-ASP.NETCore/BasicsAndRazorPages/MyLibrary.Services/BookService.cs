@@ -22,5 +22,7 @@
         }
 
         public IList<Book> GetBooksList => this.context.Books.ToList();
+
+        public Book FindBookById(int id) => this.context.Books.Find(id);
     }
 }
