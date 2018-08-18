@@ -5,6 +5,7 @@
     using Contracts;
     using Data;
     using Models;
+    using ViewModels;
 
     public class BookService : IBookService
     {
@@ -21,7 +22,19 @@
             this.context.SaveChanges();
         }
 
-        public IList<Book> GetBooksList => this.context.Books.ToList();
+        public IList<BookViewModel> GetBooksList()
+        {
+             return this.context
+                 .Books
+                 .Select(b => new BookViewModel
+                 {
+                     Id = b.Id,
+                     Title = b.Title,
+                     Author = b.Author.Name,
+                     Status = b.IsBorrowed ? "At home" : "Borrowed"
+                 })
+                 .ToList(); 
+        }
 
         public Book FindBookById(int id) => this.context.Books.Find(id);
     }

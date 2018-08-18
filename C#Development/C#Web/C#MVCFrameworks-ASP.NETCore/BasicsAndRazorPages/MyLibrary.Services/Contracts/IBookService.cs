@@ -2,12 +2,13 @@
 {
     using System.Collections.Generic;
     using Models;
+    using ViewModels;
 
     public interface IBookService
     {
         void AddBook(Book book);
 
-        IList<Book> GetBooksList { get; }
+        IList<BookViewModel> GetBooksList();
 
         Book FindBookById(int id);
     }

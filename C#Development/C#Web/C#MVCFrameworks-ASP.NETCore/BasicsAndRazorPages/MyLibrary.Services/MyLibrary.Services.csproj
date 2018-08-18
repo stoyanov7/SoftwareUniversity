@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyLibrary.Data\MyLibrary.Data.csproj" />
+    <ProjectReference Include="..\MyLibrary.ViewModels\MyLibrary.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
