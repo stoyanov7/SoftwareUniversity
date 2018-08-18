@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Book>
+﻿@using MyLibrary.ViewModels
+@model IEnumerable<BookViewModel>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -18,9 +19,11 @@
         @foreach (var book in Model)
         {
             <tr>
-                <td>@book.Title</td>
+                <td>
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a>
+                </td>
                 <td>@book.Author</td>
-                <td>@book.IsBorrowed</td>
+                <td>@book.Status</td>
             </tr>
         }
     </tbody>

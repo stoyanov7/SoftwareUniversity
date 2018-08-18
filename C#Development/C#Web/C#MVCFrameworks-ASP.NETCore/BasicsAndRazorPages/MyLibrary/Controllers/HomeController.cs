@@ -2,8 +2,8 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using Models.ViewModels;
     using Services.Contracts;
+    using ViewModels;
 
     public class HomeController : Controller
     {
@@ -16,7 +16,7 @@
 
         public IActionResult Index()
         {
-            var books = this.bookService.GetBooksList;
+            var books = this.bookService.GetBooksList();
 
             return this.View(books);
         }
