@@ -10,6 +10,9 @@
         [Required(ErrorMessage = "Author name is required!")]
         public AuthorViewModel Author { get; set; }
 
+        [Required(ErrorMessage = "Description is required!")]
+        public string Description { get; set; }
+
         [Required]
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Image URL")]
