@@ -4,6 +4,7 @@
     using System.Linq;
     using Contracts;
     using Data;
+    using Microsoft.EntityFrameworkCore;
     using Models;
     using ViewModels;
 
@@ -30,12 +31,19 @@
                  {
                      Id = b.Id,
                      Title = b.Title,
+                     AuthorId = b.AuthorId,
                      Author = b.Author.Name,
                      Status = b.IsBorrowed ? "At home" : "Borrowed"
                  })
                  .ToList(); 
         }
 
-        public Book FindBookById(int id) => this.context.Books.Find(id);
+        public Book FindBookById(int id)
+        {
+            return this.context
+                .Books
+                .Include(b => b.Author)
+                .FirstOrDefault(b => b.Id == id);
+        }
     }
 }
