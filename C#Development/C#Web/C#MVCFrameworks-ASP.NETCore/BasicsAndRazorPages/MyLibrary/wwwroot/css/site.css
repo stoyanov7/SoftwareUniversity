@@ -35,3 +35,14 @@ body {
         display: none;
     }
 }
+
+#coverBookImage {
+    float: left;
+    padding-top: 20px;
+    width: 350px;
+    height: 600px;
+}
+
+#status {
+    color: green;
+}
