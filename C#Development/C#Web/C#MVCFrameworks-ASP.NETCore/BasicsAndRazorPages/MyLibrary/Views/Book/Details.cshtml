@@ -1,6 +1,22 @@
-﻿@{
+﻿@using MyLibrary.ViewModels
+@model BookDetailsViewModel
+@{
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<div class="container container-fluid">
+    <div class="row">
+        <div class="pull-left">
+            <img id="coverBookImage" src="@Model.ImageUrl" alt=""/>
+        </div>
+        <div class="col-sm-8">
+            <h1>@Model.Title</h1>
+            <h4>by @Model.Author</h4>
+            <p>@Model.Description</p>
+            <div>
+                <strong>Status: </strong><strong id="status">@Model.Status</strong>
+            </div>
+        </div>
+    </div>
+</div>
 

@@ -3,6 +3,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Models;
     using Services.Contracts;
+    using ViewModels;
 
     public class BookController : Controller
     {
@@ -31,13 +32,23 @@
         public IActionResult Details(int id)
         {
             var book = this.bookService.FindBookById(id);
-
+            
             if (book == null)
             {
                 return this.NotFound();
             }
 
-            return this.View(book);
+            var bookDetails = new BookDetailsViewModel
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Author = book.Author.Name,
+                Description = book.Description,
+                ImageUrl = book.ImageUrl,
+                Status = book.IsBorrowed ? "At home" : "Borrowed"
+            };
+
+            return this.View(bookDetails);
         }
     }
 }

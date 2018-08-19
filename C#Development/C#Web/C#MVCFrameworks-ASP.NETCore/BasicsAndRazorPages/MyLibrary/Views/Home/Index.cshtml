@@ -22,7 +22,9 @@
                 <td>
                     <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a>
                 </td>
-                <td>@book.Author</td>
+                <td>
+                    <a asp-controller="Author" asp-action="Details" asp-route-id="@book.Author"></a> @book.Author
+                </td>
                 <td>@book.Status</td>
             </tr>
         }
