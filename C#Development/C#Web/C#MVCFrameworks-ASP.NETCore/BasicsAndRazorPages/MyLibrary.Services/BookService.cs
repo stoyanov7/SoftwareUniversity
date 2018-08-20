@@ -45,5 +45,17 @@
                 .Include(b => b.Author)
                 .FirstOrDefault(b => b.Id == id);
         }
+
+        public void DeleteBook(int id)
+        {
+            var book = this.context
+                .Books
+                .SingleOrDefault(b => b.Id == id);
+
+            this.context.Books.Remove(book);
+            this.context.SaveChanges();
+        }
+
+        public bool Exists(int id) => this.context.Books.Any(i => i.Id == id);
     }
 }

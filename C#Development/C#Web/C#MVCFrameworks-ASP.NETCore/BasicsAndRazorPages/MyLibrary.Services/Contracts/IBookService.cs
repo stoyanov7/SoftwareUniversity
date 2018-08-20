@@ -11,5 +11,9 @@
         IList<BookViewModel> GetBooksList();
 
         Book FindBookById(int id);
+
+        void DeleteBook(int id);
+
+        bool Exists(int id);
     }
 }

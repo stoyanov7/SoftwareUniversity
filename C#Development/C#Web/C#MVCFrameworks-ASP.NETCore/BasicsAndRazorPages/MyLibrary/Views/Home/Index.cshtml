@@ -6,7 +6,9 @@
 }
 
 <h1>My Library</h1>
-<a asp-area="" asp-controller="Book" asp-action="Add" class="btn btn-success">Add new book</a>
+<a asp-controller="Book" asp-action="Add" class="btn btn-success">
+    <i class="glyphicon glyphicon-plus"></i> Add new book
+</a>
 <table class="table">
     <thead>
     <tr>
@@ -23,7 +25,7 @@
                     <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a>
                 </td>
                 <td>
-                    <a asp-controller="Author" asp-action="Details" asp-route-id="@book.Author"></a> @book.Author
+                    @book.Author
                 </td>
                 <td>@book.Status</td>
             </tr>

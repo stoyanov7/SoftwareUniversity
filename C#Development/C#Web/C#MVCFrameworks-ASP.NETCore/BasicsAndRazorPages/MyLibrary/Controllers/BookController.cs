@@ -50,5 +50,18 @@
 
             return this.View(bookDetails);
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (!this.bookService.Exists(id))
+            {
+                return this.RedirectToAction("Index", "Home");
+            }
+
+            this.bookService.DeleteBook(id);
+
+            return this.RedirectToAction("Index", "Home");
+        }
     }
 }
