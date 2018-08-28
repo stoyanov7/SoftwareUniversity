@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByTheCake", "ByTheCake\ByTheCake.csproj", "{1AC92272-3C2B-44E5-A99A-5D550C4704FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{E017E704-B871-468D-B079-FBEF506C2E2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AC92272-3C2B-44E5-A99A-5D550C4704FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC92272-3C2B-44E5-A99A-5D550C4704FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC92272-3C2B-44E5-A99A-5D550C4704FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC92272-3C2B-44E5-A99A-5D550C4704FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E017E704-B871-468D-B079-FBEF506C2E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E017E704-B871-468D-B079-FBEF506C2E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E017E704-B871-468D-B079-FBEF506C2E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E017E704-B871-468D-B079-FBEF506C2E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB1EDEF2-EDBD-48E1-9E4A-29368B535527}
+	EndGlobalSection
+EndGlobal
