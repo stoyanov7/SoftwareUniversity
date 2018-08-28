@@ -10,7 +10,9 @@
         {
             appRouteConfig.Get("/", req => new HomeController().Index());
 
-            appRouteConfig.Get("Cake/Add", req => new CakeController().Add());
+            appRouteConfig.Get("/About", req => new HomeController().About());
+
+            appRouteConfig.Get("/Add", req => new CakeController().Add());
         }
     }
 }

@@ -11,5 +11,10 @@
         {
             return new ViewResponse(HttpStatusCode.Ok, new Index());
         }
+
+        public IHttpResponse About()
+        {
+            return new ViewResponse(HttpStatusCode.Ok, new About());
+        }
     }
 }
