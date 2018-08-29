@@ -1,12 +1,21 @@
-﻿using System;
-
-namespace MeTube
+﻿namespace MeTube
 {
-    class Program
+    using Data;
+    using SimpleMvc.Framework;
+    using SimpleMvc.Framework.Routers;
+    using WebServer;
+
+    public class Startup
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var server = new WebServer(
+                42420,
+                new ControllerRouter(),
+                new ResourceRouter());
+
+            var context = new MeTubeContext();
+            MvcEngine.Run(server, context);
         }
     }
 }
