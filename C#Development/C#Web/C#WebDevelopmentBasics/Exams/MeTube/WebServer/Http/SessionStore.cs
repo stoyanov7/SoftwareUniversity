@@ -6,6 +6,7 @@
     {
         public const string SessionCookieKey = "MY_SID";
         public const string CurrentUserKey = "^%Current_User_Session_Key%^";
+        public const string CurrentUserIdKey = "^%Current_User_Session_ID_Key%^";
 
         private static readonly ConcurrentDictionary<string, HttpSession> sessions =
             new ConcurrentDictionary<string, HttpSession>();
