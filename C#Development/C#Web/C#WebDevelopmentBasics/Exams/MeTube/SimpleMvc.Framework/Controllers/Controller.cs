@@ -4,10 +4,10 @@
     using System.Linq;
     using System.Runtime.CompilerServices;
     using SimpleMvc.Framework.ActionResults;
-    using SimpleMvc.Framework.Attributes.Property;
     using SimpleMvc.Framework.Interfaces;
     using SimpleMvc.Framework.Models;
     using SimpleMvc.Framework.Security;
+    using SimpleMvc.Framework.Validation;
     using SimpleMvc.Framework.Views;
     using WebServer.Http;
     using WebServer.Http.Contracts;
@@ -22,11 +22,13 @@
 
         protected ViewModel Model { get; set; }
 
-        protected Authentication User { get; set; }
+        public Authentication User { get; set; }
 
         public IHttpRequest Request { get; set; }
 
-        protected virtual IViewable View([CallerMemberName] string caller = "")
+        public ParameterValidator ParameterValidator { get; set; }
+
+        protected IViewable View([CallerMemberName] string caller = "")
         {
             var controllerName = this.GetType()
                 .Name
@@ -52,6 +54,8 @@
         {
             var properties = bindingModel.GetType().GetProperties();
 
+            bool errorFound = false;
+
             foreach (var property in properties)
             {
                 var validationAttributes = property
@@ -69,12 +73,16 @@
                     var validationResult = validationAttribute.GetValidationResult(propertyValue, new ValidationContext(bindingModel));
                     if (validationResult != ValidationResult.Success)
                     {
-                        return false;
+                        this.ParameterValidator.AddModelError(
+                            property.Name,
+                            validationResult.ErrorMessage
+                                .Replace(bindingModel.GetType().Name, property.Name));
+                        errorFound = true;
                     }
                 }
             }
 
-            return true;
+            return !errorFound;
         }
 
         protected internal void InitializeUser()
@@ -99,6 +107,12 @@
         protected void SignOut()
         {
             this.Request.Session.Clear();
+        }
+
+        public virtual void OnAuthentication()
+        {
+            // If a child controller needs to implement this lifecycle method,
+            // they will simply override it
         }
     }
 }

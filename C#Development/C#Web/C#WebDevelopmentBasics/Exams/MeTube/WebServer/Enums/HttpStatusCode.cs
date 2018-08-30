@@ -7,7 +7,7 @@
         Found = 302,
         MovedTemporary = 303,
         BadRequest = 400,
-        NotAuthorized = 401,
+        Unauthorized = 401,
         NotFound = 404,
         InternalServerError = 500
     }

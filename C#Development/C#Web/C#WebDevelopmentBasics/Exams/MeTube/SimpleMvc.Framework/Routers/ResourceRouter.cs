@@ -12,6 +12,7 @@
     public class ResourceRouter : IHandleable
     {
         private const string ContentDirectory = "../../../Content/";
+        private const string BasePath = "/";
 
         private static readonly Dictionary<string, string> ExtensionsToMIMETypes = new Dictionary<string, string>()
         {
@@ -27,8 +28,7 @@
                 string[] resourcePath = request.Path.Split('/', 3);
                 string folderPath = request.Path;
 
-                // The first part will always be empty, as it begins with '/'
-                // The second part may be either a controller path or a direct resource
+                // TODO: Handle requests which come from '/' and don't have a controller at the beginning
                 if (resourcePath.Length > 2)
                 {
                     folderPath = resourcePath[2];

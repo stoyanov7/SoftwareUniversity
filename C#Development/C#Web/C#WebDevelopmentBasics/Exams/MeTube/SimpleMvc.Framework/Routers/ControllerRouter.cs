@@ -4,44 +4,80 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using Common;
-    using Attributes.Methods;
-    using Controllers;
-    using Interfaces;
+    using SimpleMvc.Common;
+    using SimpleMvc.Framework.Attributes.Methods;
+    using SimpleMvc.Framework.Attributes.Security;
+    using SimpleMvc.Framework.Controllers;
+    using SimpleMvc.Framework.Interfaces;
+    using SimpleMvc.Framework.Validation;
     using WebServer.Contracts;
     using WebServer.Enums;
+    using WebServer.Exceptions;
     using WebServer.Http.Contracts;
     using WebServer.Http.Response;
 
     public class ControllerRouter : IHandleable
     {
+        private const string BasePath = "/";
+        private const string DefaultControllerName = "HomeController";
+        private const string DefaultActionName = "Index";
+
         public IHttpResponse Handle(IHttpRequest request)
         {
             var getParams = request.UrlParameters;
             var postParams = request.FormData;
             var requestMethod = request.Method.ToString();
 
-            string[] invocationParameters =
-                request.Path.Split('/', StringSplitOptions.RemoveEmptyEntries);
-            if (invocationParameters.Length != 2)
-            {
-                throw new InvalidOperationException("Invalid URL");
-            }
 
-            var controllerName = invocationParameters[0].CapitalizeFirstLetter() + MvcContext.Get.ControllerSuffix;
-            var actionName = invocationParameters[1].CapitalizeFirstLetter();
+            string controllerName = string.Empty;
+            string actionName = string.Empty;
+
+            if (request.Path == BasePath)
+            {
+                return new RedirectResponse("/home/index");
+            }
+            else
+            {
+                string[] invocationParameters =
+                    request.Path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+                if (invocationParameters.Length != 2)
+                {
+                    throw new InvalidOperationException("Invalid URL");
+                }
+
+                controllerName = invocationParameters[0].CapitalizeFirstLetter() + MvcContext.Get.ControllerSuffix;
+                actionName = invocationParameters[1].CapitalizeFirstLetter();
+            }
 
             var controller = this.GetController(controllerName, request);
 
-            MethodInfo action = this.GetMethod(requestMethod, controller, actionName);
-
-            if (action == null)
+            try
             {
-                return new NotFoundResponse();
-            }
+                MethodInfo action = this.GetMethod(requestMethod, controller, actionName);
+                if (action == null)
+                {
+                    return new NotFoundResponse();
+                }
 
-            var actionParameters = this.MapActionParameters(action, getParams, postParams);
-            return this.PrepareResponse(controller, action, actionParameters);
+                var authAttribute = action
+                   .GetCustomAttributes()
+                   .Where(attr => attr is PreAuthorizeAttribute)
+                   .Cast<PreAuthorizeAttribute>()
+                   .FirstOrDefault();
+                if (authAttribute != null && !controller.User.IsAuthenticated)
+                {
+                    return authAttribute.GetResponse("The user is not authorized to perform this action.");
+                }
+
+                var parameterValidator = new ParameterValidator();
+                var actionParameters = this.MapActionParameters(action, getParams, postParams, parameterValidator);
+                controller.ParameterValidator = parameterValidator;
+                return this.PrepareResponse(controller, action, actionParameters);
+            }
+            catch (UnauthorizedException e)
+            {
+                return new PreAuthorizeAttribute().GetResponse(e.Message);
+            }
         }
 
         private IHttpResponse PrepareResponse(
@@ -69,7 +105,8 @@
         private object[] MapActionParameters(
             MethodInfo method,
             IDictionary<string, string> getParams,
-            IDictionary<string, string> postParams)
+            IDictionary<string, string> postParams,
+            ParameterValidator parameterValidator)
         {
             var parameterDescriptions = method.GetParameters();
             object[] parameters = new object[parameterDescriptions.Length];
@@ -84,7 +121,7 @@
                 else
                 {
                     // POST request -> models
-                    parameters[index] = ProcessBindingModelParameters(postParams, param);
+                    parameters[index] = ProcessBindingModelParameters(postParams, param, parameterValidator);
                 }
             }
 
@@ -110,6 +147,7 @@
             {
                 controller.Request = request;
                 controller.InitializeUser();
+                controller.OnAuthentication();
             }
 
             return controller;
@@ -141,7 +179,7 @@
                     .Where(attr => attr is HttpMethodAttribute)
                     .Cast<HttpMethodAttribute>();
 
-                if (!attributes.Any() && requestMethod == "GET")
+                if (!attributes.Any() && requestMethod.ToUpper() == "GET")
                 {
                     return methodInfo;
                 }
@@ -153,6 +191,7 @@
                         return methodInfo;
                     }
                 }
+
             }
 
             return method;
@@ -168,15 +207,23 @@
 
         private static object ProcessBindingModelParameters(
             IDictionary<string, string> postParams,
-            ParameterInfo param)
+            ParameterInfo param,
+            ParameterValidator parameterValidator)
         {
             Type modelType = param.ParameterType;
             var modelInstance = Activator.CreateInstance(modelType);
             var modelProperties = modelType.GetProperties();
             foreach (var property in modelProperties)
             {
-                var value = postParams[property.Name];
-                property.SetValue(modelInstance, Convert.ChangeType(value, property.PropertyType));
+                try
+                {
+                    var value = postParams[property.Name];
+                    property.SetValue(modelInstance, Convert.ChangeType(value, property.PropertyType));
+                }
+                catch(Exception)
+                {
+                    parameterValidator.AddModelError(property.Name, $"The {property.Name} field could not be mapped.");
+                }
             }
 
             return Convert.ChangeType(modelInstance, modelType);

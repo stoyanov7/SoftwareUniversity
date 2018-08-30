@@ -7,15 +7,16 @@
 
     public class Startup
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             var server = new WebServer(
-                42420,
+                7777,
                 new ControllerRouter(),
                 new ResourceRouter());
 
-            var context = new MeTubeContext();
-            MvcEngine.Run(server, context);
+            var dbContext = new MeTubeContext();
+
+            MvcEngine.Run(server, dbContext);
         }
     }
 }

@@ -123,8 +123,12 @@
 
         private void SetResponseSession(IHttpResponse httpResponse, string sessionId)
         {
-            var session = SessionStore.Get(sessionId);
-            httpResponse.Headers.Add(HttpHeader.SetCookie, sessionId);
+            if (sessionId != null)
+            {
+                httpResponse.Headers.Add(
+                    HttpHeader.SetCookie,
+                    $"{SessionStore.SessionCookieKey}={sessionId};HttpOnly=true;Path=/");
+            }
         }
 
         private async Task PrepareResponse(IHttpResponse httpResponse)
