@@ -1,0 +1,47 @@
+﻿<div class="text-center mb-3">
+    <h1>Upload</h1>
+</div>
+<hr class="my-2">
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-holder text-center">
+            {{{error}}}
+            <form class="form-inline" action="/tube/upload" method="POST">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="Title">Title</label>
+                        <div class="controls">
+                            <input type="text" id="Title" name="Title" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="Author">Author</label>
+                        <div class="controls">
+                            <input type="text" id="Author" name="Author" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="YouTubeLink">YouTubeLink</label>
+                        <div class="controls">
+                            <input type="text" id="YouTubeLink" name="YouTubeLink" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="Description">Description</label>
+                        <div class="controls">
+                            <textarea id="Description" name="Description" placeholder="" class="input-xlarge"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-info">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
