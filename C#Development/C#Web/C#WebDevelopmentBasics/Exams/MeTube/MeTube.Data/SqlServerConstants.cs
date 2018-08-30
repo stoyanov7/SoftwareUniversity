@@ -1,6 +1,6 @@
 ﻿namespace MeTube.Data
 {
-    public static class Configuration
+    public static class SqlServerConstants
     {
         public const string ConnectionString = "Data Source=.;Database=MeTube;Integrated Security=True";
     }

@@ -14,8 +14,8 @@ namespace MeTube.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Username = table.Column<string>(nullable: false),
-                    PasswordHash = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false)
+                    Email = table.Column<string>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,7 +29,7 @@ namespace MeTube.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Author = table.Column<string>(nullable: false),
+                    Author = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     YouTubeId = table.Column<string>(nullable: false),
                     Views = table.Column<int>(nullable: false),

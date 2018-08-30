@@ -24,8 +24,7 @@ namespace MeTube.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Author")
-                        .IsRequired();
+                    b.Property<string>("Author");
 
                     b.Property<string>("Description");
 

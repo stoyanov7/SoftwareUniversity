@@ -1,7 +1,7 @@
 ﻿namespace MeTube.Data
 {
-    using Microsoft.EntityFrameworkCore;
     using Models;
+    using Microsoft.EntityFrameworkCore;
 
     public class MeTubeContext : DbContext
     {
@@ -13,7 +13,7 @@
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration.ConnectionString);
+                optionsBuilder.UseSqlServer(SqlServerConstants.ConnectionString);
             }
 
             base.OnConfiguring(optionsBuilder);
@@ -21,12 +21,14 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Username)
+            modelBuilder
+                .Entity<User>()
+                .HasIndex(user => user.Username)
                 .IsUnique();
 
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Email)
+            modelBuilder
+                .Entity<User>()
+                .HasIndex(user => user.Email)
                 .IsUnique();
 
             base.OnModelCreating(modelBuilder);
