@@ -5,7 +5,7 @@
     public class UserRegisterBindingModel
     {
         [Required]
-        [MinLength(3)]
+        [MinLength(5)]
         public string Username { get; set; }
 
         [Required]

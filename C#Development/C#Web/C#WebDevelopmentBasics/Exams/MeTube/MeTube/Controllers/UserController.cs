@@ -1,17 +1,16 @@
 ﻿namespace MeTube.Controllers
 {
     using System.Linq;
-    using Models;
     using Models.BindingModels;
+    using Models;
     using SimpleMvc.Common;
     using SimpleMvc.Framework.Attributes.Methods;
     using SimpleMvc.Framework.Interfaces;
 
-    public class UserController : ContextController
+    public class UserController : BaseController
     {
         [HttpGet]
-        public IActionResult Register()
-            => this.User.IsAuthenticated ? this.RedirectToHome() : this.View();
+        public IActionResult Register() => this.User.IsAuthenticated ? this.RedirectToHome() : this.View();
 
         [HttpPost]
         public IActionResult Register(UserRegisterBindingModel model)
@@ -26,13 +25,13 @@
                 return this.BuildErrorView();
             }
 
-            var passwordHash = PasswordExtensions.GenerateSHA256String(model.Password);
+            var passwordHash = PasswordUtilities.GetPasswordHash(model.Password);
 
-            var user = new User
+            var user = new User()
             {
                 Username = model.Username,
-                PasswordHash = passwordHash,
-                Email = model.Email
+                Email = model.Email,
+                PasswordHash = passwordHash
             };
 
             using (this.Context)
@@ -42,13 +41,11 @@
             }
 
             this.SignIn(user.Username, user.Id);
-
             return this.RedirectToHome();
         }
 
         [HttpGet]
-        public IActionResult Login()
-            => this.User.IsAuthenticated ? this.RedirectToHome() : this.View();
+        public IActionResult Login() => this.User.IsAuthenticated ? this.RedirectToHome() : this.View();
 
         [HttpPost]
         public IActionResult Login(UserLoginBindingModel model)
@@ -66,12 +63,10 @@
             User user;
             using (this.Context)
             {
-                user = this.Context
-                    .Users
+                user = this.Context.Users
                     .FirstOrDefault(u => u.Username == model.Username);
             }
-
-            var passwordHash = PasswordExtensions.GenerateSHA256String(model.Password);
+            var passwordHash = PasswordUtilities.GetPasswordHash(model.Password);
 
             if (passwordHash != user.PasswordHash)
             {
@@ -82,10 +77,15 @@
             return this.RedirectToHome();
         }
 
-        private IActionResult BuildErrorView()
+        [HttpGet]
+        public IActionResult Logout()
         {
-            this.Model.Data["error"] = "You have errors in your form";
-            return this.View();
+            if (this.User.IsAuthenticated)
+            {
+                this.SignOut();
+            }
+
+            return this.RedirectToHome();
         }
     }
 }
