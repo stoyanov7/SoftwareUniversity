@@ -1,0 +1,29 @@
+.bg-color-dark {
+    background-color: #483D8B;
+    color: #A9A9A9;
+}
+
+.footer {
+    background-color: #483D8B;
+    color: #A9A9A9;
+}
+
+.nav-item > a:hover, .navbar-brand:hover {
+    color: #FFFFFF;
+}
+
+iframe {
+    overflow: hidden;
+}
+
+.tube-author {
+    font-size: 2.5em;
+}
+
+.tube-views {
+    font-size: 1.8em;
+}
+
+.img-fluid.tube-thumbnail {
+    max-width: 300px;
+}

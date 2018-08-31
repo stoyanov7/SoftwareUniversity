@@ -1,0 +1,35 @@
+﻿<div class="text-center mb-3">
+    <h1>Login</h1>
+</div>
+<hr class="my-2">
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-holder text-center">
+            {{{error}}}
+            <form class="form-inline" action="/user/login" method="POST">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="Username">Username</label>
+                        <div class="controls">
+                            <input type="text" id="Username" name="Username" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label h3 mb-2" for="Password">Password</label>
+                        <div class="controls">
+                            <input type="password" id="Password" name="Password" placeholder=""
+                                   class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-info">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
