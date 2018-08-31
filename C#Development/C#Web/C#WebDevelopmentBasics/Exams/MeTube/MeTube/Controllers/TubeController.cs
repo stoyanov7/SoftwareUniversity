@@ -25,7 +25,7 @@
 
             using (this.Context)
             {
-                var youTubeId = this.GetYouTubeIdFromLink(model.YoutubeLink);
+                var youTubeId = this.GetYouTubeIdFromLink(model.YouTubeLink);
 
                 if (youTubeId == null)
                 {

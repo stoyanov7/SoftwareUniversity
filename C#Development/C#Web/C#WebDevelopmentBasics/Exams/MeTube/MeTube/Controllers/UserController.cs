@@ -1,8 +1,12 @@
 ﻿namespace MeTube.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
+    using Attributes;
     using Models.BindingModels;
     using Models;
+    using Models.ViewModels;
     using SimpleMvc.Common;
     using SimpleMvc.Framework.Attributes.Methods;
     using SimpleMvc.Framework.Interfaces;
@@ -27,7 +31,7 @@
 
             var passwordHash = PasswordUtilities.GetPasswordHash(model.Password);
 
-            var user = new User()
+            var user = new User
             {
                 Username = model.Username,
                 Email = model.Email,
@@ -86,6 +90,41 @@
             }
 
             return this.RedirectToHome();
+        }
+
+        [HttpGet]
+        [AuthorizeLogin]
+        public IActionResult Profile()
+        {
+            IEnumerable<TubeProfileViewModel> tubes;
+            using (this.Context)
+            {
+                tubes = this.Context
+                    .Tubes
+                    .Where(t => t.UploaderId == this.DbUser.Id)
+                    .AsEnumerable()
+                    .Select(TubeProfileViewModel.FromTube)
+                    .ToList();
+            }
+
+            this.Model.Data["username"] = this.DbUser.Username;
+            this.Model.Data["email"] = this.DbUser.Email;
+
+            var tubesResult = new StringBuilder();
+            foreach (var tube in tubes)
+            {
+                tubesResult.AppendLine(
+                    $@"<tr>
+                        <td>{tube.Id}</td>
+                        <td>{tube.Title}</td>
+                        <td>{tube.Author}</td>
+                        <td><a href=""/tubes/details?id={tube.Id}"">Details</a></td>
+                    </tr>");
+            }
+
+            this.Model.Data["tubes"] = tubesResult.ToString();
+
+            return this.View();
         }
     }
 }

@@ -14,7 +14,7 @@
 
         [Required]
         [DataType(DataType.Url)]
-        public string YoutubeLink { get; set; }
+        public string YouTubeLink { get; set; }
 
         public string Description { get; set; }
     }
