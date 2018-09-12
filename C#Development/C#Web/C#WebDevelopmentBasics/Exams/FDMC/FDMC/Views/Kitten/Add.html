@@ -1,0 +1,40 @@
+﻿<div class="text-center mb-3">
+    <h1>Add Kitten</h1>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-holder text-center">
+            {{{error}}}
+            <form class="form-inline" action="/Kitten/Add" method="POST">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="Name">Name</label>
+                        <div class="controls">
+                            <input type="text" id="Name" name="Name" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label" for="Age">Age</label>
+                        <div class="controls">
+                            <input type="number" id="Age" name="Age" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <label class="control-label" for="Breed">Breed</label>
+                        <div class="controls">
+                            <input type="text" id="Breed" name="Breed" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-success">Add Kittens</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

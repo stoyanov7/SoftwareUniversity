@@ -1,0 +1,49 @@
+﻿<div class="text-center mb-3">
+    <h1>Register</h1>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-holder text-center">
+            {{{error}}}
+            <form class="form-inline" action="/User/Register" method="POST">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="Username">Username</label>
+                        <div class="controls">
+                            <input type="text" id="Username" name="Username" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="control-group">
+                        <label class="control-label" for="Email">E-mail</label>
+                        <div class="controls">
+                            <input type="email" id="Email" name="Email" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="control-group">
+                        <label class="control-label" for="Password">Password</label>
+                        <div class="controls">
+                            <input type="password" id="Password" name="Password" placeholder=""
+                                   class="input-xlarge">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="control-group">
+                        <label class="control-label" for="ConfirmPassword">Confirm Password</label>
+                        <div class="controls">
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder=""
+                                   class="input-xlarge">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
