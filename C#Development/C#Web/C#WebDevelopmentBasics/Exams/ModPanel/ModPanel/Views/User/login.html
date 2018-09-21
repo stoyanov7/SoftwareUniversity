@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-6">
+            <div class="text-center">
+                <h1 class="display-3">Login</h1>
+            </div>
+            <hr />
+            <form action="/user/login" method="POST">
+                <div class="form-group row">
+                    <label class="col-form-label" for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" name="Email" placeholder="ivan@example.com" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label" for="Password">Password</label>
+                    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" id="Password" name="Password" class="form-control" placeholder="Password" />
+                </div>
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" />
+            </form>
+            <br />
+        </div>
+    </div>
+</div>
