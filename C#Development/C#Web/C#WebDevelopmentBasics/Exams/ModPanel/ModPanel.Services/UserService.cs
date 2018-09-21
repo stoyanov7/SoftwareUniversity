@@ -37,30 +37,22 @@
                 this.context.Add(user);
                 this.context.SaveChanges();
 
-                return true; 
+                return true;
             }
         }
 
-        public bool UserIsApproved(string email)
-        {
-            using (this.context)
-            {
-                return this.context
-                    .Users
-                    .Any(u => u.Email == email && u.IsApproved);
-            }
-        }
+        public bool UserIsApproved(string email) 
+            => this.context
+                .Users
+                .Any(u => u.Email == email && u.IsApproved);
 
         public bool UserExists(string email, string password)
         {
             var passwordHash = PasswordUtilities.GetPasswordHash(password);
 
-            using (this.context)
-            {
-                return this.context
-                    .Users
-                    .Any(u => u.Email == email && u.PasswordHash == passwordHash);
-            }
+            return this.context
+                .Users
+                .Any(u => u.Email == email && u.PasswordHash == passwordHash);
         }
     }
 }

@@ -21,7 +21,25 @@
 
                 <div class="collapse navbar-collapse" id="nav-collapse">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" style="display: {{{anonymousDisplay}}}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/register">Register</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="display: {{{adminDisplay}}}">
+                        <li class="nav-item dropdown float-left">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/admin/log">Log</a>
+                                <a class="dropdown-item" href="/admin/posts">Posts</a>
+                                <a class="dropdown-item" href="/admin/users">Users</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav" style="display: {{{userDisplay}}}">
                         <li class="navbar-nav">
                             <form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
@@ -29,10 +47,10 @@
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/login">Login</a>
+                            <a class="nav-link" href="#">New Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/register">Register</a>
+                            <a class="nav-link" href="/user/logout">Logout</a>
                         </li>
                     </ul>
                 </div>
