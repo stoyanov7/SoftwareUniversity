@@ -18,6 +18,8 @@
 
         protected User DbUser { get; private set; }
 
+        protected bool IsAdmin => this.User.IsAuthenticated && this.DbUser.IsAdmin;
+
         protected IActionResult RedirectToHome() => this.RedirectToAction("/home/index");
 
         protected IActionResult RedirectToLogin() => this.RedirectToAction("/user/login");

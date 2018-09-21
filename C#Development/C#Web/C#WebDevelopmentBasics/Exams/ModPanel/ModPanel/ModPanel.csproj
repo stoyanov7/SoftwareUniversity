@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModPanel.Data\ModPanel.Data.csproj" />
-    <ProjectReference Include="..\ModPanel.Services\ModPanel.Services.csproj" />
     <ProjectReference Include="..\SimpleMvc.Framework\SimpleMvc.Framework.csproj" />
     <ProjectReference Include="..\WebServer\WebServer.csproj" />
   </ItemGroup>
