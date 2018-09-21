@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModPanel.Data\ModPanel.Data.csproj" />
+    <ProjectReference Include="..\SimpleMvc.Common\SimpleMvc.Common.csproj" />
+  </ItemGroup>
+
+</Project>

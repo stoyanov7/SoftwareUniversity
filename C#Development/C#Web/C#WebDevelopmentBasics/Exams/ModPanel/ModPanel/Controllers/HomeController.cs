@@ -1,10 +1,9 @@
 ﻿namespace ModPanel.Controllers
 {
     using SimpleMvc.Framework.Attributes.Methods;
-    using SimpleMvc.Framework.Controllers;
     using SimpleMvc.Framework.Interfaces;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         [HttpGet]
         public IActionResult Index() => this.View();

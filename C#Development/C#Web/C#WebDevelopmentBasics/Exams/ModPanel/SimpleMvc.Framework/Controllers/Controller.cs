@@ -98,10 +98,9 @@
             }
         }
 
-        protected void SignIn(string username, int userId)
+        protected void SignIn(string username)
         {
             this.Request.Session.Add(SessionStore.CurrentUserKey, username);
-            this.Request.Session.Add(SessionStore.CurrentUserIdKey, userId);
         }
 
         protected void SignOut()
