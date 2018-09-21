@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModPanel", "ModPanel\ModPanel.csproj", "{E38D21D6-EFF3-418E-BE4E-8B1C47B95CAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModPanel", "ModPanel\ModPanel.csproj", "{E38D21D6-EFF3-418E-BE4E-8B1C47B95CAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{85D0F2E7-F55B-4103-9EAB-6CBF7FCB4BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{85D0F2E7-F55B-4103-9EAB-6CBF7FCB4BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMvc.Framework", "SimpleMvc.Framework\SimpleMvc.Framework.csproj", "{26D75421-92FF-4817-BDA3-FB127BC2D309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMvc.Framework", "SimpleMvc.Framework\SimpleMvc.Framework.csproj", "{26D75421-92FF-4817-BDA3-FB127BC2D309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMvc.Common", "SimpleMvc.Common\SimpleMvc.Common.csproj", "{FDC8FF01-C05D-41DA-BFB6-AB65C86BEA5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMvc.Common", "SimpleMvc.Common\SimpleMvc.Common.csproj", "{FDC8FF01-C05D-41DA-BFB6-AB65C86BEA5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModPanel.Models", "ModPanel.Models\ModPanel.Models.csproj", "{CDE85A51-3FC3-4334-8ED8-8EFB869402C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModPanel.Data", "ModPanel.Data\ModPanel.Data.csproj", "{7B42D54F-54B7-4DA8-BEE2-2BC3A29A50F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModPanel.Services", "ModPanel.Services\ModPanel.Services.csproj", "{2F2419D9-24D0-43B9-A16D-E137B32ACE8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{FDC8FF01-C05D-41DA-BFB6-AB65C86BEA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDC8FF01-C05D-41DA-BFB6-AB65C86BEA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC8FF01-C05D-41DA-BFB6-AB65C86BEA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE85A51-3FC3-4334-8ED8-8EFB869402C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE85A51-3FC3-4334-8ED8-8EFB869402C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE85A51-3FC3-4334-8ED8-8EFB869402C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE85A51-3FC3-4334-8ED8-8EFB869402C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B42D54F-54B7-4DA8-BEE2-2BC3A29A50F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B42D54F-54B7-4DA8-BEE2-2BC3A29A50F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B42D54F-54B7-4DA8-BEE2-2BC3A29A50F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B42D54F-54B7-4DA8-BEE2-2BC3A29A50F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2419D9-24D0-43B9-A16D-E137B32ACE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2419D9-24D0-43B9-A16D-E137B32ACE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2419D9-24D0-43B9-A16D-E137B32ACE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2419D9-24D0-43B9-A16D-E137B32ACE8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
