@@ -1,0 +1,11 @@
+﻿ <tr class="row">
+    <th class="col-md-1">@Model.Index</th>
+    <td class="col-md-5">@Model.TaskName</td>
+    <td class="col-md-1">@Model.TaskLevel</td>
+    <td class="col-md-2">@Model.Status</td>
+    <td class="col-md-2">
+        <div class="button-holder d-flex justify-content-between">
+            <button onclick="location.href='/Reports/Details?Id=@Model.Id'" class="btn bg-torshia text-white">Details</button>
+        </div>
+    </td>
+</tr>

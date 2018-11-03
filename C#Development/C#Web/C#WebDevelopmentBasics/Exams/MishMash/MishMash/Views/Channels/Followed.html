@@ -1,0 +1,17 @@
+﻿<hr class="hr-2 bg-mishmash" />
+<h1 class="text-center text-mishmash">Following</h1>
+<hr class="hr-2 bg-mishmash" />
+<table class="table w-75 mx-auto table-hover">
+    <thead>
+    <tr class="row">
+        <th class="col-md-1">#</th>
+        <th class="col-md-5">Channel</th>
+        <th class="col-md-1">Type</th>
+        <th class="col-md-2">Followers</th>
+        <th class="col-md-2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        @Model.Collection.Followed(@Item)
+    </tbody>
+</table>

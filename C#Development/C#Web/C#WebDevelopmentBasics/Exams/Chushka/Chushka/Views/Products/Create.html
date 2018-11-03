@@ -1,0 +1,44 @@
+﻿<h1 class="text-center ">Create Product</h1>
+<hr class="hr-2 bg-dark" />
+<form class="mx-auto w-50" method="post" action="/Products/Create">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Name..." name="Name">
+    </div>
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="text" class="form-control" id="Price" placeholder="Price..." name="Price">
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" id="Description" placeholder="Description..." name="Description"></textarea>
+    </div>
+    <h3 class="text-center">Product Type</h3>
+    <hr class="hr-2 half-width bg-dark" />
+    <div class="form-group d-flex justify-content-around">
+        <label class="radio-inline" for="ProductType">
+            <input type="radio" name="ProductType" value="Food">Food
+        </label>
+
+        <label class="radio-inline" for="ProductType">
+            <input type="radio" name="ProductType" value="Domestic">Domestic
+        </label>
+
+        <label class="radio-inline" for="ProductType">
+            <input type="radio" name="ProductType" value="Health">Health
+        </label>
+
+        <label class="radio-inline" for="ProductType">
+            <input type="radio" name="ProductType" value="Cosmetic">Cosmetic
+        </label>
+
+        <label class="radio-inline" for="ProductType">
+            <input type="radio" name="ProductType" value="Other" checked>Other
+        </label>
+    </div>
+    <hr class="hr-2 half-width bg-dark" />
+
+    <div class="button-holder mt-4 d-flex justify-content-center">
+        <button type="submit" class="btn chushka-bg-color">Create</button>
+    </div>
+</form>

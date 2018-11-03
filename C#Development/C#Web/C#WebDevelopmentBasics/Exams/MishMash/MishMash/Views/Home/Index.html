@@ -1,0 +1,22 @@
+﻿<div style="display: @Model.Guest">
+    <div class="jumbotron mt-3 bg-mishmash">
+        <h1 class="text-white">Welcome to Mish-Mash Media Channels</h1>
+        <hr class="bg-white hr-2" />
+        <h3 class="text-white"><a href="/Users/Login">Login</a> if you have an account.</h3>
+        <h3 class="text-white"><a href="/Users/Register">Register</a> if you don't.</h3>
+    </div>
+</div>
+<div style="display: @Model.User">
+    <h2 class="text-center text-mishmash">Welcome, @Model.Username</h2>
+    <div class="container-fluid mb-4">
+        <h2 class="text-mishmash">Your Channels</h2>
+        <hr class="bg-mishmash hr-2" />
+    </div>
+</div>
+<div style="display: @Model.Admin">
+    <h2 class="text-center text-mishmash">Welcome, Admin - @Model.Username</h2>
+    <div class="container-fluid mb-4">
+        <h2 class="text-mishmash">Your Channels</h2>
+        <hr class="bg-mishmash hr-2" />
+    </div>
+</div>
