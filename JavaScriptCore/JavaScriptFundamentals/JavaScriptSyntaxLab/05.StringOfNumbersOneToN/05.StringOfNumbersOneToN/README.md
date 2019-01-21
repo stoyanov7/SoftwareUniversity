@@ -1,3 +1,0 @@
-﻿# 05.StringOfNumbersOneToN
-
-

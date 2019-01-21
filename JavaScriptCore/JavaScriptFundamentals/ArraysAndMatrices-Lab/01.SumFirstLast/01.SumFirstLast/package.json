@@ -1,9 +1,0 @@
-{
-  "name": "01.sum-first-last",
-  "version": "0.0.0",
-  "description": "01.SumFirstLast",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "name": "05.grads-to-radians",
-  "version": "0.0.0",
-  "description": "05.GradsToRadians",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

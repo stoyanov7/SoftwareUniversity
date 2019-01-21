@@ -1,9 +1,0 @@
-{
-  "name": "01.sum3-numbers",
-  "version": "0.0.0",
-  "description": "01.Sum3Numbers",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

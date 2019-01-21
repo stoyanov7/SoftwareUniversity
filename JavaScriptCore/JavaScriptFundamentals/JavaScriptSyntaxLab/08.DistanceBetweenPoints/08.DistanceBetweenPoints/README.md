@@ -1,3 +1,0 @@
-﻿# 08.DistanceBetweenPoints
-
-

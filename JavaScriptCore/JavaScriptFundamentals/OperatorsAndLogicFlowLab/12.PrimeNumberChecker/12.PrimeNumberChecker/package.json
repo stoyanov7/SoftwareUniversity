@@ -1,9 +1,0 @@
-{
-  "name": "12.prime-number-checker",
-  "version": "0.0.0",
-  "description": "12.PrimeNumberChecker",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

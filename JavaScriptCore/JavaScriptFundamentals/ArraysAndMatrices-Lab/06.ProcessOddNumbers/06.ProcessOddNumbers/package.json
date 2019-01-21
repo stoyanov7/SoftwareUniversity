@@ -1,9 +1,0 @@
-{
-  "name": "06.process-odd-numbers",
-  "version": "0.0.0",
-  "description": "06.ProcessOddNumbers",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

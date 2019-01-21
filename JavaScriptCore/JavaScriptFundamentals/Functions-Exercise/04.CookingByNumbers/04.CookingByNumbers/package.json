@@ -1,9 +1,0 @@
-{
-  "name": "04.cooking-by-numbers",
-  "version": "0.0.0",
-  "description": "04.CookingByNumbers",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

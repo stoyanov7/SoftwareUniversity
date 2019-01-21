@@ -1,9 +1,0 @@
-{
-  "name": "03.distance-over-time",
-  "version": "0.0.0",
-  "description": "03.DistanceOverTime",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "name": "14.biggest-of3-numbers",
-  "version": "0.0.0",
-  "description": "14.BiggestOf3Numbers",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

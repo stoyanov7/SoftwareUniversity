@@ -1,9 +1,0 @@
-{
-  "name": "08.biggest-element",
-  "version": "0.0.0",
-  "description": "08.BiggestElement",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

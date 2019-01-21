@@ -1,9 +1,0 @@
-{
-  "name": "05.last-knumbers-sequence",
-  "version": "0.0.0",
-  "description": "05.LastKNumbersSequence",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

@@ -1,3 +1,0 @@
-﻿# 06.FigureArea
-
-

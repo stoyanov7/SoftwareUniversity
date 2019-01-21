@@ -1,9 +1,0 @@
-{
-  "name": "08.distance-between-points",
-  "version": "0.0.0",
-  "description": "08.DistanceBetweenPoints",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

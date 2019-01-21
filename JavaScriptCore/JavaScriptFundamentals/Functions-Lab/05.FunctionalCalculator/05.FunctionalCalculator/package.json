@@ -1,9 +1,0 @@
-{
-  "name": "05.functional-calculator",
-  "version": "0.0.0",
-  "description": "05.FunctionalCalculator",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

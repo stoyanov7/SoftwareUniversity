@@ -1,9 +1,0 @@
-{
-  "name": "01.print-array-with-given-delimiter",
-  "version": "0.0.0",
-  "description": "01.PrintArrayWithGivenDelimiter",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

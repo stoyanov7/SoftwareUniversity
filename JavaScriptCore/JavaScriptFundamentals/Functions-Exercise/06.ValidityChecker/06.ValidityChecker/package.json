@@ -1,9 +1,0 @@
-{
-  "name": "06.validity-checker",
-  "version": "0.0.0",
-  "description": "06.ValidityChecker",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}

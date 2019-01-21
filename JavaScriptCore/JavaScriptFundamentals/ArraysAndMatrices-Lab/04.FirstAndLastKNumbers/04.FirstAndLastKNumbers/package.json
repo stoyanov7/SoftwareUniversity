@@ -1,9 +1,0 @@
-{
-  "name": "04.first-and-last-knumbers",
-  "version": "0.0.0",
-  "description": "04.FirstAndLastKNumbers",
-  "main": "app.js",
-  "author": {
-    "name": "Joro"
-  }
-}
