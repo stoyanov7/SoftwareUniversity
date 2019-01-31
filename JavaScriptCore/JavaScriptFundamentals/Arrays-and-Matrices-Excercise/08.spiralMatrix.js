@@ -1,57 +1,49 @@
 function solve(rows, cols) {
-    let matrix = [];
+    let matrix = fillMatrix(rows);
 
-    for (let row = 0; row < rows; row++) {
-        matrix[row] = [];
+    let number = 1;
+    let startRow = 0;
+    let endRow = rows - 1;
+    let startCol = 0;
+    let endCol = cols - 1;
 
-        for (let col = 0; col < cols; col++) {
-            matrix[row][col] = 0;            
-        }   
-    }
-
-    let counter = 1;
-    let currentRow = 0;
-    let currentCol = 0;
-    let direction = 'right';
-
-    for (let i = 0; i < rows * cols; i++) {
-        matrix[currentRow][currentCol] = counter;
-        counter++;
-
-        if (direction === 'right') {
-            if (currentCol + 1 >= cols || matrix[currentRow][currentCol + 1] !== 0) {
-                direction = 'down';
-                currentRow++;
-            } else {
-                currentCol++;
-            }
-        } else if (direction === 'down') {
-            if (currentRow + 1 >= rows || matrix[currentRow + 1][currentCol] !== 0) {
-                direction = 'left';
-                currentCol--;
-            } else {
-                currentRow++;
-            }
-        } else if (direction === 'left') {
-            if (currentCol - 1 < 0 || matrix[currentRow][currentCol - 1] !== 0) {
-                direction = 'up';
-                currentRow++;
-            } else {
-                currentCol--;
-            }
-        } else if (direction === 'up') {
-            if (currentRow - 1 < 0 || matrix[currentRow - 1][currentCol] !== 0) {
-                direction = 'right';
-                currentCol++;
-            } else {
-                currentRow--;
-            }
+    while (startRow <= endRow || startCol <= endCol) {
+        for (let i = startRow; i <= endRow; i++) {
+            matrix[startRow][i] = number;
+            number++;
         }
+
+        for (let i = startRow + 1; i <= endRow; i++) {
+            matrix[i][endCol] = number;
+            number++;
+        }
+
+        for (let i = endCol - 1; i >= startCol; i--) {
+            matrix[endRow][i] = number;
+            number++;
+        }
+
+        for (let i = endRow - 1; i > startRow; i--) {
+            matrix[i][startCol] = number;
+            number++;
+        }
+
+        startRow++;
+        endRow--;
+        startCol++;
+        endCol--;
     }
 
     for (let row of matrix) {
         console.log(row.join(' '));
     }
-}
 
-solve(5, 5);
+    function fillMatrix(rows) {
+        let matrix = [];
+        for (let row = 0; row < rows; row++) {
+            matrix.push([]);
+        }
+
+        return matrix;
+    }
+}
