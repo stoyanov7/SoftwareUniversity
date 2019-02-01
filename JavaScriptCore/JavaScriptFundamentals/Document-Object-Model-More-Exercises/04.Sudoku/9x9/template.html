@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="template.css">
+    <title>Sudomu</title>
+</head>
+
+<body>
+<div id="container">
+    <nav id="navigation">
+        <div id="navigation-text">
+            <p id="lecture-name">Intro to DOM</p>
+            <p id="problem-name">Sudomu</p>
+        </div>
+        <img id="logo-img" src="SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+    </nav>
+    <main id="main">
+        <div id="exercise">
+			<table>
+				<thead>
+				<tr>
+					<th colspan="9">SUDOMU</th>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+					<td colspan="9">
+						<button>Quick Check</button>
+						<button>Clear</button>
+					</td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<!-- <tr>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+					<td>
+						<input min="1" max="3" type="number"/>
+					</td>
+				</tr> -->
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				<tr>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+					<td><input type="number"/></td>
+				</tr>
+				</tbody>
+		</table>
+<div id="check">
+    <p></p>
+</div>
+        </div>
+        <img id="softUni-person-img" src="cw_2_New_Logo.png" alt="softUni-person">
+    </main>
+    <footer id="footer">
+        <p id="footer-text">Check your solution here: <span id="check-judge">Put the judge link here...</span>
+        </p>
+    </footer>
+</div>
+<script>
+let rows = Array.from(document.getElementsByTagName('tr')).slice(2, 11);
+    let count = 0;
+    let btn = document.getElementsByTagName('button')[0].addEventListener('click', realTimeCheck);
+    let clear = document.getElementsByTagName('button')[1].addEventListener('click', clearTable);
+    let p = document.getElementById('check').children[0];
+	console.log(p);
+
+    function realTimeCheck() {
+        let matrix = getNumbers();
+        let isSolve = isSolved(matrix);
+
+        if (isSolve) {
+            document.querySelector('table').style.border = "2px solid green";
+            p.style.color = "green";
+            p.textContent = 'You solve it! Congratulations!'
+        } else {
+
+            document.querySelector('table').style.border = "2px solid darkred";
+            p.style.color = "darkred";
+            p.textContent = 'NOP! You are not done yet...'
+        }
+
+        function getNumbers() {
+            let numbers = [];
+            rows.forEach((row) => {
+                let r = [];
+                Array.from(row.children).forEach((col) => {
+                    r.push(+col.children[0].value)
+                });
+                numbers.push(r);
+            });
+            return numbers;
+        }
+
+        function isSolved(input) {
+
+            let output = true;
+            let values = [];
+
+            input.forEach((row) => {
+
+                values = [1,2,3,4,5,6,7,8,9];
+
+                row.forEach((n) => {
+
+                    if (!values.includes(n)) {
+                        output = false;
+                    } else {
+                        let index = values.indexOf(n);
+                        values.splice(index, 1);
+                    }
+                });
+            });
+
+            if (output) {
+
+                for (let i = 0; i < 9; i++) {
+                    values = [1,2,3];
+                    let column = [input[0][i], input[1][i], input[2][i], input[3][i], input[4][i], input[5][i], input[6][i], input[7][i], input[8][i]];
+
+                    column.forEach((n) => {
+                        if(!values.includes(n)){
+                            output = false;
+                        } else {
+                            let index = values.indexOf(n);
+                            values.splice(index,1);
+                        }
+                    });
+                }
+            }
+            return output;
+        }
+    }
+
+    function clearTable() {
+        rows.forEach(r => {
+            Array.from(r.children).forEach(d => {
+                d.children[0].value = '';
+            })
+        });
+        document.querySelector('table').style.border = "none";
+        p.textContent = "";
+    }
+</script>
+</body>
+
+</html>
