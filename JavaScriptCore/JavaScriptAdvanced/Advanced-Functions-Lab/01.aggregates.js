@@ -5,10 +5,10 @@ function solve(arr) {
                console.log(`Sum = ${sum}`);
           },
           'min': (arr) => {
-               console.log(`Min = ${Math.min.apply(null, arr)}`);
+               console.log(`Min = ${Math.min(...arr)}`);
           },
           'max': (arr) => {
-               console.log(`Max = ${Math.max.apply(null, arr)}`);
+               console.log(`Max = ${Math.max(...arr)}`);
           },
           'product': (arr) => {
                let product = arr.reduce((a, b) => a * b);
@@ -20,9 +20,7 @@ function solve(arr) {
           }
      };
 
-     service['sum'](arr);
-     service['min'](arr);
-     service['max'](arr);
-     service['product'](arr);
-     service['join'](arr);
+     for(let key of Reflect.ownKeys(service)) {
+          service[key](arr);
+     }
 }
