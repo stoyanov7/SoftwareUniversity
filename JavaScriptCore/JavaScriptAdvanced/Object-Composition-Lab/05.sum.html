@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="text" id="num1" />
+    <input type="text" id="num2" />
+    <input type="text" id="result" readonly />
+    <br>
+    <button id="sumButton">Sum</button>
+    <button id="subtractButton">Subtract</button>
+    <script>
+        function solve() {
+            let firstSelector, secondSelector, resultSelector;
+
+            return {
+                init: (selector1, selector2, resultSelectorAsStr) => {
+                    firstSelector = $(selector1);
+                    secondSelector = $(selector2);
+                    resultSelector = $(resultSelectorAsStr);
+                },
+                add: () => {
+                    let firstValue = +firstSelector.val();
+                    let secondValue = +secondSelector.val();
+
+                    resultSelector.val(firstValue + secondValue);
+                },
+                subtract: () => {
+                    let firstValue = +firstSelector.val();
+                    let secondValue = +secondSelector.val();
+
+                    resultSelector.val(firstValue - secondValue);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
