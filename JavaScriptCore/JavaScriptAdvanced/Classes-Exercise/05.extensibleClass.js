@@ -3,7 +3,7 @@
 
      return class Extensible {
           constructor() {
-               this.id = counter;
+               this._id = counter;
                counter++;
           }
 

@@ -1,12 +1,12 @@
 class Person {
      constructor(firstName, lastName, age, email) {
-          this.firstName = firstName;
-          this.lastName = lastName;
-          this.age = age;
-          this.email = email;
+          this._firstName = firstName;
+          this._lastName = lastName;
+          this._age = age;
+          this._email = email;
      }
 
      toString() {
-          return `${this.firstName} ${this.lastName} (age: ${this.age}, email: ${this.email})`;
+          return `${this._firstName} ${this._lastName} (age: ${this._age}, email: ${this._email})`;
      }
 }

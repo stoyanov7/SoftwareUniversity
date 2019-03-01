@@ -1,7 +1,7 @@
 class Rat {
      constructor(name) {
-          this.name = name;
-          this.uniteRats = [];
+          this._name = name;
+          this._uniteRats = [];
      }
 
      /**
@@ -10,7 +10,7 @@ class Rat {
       */
      unite(otherRat) {
           if (otherRat.constructor === Rat) {
-               this.uniteRats.push(otherRat);
+               this._uniteRats.push(otherRat);
           }
      }
 
@@ -18,7 +18,7 @@ class Rat {
       * Returns all the rats it has united to, in a list.
       */
      getRats() {
-          return this.uniteRats;
+          return this._uniteRats;
      }
 
      /**
@@ -27,9 +27,9 @@ class Rat {
       * each on a new line. 
       */
      toString() {
-          let result = this.name + '\n';
+          let result = this._name + '\n';
 
-          for (let rat of this.uniteRats) {
+          for (let rat of this._uniteRats) {
                result += `##${rat.name}\n`;
           }
 

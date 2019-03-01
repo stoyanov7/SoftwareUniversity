@@ -4,8 +4,8 @@
  */
 class SortedList {
      constructor() {
-          this.arr = [];
-          this.size = 0;
+          this._arr = [];
+          this._size = 0;
      }
 
      /**
@@ -13,11 +13,11 @@ class SortedList {
       * @param {*} element Element to add.
       */
      add(element) {
-          this.arr.push(element);
-          this.arr.sort((a, b) => a - b);
-          this.size++;
+          this._arr.push(element);
+          this._arr.sort((a, b) => a - b);
+          this._size++;
 
-          return this.arr;
+          return this._arr;
      }
 
      /**
@@ -25,12 +25,12 @@ class SortedList {
       * @param {*} index Index for removing.
       */
      remove(index) {
-          if (index >= 0 && index < this.arr.length) {
-               this.arr.splice(index, 1);
-               this.arr.sort((a, b) => a - b);
-               this.size--;
+          if (index >= 0 && index < this._arr.length) {
+               this._arr.splice(index, 1);
+               this._arr.sort((a, b) => a - b);
+               this._size--;
 
-               return this.arr;
+               return this._arr;
           }
      }
 
@@ -39,8 +39,8 @@ class SortedList {
       * @param {*} index Position index.
       */
      get(index) {
-          if (index >= 0 && index < this.arr.length) {
-               return this.arr[index];
+          if (index >= 0 && index < this._arr.length) {
+               return this._arr[index];
           }
      }
 }

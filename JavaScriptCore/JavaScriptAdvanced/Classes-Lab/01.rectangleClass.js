@@ -1,12 +1,12 @@
 class Rectngle {
      constructor(width, height, color) {
-          this.width = width;
-          this.height = height;
-          this.color = color;
+          this._width = width;
+          this._height = height;
+          this._color = color;
      }
 
      calcArea() {
-          let area = this.width * this.height;
+          let area = this._width * this._height;
           return area;
      }
 }

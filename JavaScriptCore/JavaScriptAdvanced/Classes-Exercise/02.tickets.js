@@ -4,9 +4,9 @@
       */
      class Ticket {
           constructor(destination, price, status) {
-               this.destination = destination;
-               this.price = price;
-               this.status = status;
+               this._destination = destination;
+               this._price = price;
+               this._status = status;
           }
      }
      let tickets = [];

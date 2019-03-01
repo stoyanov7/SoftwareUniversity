@@ -1,10 +1,10 @@
 class CheckingAccount {
      constructor(clientId, email, firstName, lastName) {
-          this.clientId = clientId;
-          this.email = email;
-          this.firstName = firstName;
-          this.lastName = lastName;
-          this.products = [];
+          this._clientId = clientId;
+          this._email = email;
+          this._firstName = firstName;
+          this._lastName = lastName;
+          this._products = [];
      }
 
      set clientId(clientId) {

@@ -1,18 +1,18 @@
 class Stringer {
      constructor(innerString, innerLength) {
-          this.innerString = innerString;
-          this.innerLength = innerLength;
+          this._innerString = innerString;
+          this._innerLength = innerLength;
      }
 
      increase(length) {
-          this.innerLength += length;
+          this._innerLength += length;
      }
 
      decrease(length) {
-          this.innerLength -= length;
+          this._innerLength -= length;
 
-          if (this.innerLength < 0) {
-               this.innerLength = 0;
+          if (this._innerLength < 0) {
+               this._innerLength = 0;
           }
      }
 
@@ -20,10 +20,10 @@ class Stringer {
       * Returns the string, the object was initialized with.
       */
      toString() {
-          if (this.innerLength < this.innerString.length) {
-               return this.innerString.slice(0, this.innerLength) + '...';
+          if (this._innerLength < this._innerString.length) {
+               return this._innerString.slice(0, this._innerLength) + '...';
           }
 
-          return this.innerString.slice(0, this.innerLength);
+          return this._innerString.slice(0, this._innerLength);
      }
 }

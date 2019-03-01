@@ -3,11 +3,11 @@
  */
 class Request {
      constructor(method, uri, version, message) {
-          this.method = method;
-          this.uri = uri;
-          this.version = version;
-          this.message = message;
-          this.response = undefined;
-          this.fulfilled = false;
+          this._method = method;
+          this._uri = uri;
+          this._version = version;
+          this._message = message;
+          this._response = undefined;
+          this._fulfilled = false;
      }
 }
