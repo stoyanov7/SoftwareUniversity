@@ -1,5 +1,5 @@
 function solve() {
-  let inputArr = document.getElementById('arr').value;
+  let inputArr = $('#arr').val();
   let arr = JSON.parse(inputArr);
   let result = [];
 
@@ -9,5 +9,5 @@ function solve() {
     }
   });
 
-  document.getElementById('result').textContent = result.join(' x ');
+  $('#result').text(result.join(' x '));
 }

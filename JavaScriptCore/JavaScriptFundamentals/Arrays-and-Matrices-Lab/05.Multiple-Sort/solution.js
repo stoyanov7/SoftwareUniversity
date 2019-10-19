@@ -1,15 +1,17 @@
 function solve() {
-  let inputArray = document.getElementById('arr').value
+  let inputArray = $('#arr').val();
   let array = JSON.parse(inputArray);
-  let result = document.getElementById('result');
+  let result = $('#result');
 
   let ascendingSortedArr = array.sort((a, b) => a - b);
-  let ascendindElement = document.createElement('div');
-  ascendindElement.textContent = ascendingSortedArr.join(', ');
-  result.appendChild(ascendindElement);
+  let ascendindElement = $('<div>');
+  ascendindElement.text(ascendingSortedArr.join(', '));
+  
+  result.append(ascendindElement);
 
   let alphabeticallySortedArr = array.sort();
-  let alphabeticallyElement = document.createElement('div');
-  alphabeticallyElement.textContent = ascendingSortedArr.join(', ');
-  result.appendChild(alphabeticallyElement);
+  let alphabeticallyElement = $('<div>');
+  alphabeticallyElement.text(alphabeticallySortedArr.join(', '));
+
+  result.append(alphabeticallyElement);
 }

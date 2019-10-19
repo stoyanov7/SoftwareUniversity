@@ -7,7 +7,7 @@ function validate() {
     let regionCode = document.getElementById('region');
 
     let button = document.querySelector('button');
-    let pEgn = document.getElementById('egn')
+    let pEgn = document.getElementById('egn');
 
     button.addEventListener('click', event => {
         if (isYearValid(yearElement.value) && isRegionCodeValid(regionCode.value)) {
@@ -18,7 +18,7 @@ function validate() {
             let gender = maleElement.checked ? 2 : 1;
             let egnResult = `${year}${month}${date}${region}${gender}`
 
-            pEgn.textContent = `Your EGN is: ${egnResult}${getControlDigit(egnResult)}`
+            pEgn.textContent = `Your EGN is: ${egnResult}${getControlDigit(egnResult)}`;
         }
 
         year.value = ''

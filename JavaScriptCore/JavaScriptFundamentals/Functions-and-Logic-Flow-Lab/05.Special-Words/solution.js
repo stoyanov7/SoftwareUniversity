@@ -1,12 +1,12 @@
 function solve() {
-  let startNum = document.getElementById('firstNumber').value;
-  let endNum = document.getElementById('secondNumber').value;
+  let startNum = $('#firstNumber').val();
+  let endNum = $('#secondNumber').val();
 
-  let firstWord = document.getElementById('firstString').value;
-  let secondWord = document.getElementById('secondString').value;
-  let thirdWord = document.getElementById('thirdString').value;
+  let firstWord = $('#firstString').val();
+  let secondWord = $('#secondString').val();
+  let thirdWord = $('#thirdString').val();
 
-  let divResult = document.getElementById('result');
+  let divResult = $('#result');
 
   for (let i = startNum; i <= endNum; i++) {
     checkCurrentNumber(i);
@@ -14,24 +14,17 @@ function solve() {
 
   function checkCurrentNumber(i) {
     if (i % 3 === 0 && i % 5 === 0) {
-      let p = document.createElement('p');
-      p.innerHTML = `${i} ${firstWord}-${secondWord}-${thirdWord}`;
-      divResult.appendChild(p);
-    }
-    else if (i % 3 === 0) {
-      let p = document.createElement('p');
-      p.innerHTML = `${i} ${secondWord}`;
-      divResult.appendChild(p);
-    }
-    else if (i % 5 === 0) {
-      let p = document.createElement('p');
-      p.innerHTML = `${i} ${thirdWord}`;
-      divResult.appendChild(p);
-    }
-    else {
-      let p = document.createElement('p');
-      p.innerHTML = i;
-      divResult.appendChild(p);
+      $('<p>').html(`${i} ${firstWord}-${secondWord}-${thirdWord}`);
+      divResult.append(p);
+    } else if (i % 3 === 0) {
+      $('<p>').html(`${i} ${secondWord}`);
+      divResult.append(p);
+    } else if (i % 5 === 0) {      
+      $('<p>').html(`${i} ${thirdWord}`);
+      divResult.append(p);
+    } else {
+      $('<p>').html(i);
+      divResult.append(p);
     }
   }
 }

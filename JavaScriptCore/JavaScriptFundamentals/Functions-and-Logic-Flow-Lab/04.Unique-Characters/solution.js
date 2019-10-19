@@ -1,9 +1,10 @@
 function solve() {
   let uniquesChars = '';
-  let string = document.getElementById('string').value;
+  let string = $('#string').val();
 
-  findUniqueChars(string)
-  document.getElementById('result').innerHTML = uniquesChars;
+  findUniqueChars(string);
+
+  $('#result').html(uniquesChars);
 
   function isCharWhitespace(i) {
     if (string[i] === " ") {

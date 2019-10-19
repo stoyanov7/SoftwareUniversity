@@ -1,7 +1,7 @@
 function solve() {
-   let number = +document.getElementById('num').value;
-
-   document.getElementById('result').textContent = `${calculate(number).join(' ')}`;
+   let number = Number($('#num').val());
+   
+   $('#result').text(`${calculate(number).join(' ')}`);
 
    function calculate(num) {
       let result = [];

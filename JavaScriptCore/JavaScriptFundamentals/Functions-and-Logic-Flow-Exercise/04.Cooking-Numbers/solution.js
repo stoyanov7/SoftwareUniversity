@@ -8,10 +8,10 @@ function solve() {
             let service = {
                 'Chop': (n) => {
                     if (output.textContent) {
-                        return output.textContent / 2
+                        return output.textContent / 2;
                     }
                     else {
-                        return n / 2
+                        return n / 2;
                    }
                 },
                 'Dice': (n) => {
@@ -24,31 +24,28 @@ function solve() {
                 },
                 'Spice': (n) => {
                     if (output.textContent) {
-                        return +output.textContent + 1
-                    }
-                    else {
+                        return +output.textContent + 1;
+                    } else {
                         return n + 1;
                     }
                 },
                 'Bake': (n) => {
                     if (output.textContent) {
                         return output.textContent * 3;
-                    }
-                    else {
+                    } else {
                         return n * 3;
                     }
                 },
                 'Fillet': (n) => {
                     if (output.textContent) {
                         return output.textContent * 0.8;
-                    }
-                    else {
-                        return n * 0.8
+                    } else {
+                        return n * 0.8;
                     }
                 }
             };
             
-            output.innerHTML = service[btn.textContent] (inputNumber.value)
+            output.innerHTML = service[btn.textContent] (inputNumber.value);
         });
     });
 }

@@ -1,20 +1,18 @@
 function leapYear() {
-    let button = document.querySelector('button');
-    let year = document.querySelector('input');   
-    let yearH2 = document.querySelector('#year h2');
-    let yearInnerDiv = document.querySelector('#year div');
+    let year = $('input');   
+    let yearH2 = $('#year h2');
+    let yearInnerDiv = $('#year div');
 
-    button.addEventListener('click', event => {
-        if (isYearLeap(year.value)) {
-            yearH2.innerHTML = "Leap Year";
-            yearInnerDiv.innerHTML = year.value;
-        }
-        else {
-            yearH2.innerHTML = "Not Leap Year";
-            yearInnerDiv.innerHTML = year.value;
+    $('button').click(() => {
+        if (isYearLeap(year.val())) {
+            yearH2.html("Leap Year");
+            yearInnerDiv.html(year.val());
+        } else {
+            yearH2.html("Not Leap Year");
+            yearInnerDiv.html(year.val());
         }
 
-        year.value = ""
+        year.val("");
     });
 
     function isYearLeap(year) {

@@ -1,8 +1,5 @@
 function solve() {
-  let inputElement = document.getElementById('input');
-  let output = document.getElementById('output');
-
-  let inputText = inputElement.textContent.split('.')
+  let inputText = $('#input').text().split('.');
 
   for (let i = 0; i < inputText.length; i+= 3) {
     let paragraph = document.createElement('p');
@@ -16,6 +13,6 @@ function solve() {
       paragraph.textContent += '. ' + inputText[i + 2];
     }
     
-    output.appendChild(paragraph);
+    $('#output').append(paragraph);
   }  
 }

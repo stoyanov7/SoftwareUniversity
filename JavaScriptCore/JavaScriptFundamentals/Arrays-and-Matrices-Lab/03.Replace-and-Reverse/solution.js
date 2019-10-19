@@ -1,5 +1,5 @@
 function solve() {
-  let inputText = document.getElementById('arr').value;
+  let inputText =$('#arr').val();
   let inputArr = JSON.parse(inputText);
 
   inputArr.forEach((word, index, arr) => {
@@ -8,5 +8,5 @@ function solve() {
 
   let result = inputArr.map(word => word[0].toUpperCase() + word.slice(1));
   
-  document.getElementById('result').textContent = result.join(' ');
+  $('#result').text(result.join(' '));
 }

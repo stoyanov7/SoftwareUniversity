@@ -1,5 +1,5 @@
 function solve() {
-  var links = document.querySelectorAll('a'), result;
+  var links = $('a'), result;
 
   for (var i = 0; i < links.length; i++) {
     result = links[i];

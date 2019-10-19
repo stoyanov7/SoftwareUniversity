@@ -1,24 +1,17 @@
 function solve() {
-  let numberToBeMultiplied = Number(document.getElementById('num1').value);
-  let multiplier = Number(document.getElementById('num2').value);
-  let divResult = document.getElementById('result');
+  let numberToBeMultiplied = Number($('#num1').val());
+  let multiplier = Number($('#num2').val());
+  let divResult = $('#result');
 
-  findWrongInput(numberToBeMultiplied, multiplier);
-  printTable(numberToBeMultiplied, multiplier);
-
-  function findWrongInput(firstNumber, secondNumber) {
-    if (firstNumber > secondNumber) {
-      divResult.innerHTML = "Try with other numbers."
+  divResult.html(() => {
+    if (numberToBeMultiplied > multiplier) {
+      return "Try with other numbers.";
     }
-  }
+  });
 
-  function printTable(multiplied, multiplier) {
-    for (let i = multiplied; i <= multiplier; i++) {
-      let result = multiplier * i;
-      let p = document.createElement('p');
+  for (let i = numberToBeMultiplied; i <= multiplier; i++) {
+    let result = multiplier * i;
 
-      p.innerHTML = `${i} * ${multiplier} = ${result}`;
-      divResult.appendChild(p);   
-    }
+    divResult.append($('<p>').html(`${i} * ${multiplier} = ${result}`));
   }
 }

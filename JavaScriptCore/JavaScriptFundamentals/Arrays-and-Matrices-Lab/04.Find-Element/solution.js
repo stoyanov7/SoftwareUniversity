@@ -1,6 +1,6 @@
 function solve() {
-  let needle = parseInt(document.getElementById('num').value);
-  let inputArray = document.getElementById('arr').value;
+  let needle = parseInt($('#num').val());
+  let inputArray = $('#arr').val;
   let haystack = JSON.parse(inputArray);
   let result = [];
 
@@ -11,5 +11,5 @@ function solve() {
     result.push(`${hasValue} -> ${index}`);
   });
 
-  document.getElementById('result').textContent = result.join(',')
+  $('#result').text(result.join(','));
 }

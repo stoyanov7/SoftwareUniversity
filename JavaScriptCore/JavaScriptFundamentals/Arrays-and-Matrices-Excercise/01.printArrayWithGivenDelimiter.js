@@ -1,16 +1,5 @@
 function solve(arr) {
-    let delimeter = arr[arr.length - 1];
-    arr.pop();
-    let result = '';
+    let delimeter = arr.pop(); 
 
-    for (let i = 0; i < arr.length; i++) {
-        if (result == 0) {
-            result += arr[i];
-        }
-        else {
-            result += delimeter + arr[i];
-        }
-    }
-
-    console.log(result);
+    console.log(arr.join(delimeter));
 }

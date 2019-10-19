@@ -1,15 +1,12 @@
 function binarySearch() {
-    let numbers = document.getElementById('arr').value.split(', ');
-    let numberForSearch = document.getElementById('num').value;
+    let numbers = $('#arr').val().split(', ');
+    let numberForSearch = $('#num').val();
 
     let index = numbers.indexOf(numberForSearch);
 
-    let result = document.getElementById('result');
-
     if (index !== -1) {
-        result.textContent = `Found ${numberForSearch} at index ${index}`;
-    } 
-    else {
-        result.textContent = `${numberForSearch} is not in the array`;
+        $('#result').text(`Found ${numberForSearch} at index ${index}`);
+    } else {
+        $('#result').text(`${numberForSearch} is not in the array`);
     }
 }

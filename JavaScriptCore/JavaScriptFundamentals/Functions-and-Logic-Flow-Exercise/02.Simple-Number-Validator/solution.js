@@ -1,10 +1,9 @@
 function validate() {
-    let button = document.querySelector('button');
     let input = document.querySelector('input');
     let weightPosition = [2, 4, 8, 5, 10, 9, 7, 3, 6];
     let sum = 0;
 
-    button.addEventListener('click', event => {        
+    $('button').click(() => {        
         let lastDigit = input.value[input.value.length - 1];
 
         for (let i = 0; i < 9; i++) {
@@ -20,13 +19,12 @@ function validate() {
             reminder = 0;
         }
 
-        let responce = document.getElementById('response');
+        let responce = $('#response');
 
         if (+lastDigit === reminder) {
-            responce.textContent = 'This number is Valid!'
-        }
-        else {
-            responce.textContent = 'This number is NOT Valid!'
+            responce.text('This number is Valid!');
+        } else {
+            responce.text('This number is NOT Valid!');
         }
     });
 }

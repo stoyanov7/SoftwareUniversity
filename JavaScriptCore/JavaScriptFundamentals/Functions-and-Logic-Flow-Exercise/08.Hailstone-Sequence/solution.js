@@ -1,5 +1,5 @@
 function getNext() {
-    let number = +document.getElementById('num').value;
+    let number = Number($('#num').val());
     let result = [number];
 
     while (number !== 1) {
@@ -13,5 +13,5 @@ function getNext() {
         }
     }
 
-    document.getElementById('result').textContent = `${result.join(' ')} `;
+    $('$result').text(`${result.join(' ')} `);
 }

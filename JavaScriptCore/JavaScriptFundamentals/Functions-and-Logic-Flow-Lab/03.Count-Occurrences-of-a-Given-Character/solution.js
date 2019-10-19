@@ -1,25 +1,19 @@
 function solve() {
-  let sentence = document.getElementById('string').value.split('');
-  let searchedCharacter = document.getElementById('character').value;
+  let sentence = $('#string').val().split('');
+  let searchedCharacter = $('#character').val();
   let count = 0;
 
-  findCharacter(sentence, searchedCharacter);
-  document.getElementById('result').innerHTML = print(searchedCharacter);
-
-  function findCharacter(string, char) {
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] === char) {
-          count++;
-      }
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] === searchedCharacter) {
+      count++;
     }
   }
 
-  function print(char) {
+  $('#result').html(() => {
     if (count % 2 === 0) {
-      return `Count of ${char} is even.`;
+      return `Count of ${searchedCharacter} is even.`;
+    } else {
+      return `Count of ${searchedCharacter} is odd.`;
     }
-    else {
-      return `Count of ${char} is odd.`
-    }
-  }
+  });
 }

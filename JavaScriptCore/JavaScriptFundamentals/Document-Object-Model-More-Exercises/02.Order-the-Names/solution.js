@@ -1,12 +1,16 @@
 function solve() {
-    let buttonElement = document.querySelector('button');
+    $('button').click(() => {
+        let input = $('input').val();
 
-    buttonElement.addEventListener('click', event => {
-        let input = document.querySelector('input');
-        let firstLetterIndex = input.value.toLowerCase().charCodeAt(0) - 97;
+        let firstLetterIndex = input
+            .toLowerCase()
+            .charCodeAt(0) - 97;
 
         if (firstLetterIndex >= 0 && firstLetterIndex <= 25) {
-            name = input.value.charAt(0).toUpperCase() + input.value.substr(1).toLowerCase();
+            name = input
+                .charAt(0)
+                .toUpperCase() + input.substr(1).toLowerCase();
+
             let liElements = document.querySelectorAll('li');
             let li = liElements[firstLetterIndex];
             
@@ -16,7 +20,7 @@ function solve() {
                 li.textContent += ", " + name;
             }
     
-            document.querySelector('input').value = '';
+            $('input').val('');
         }
     });
 }
