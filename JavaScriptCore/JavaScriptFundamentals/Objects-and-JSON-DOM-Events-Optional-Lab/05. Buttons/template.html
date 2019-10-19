@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style/template.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <title>Buttons</title>
+</head>
+<body>
+    <div id="container">
+        <nav id="navigation">
+            <div id="navigation-text">
+                <p id="lecture-name">Objects, JSON and DOM Events</p>
+                <p id="problem-name">05. Buttons</p>
+            </div>
+            <img id="logo-img" src="./images/SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+        </nav>
+        <main>
+            <div id="exercise">
+                <form>
+                    <label>Key</label>
+                    <input type="text" id="key">
+                    <label>Value</label>
+                    <input type="text" id="value">
+                    <div class="center">
+                        <input type="submit" class="button" onclick="addProperty()" value="Add">  
+                        <input type="submit" class="button" onclick="getProperty()" value="Get Value">
+                        <input type="submit" class="button" onclick="getObject()" value="Get Whole Object">
+                    </div>
+                </form>
+                <label>Console</label>
+               <textarea readonly rows="10" cols="50" id="result"></textarea>
+            </div>
+            <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
+        </main>
+        <footer>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
+            </p>
+        </footer>
+    </div>
+    <script>
+        $('.button').click(event => event.preventDefault());
+
+        let obj = {};
+
+        function addProperty() {
+            let key = $('#key').val();
+            let value = $('#value').val();
+
+            obj[key] = value;
+            $('#result').html('New property added!');
+        }
+
+        function getProperty() {
+            let key = $('#key').val();
+
+            $('#result').html(obj[key]);
+        }
+
+        function getObject() {
+            $('#result').html(JSON.stringify(obj));
+        }
+    </script>
+</body>
+</html>

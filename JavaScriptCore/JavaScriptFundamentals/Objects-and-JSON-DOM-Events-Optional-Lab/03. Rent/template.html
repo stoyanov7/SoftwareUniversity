@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style/template.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <title>Rent</title>
+</head>
+
+<body>
+    <div id="container">
+        <nav id="navigation">
+            <div id="navigation-text">
+                <p id="lecture-name">Objects, JSON and DOM Events</p>
+                <p id="problem-name">03. Rent</p>
+            </div>
+            <img id="logo-img" src="./images/SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+        </nav>
+        <main>
+            <div id="exercise">
+                <form>
+                    <label>Flat Numbers</label>
+                    <input type="text" id="flats">
+                    <label>Families</label>
+                    <input type="text" id="families">
+                    <label>Rents</label>
+                    <input type="text" id="rents">
+                    <div class="center">
+                        <input type="submit" id="button" onclick="calculateRents()" value="Calculate Rent">
+                    </div>
+                </form>
+                <label>Result</label>
+                <textarea readonly rows="10" cols="50" id="result"></textarea>
+            </div>
+            <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
+        </main>
+        <footer>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
+            </p>
+        </footer>
+    </div>
+    <script>
+        $("#button").click(event => {
+            event.preventDefault()
+        });
+
+        function calculateRents() {
+            let flats = $('#flats').val().split(', ');
+            let families = $('#families').val().split(', ');
+            let rents = $('#rents').val().split(', ').map(Number);
+
+            $('#result').html(() => {
+                let result = '';
+
+                for (let i = 0; i < families.length; i++) {
+                    result += `In flat ${flats[i]} family ${families[i]} has to pay ${rents[i]}\n`;
+                }
+
+                result += `Total rent paid ${rents.reduce((a, b) => a + b)}\n`;
+
+                return result;
+            });
+        }
+    </script>
+</body>
+</html>

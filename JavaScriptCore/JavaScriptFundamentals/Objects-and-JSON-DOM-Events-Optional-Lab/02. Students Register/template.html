@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style/template.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <title>Students Register</title>
+</head>
+<body>
+    <div id="container">
+        <nav id="navigation">
+            <div id="navigation-text">
+                <p id="lecture-name">Objects, JSON and DOM Events</p>
+                <p id="problem-name">02. Students Register</p>
+            </div>
+            <img id="logo-img" src="./images/SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+        </nav>
+        <main>
+            <div id="exercise">
+                <form>
+                    <label>Students</label>
+                    <textarea type="text" id="input" rows="10" cols="50"></textarea>
+                    <div class="center">
+                        <input type="submit" id="button" onclick="addStudents()" value="Add Students">
+                    </div>
+                </form>
+                <label>Result</label>
+               <textarea readonly rows="10" cols="50" id="result"></textarea>
+            </div>
+            <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
+        </main>
+        <footer>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
+            </p>
+        </footer>
+    </div>
+    <script>
+        $("#button").click(evenт => {
+            event.preventDefault();
+        });
+
+        function addStudents() {
+            let studentInput = $('#input').val().split('\n');
+
+            let students = studentInput.filter(x => x !== '').map(line => {
+                let currentStudent = line.split(" ");
+
+                return {
+                    firstName: currentStudent[0],
+                    secondName: currentStudent[1],
+                    grade: Number(currentStudent[2])
+                }
+            });            
+
+            let resultStr = "";
+            resultStr += "Students are: ";
+            resultStr += students.map(s => `${s.firstName} ${s.secondName}`).join(", ");
+            resultStr += "\n";
+            resultStr += "Average grade: ";
+            resultStr += (students.map(s => s.grade).reduce((a, b) => a + b) / students.length).toFixed(2);
+
+            $("#result").html(resultStr);
+        }
+    </script>
+</body>
+</html>

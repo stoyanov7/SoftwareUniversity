@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="./style/template.css">
+    <title>Problem name</title>
+</head>
+<body>
+    <div id="container">
+        <nav id="navigation">
+            <div id="navigation-text">
+                <p id="lecture-name">Objects, JSON and DOM Events</p>
+                <p id="problem-name">01. Object Properties</p>
+            </div>
+            <img id="logo-img" src="./images/SoftUniFoundation_Logo_OneLine_White@2x.png" alt="logo">
+        </nav>
+        <main>
+            <div id="exercise">
+                <form>
+                    <label>Key</label>
+                    <input type="text" id="key"></input>
+                    <label>Value</label>
+                    <input type="text" id="value"></input>
+                    <div class="center">
+                        <input type="submit" id="button" onclick="addProperty()" value="Submit"></input>
+                    </div>
+                </form>
+                <label>Result</label>
+               <textarea readonly rows="10" cols="50" id="result"></textarea>
+            </div>
+            <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
+        </main>
+        <footer>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
+            </p>
+        </footer>
+    </div>
+    <script>
+        $("#button").click(event => {
+            event.preventDefault()
+        });
+
+        let obj = {};
+
+        function addProperty() {
+            let objKey = $('#key').val();
+            let objValue = $('#value').val();
+
+            obj[objKey] = objValue;
+
+            $('#result').html(JSON.stringify(obj));
+        }
+    </script>
+</body>
+</html>
