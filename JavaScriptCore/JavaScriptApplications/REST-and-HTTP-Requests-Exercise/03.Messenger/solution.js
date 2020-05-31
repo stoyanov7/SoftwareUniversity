@@ -1,8 +1,8 @@
 function attachEvents() {
      const url = 'https://messenger-8af6d.firebaseio.com/messages.json';
 
-     $('#submit').on('click', sendMessage);
-     $('#refresh').on('click', refresh);
+     $('#submit').click(sendMessage);
+     $('#refresh').click(refresh);
 
      function sendMessage() {
           let author = $('#author').val();

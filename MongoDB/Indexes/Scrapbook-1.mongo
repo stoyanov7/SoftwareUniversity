@@ -1,0 +1,37 @@
+// 1. Create Single Field Index
+
+// create an index for "class_id" field in ascending order
+db.grades.createIndex({ class_id: 1});
+
+// find the count of document with "class_id": 27
+db.grades.explain('executionStats').find({
+   class_id: { $eq: 27 }
+})
+
+//find and delete the created index 
+db.grades.getIndexes();
+db.grades.dropIndex("student_id_1_class_id_1");
+
+// 2. Create a Compound Index 
+// create a compound index for "student_id" field in ascending order and "class_id" field for values grater then 10
+db.grades.createIndex(
+   { student_id: 1, class_id: 1 },
+   { partialFilterExpression: { class_id: { $gt: 10 } } }
+);
+
+db.grades.explain('executionStats').find({ student_id: 12, class_id: 10 })
+
+// 4. Create TTL index
+db.grades.createIndex({ student_id: 1}, { expireAfterSeconds: 10 });
+
+// 5. Create Text index
+db.grades.createIndex({ description: "text" });
+
+// Find by single word
+db.grades.find({ $text: { $search: "excelent" } })
+
+// Find by multiple words
+db.grades.find({ $text: { $search: "excelent poor"}})
+
+// Add score field
+db.grades.find({ $text: { $search: "excelent poor" }}, { score: { $meta: "textScore" }});

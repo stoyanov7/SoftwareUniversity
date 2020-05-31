@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="./style.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/gh/lipis/bootstrap-social@5.0.0/bootstrap-social.css" rel="stylesheet" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" rel="stylesheet" />
+</head>
+<body>
+     <div class="jumbotron text-white bg-info m-5 w-50 mx-auto">
+          <h3 class="text-center font-weight-bold">JOB APPLICATION</h3>
+          <h4 class="text-center font-italic">WE ARE LOOKING FOR SOMEONE LIKE YOU!</h4>
+          <div class="mt-5 p-1">
+               <button class="text-left font-weight-bold p-4 btn btn-info w-100 border-white collapsed" 
+                       type="button"
+                       data-toggle="collapse" 
+                       data-target="#enterDataForm" 
+                       aria-expanded="false"
+                       aria-controls="collapseExample">
+                    <h5><u>Enter your data</u></h5>
+               </button>
+               <div class="collapse text-dark" id="enterDataForm">
+                    <div class="bg-white p-4 form-group">
+                         <label class="d-block text-left" for="first-name">First Name</label>
+                         <div>
+                              <input class="form-control w-100" type="text" name="first-name" placeholder="First Name">
+                         </div>
+                         <label class="d-block text-left" for="last-name">Last Name</label>
+                         <div>
+                              <input class="form-control w-100" type="text" name="last-name" placeholder="Last Name">
+                         </div>
+                         <label class="d-block text-left" for="email">Email address</label>
+                         <div>
+                              <input class="form-control w-100"
+                                     type="email"
+                                     name="first-name"
+                                     placeholder="Enter email">
+                              We'll never share your email with anyone else.
+                         </div>
+                         <div class="mt-4">
+                              <a class="btn btn-block btn-social btn-facebook text-white d-inline mr-4"
+                                 data-toggle="modal"
+                                 data-target="#facebookModal">
+                                   <i class="fab fa-facebook"></i> Sign in with Facebook
+                              </a>
+                              <div class="modal" id="facebookModal" tabindex="-1" role="dialog"
+                                   aria-labelledby="facebookModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog w-50" role="document">
+                                        <div class="modal-content p-3">
+                                             <div class="modal-body text-center">
+                                                  <div>
+                                                       <i class="fas fa-exclamation-circle text-warning fa-10x"></i>
+                                                  </div>
+                                                  <h2>Leave this site?</h2>
+                                                  <p>If you click "OK" you will be redirected to http://facebook.com</p>
+                                             </div>
+                                             <div class="text-center">
+                                                  <button type="button" class="p-3 m-1 btn btn-light"
+                                                       data-dismiss="modal">Cancel</button>
+                                                  <button type="button" class="p-3 m-1 btn btn-primary">OK</button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <a class="btn btn-block btn-social btn-google text-white d-inline" data-toggle="modal"
+                                   data-target="#googleModal">
+                                   <i class="fab fa-google"></i> Sign in with Google
+                              </a>
+                              <div class="modal" id="googleModal" tabindex="-1" role="dialog"
+                                   aria-labelledby="googleModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog w-50" role="document">
+                                        <div class="modal-content p-3">
+                                             <div class="modal-body text-center">
+                                                  <div>
+                                                       <i class="fas fa-exclamation-circle text-warning fa-10x"></i>
+                                                  </div>
+                                                  <h2>Leave this site?</h2>
+                                                  <p>If you click "OK" you will be redirected to http://google.com</p>
+                                             </div>
+                                             <div class="text-center">
+                                                  <button type="button" class="p-3 m-1 btn btn-light"
+                                                       data-dismiss="modal">Cancel</button>
+                                                  <button type="button" class="p-3 m-1 btn btn-primary">OK</button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="p-1">
+               <button class="text-left font-weight-bold p-4 btn btn-info w-100 border-white collapsed" type="button"
+                    data-toggle="collapse" data-target="#socialMedia" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <h5>Social Media Profiles</h5>
+               </button>
+               <div class="collapse text-dark bg-white p-4" id="socialMedia">
+                    <a class="btn btn-block btn-social bg-white btn-twitter w-70">
+                         <span class="fab bg-info text-white fa-twitter"></span> Twitter profile
+                    </a>
+                    <a class="btn btn-block btn-social bg-white btn-facebook w-70">
+                         <span class="fab text-white bg-primary fa-facebook"></span> Facebook profile
+                    </a>
+                    <a class="btn btn-block btn-social bg-white btn-github w-70">
+                         <span class="fab fa-github bg-dark text-white"></span> Github profile
+                    </a>
+                    <a class="btn btn-block btn-social bg-white btn-linkedin w-70">
+                         <span class="fab fa-linkedin bg-primary text-white"></span> LinkedIn profile
+                    </a>
+               </div>
+          </div>
+          <div class="p-1">
+               <button class="text-left font-weight-bold p-4 btn btn-info w-100 border-white collapsed" type="button"
+                    data-toggle="collapse" data-target="#uploadCV" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <h5>Upload CV</h5>
+               </button>
+               <div class="collapse text-dark bg-white p-4" id="uploadCV">
+                    <input type="file" class="dropify" />
+               </div>
+          </div>
+          <div class="text-center mt-5">
+               <button class="btn btn-info p-2 border-white font-weight-bold">SUBMIT</button>
+          </div>
+     </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+     crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.js"></script>
+<script src="./site.js"></script>
+</html>

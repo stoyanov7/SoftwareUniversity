@@ -1,0 +1,70 @@
+//2. Find All Information About Departments 
+db.departments.find();
+
+// 3. Find all Department Names 
+db.departments.find({}, {
+   _id: 0,
+   department_name: 1
+});
+
+// 4. Find salary of Each Employee 
+db.employee.find({}, {
+   _id: 0,
+   first_name: 1,
+   last_name: 1, 
+   salary: 1
+});
+
+// 5. Find Full Name of Each Employee 
+db.employee.find({}, {
+   _id: 0,
+   first_name: 1,
+   middle_name: 1,
+   last_name: 1
+});
+
+//6. Create Email Address of Each Employee 
+
+//7. Find All Different Employee’s Salaries 
+db.employee.distinct("salary");
+
+// 8. Find all Information About Employees 
+db.employee.find({ middle_name: 'R' });
+
+// 9. Find Names of All Employees by salary in Range 
+db.employee.find({}, { "salary": { $range: [0, 30000] }});
+
+// 12. Find All Employees with salary More Than 50000 
+db.employee.find({
+   "salary": {
+      $gt: 5000
+   }   
+},
+{
+   _id: 0,
+   first_name: 1,
+   last_name: 1,
+   salary: 1
+});
+
+//13. Find 5 Best Paid Employees 
+db.employee.find({}, {
+   _id: 0,
+    first_name: 1,
+    last_name: 1
+}).limit(5).sort({
+    "salary": -1
+});
+
+// 14. Find All Employees Except Marketing
+db.employee.find({
+   "department": { $ne: "Marketing" }
+}, 
+{
+   _id: 0,
+   first_name: 1,
+   last_name: 1
+});
+
+// 15. Distinct Job Titles 
+db.employee.distinct("job_title").sort();

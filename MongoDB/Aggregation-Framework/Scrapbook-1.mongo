@@ -1,0 +1,74 @@
+db.sales.insertMany([
+  {
+      "_id" : 1,
+      "item" : "apple", 
+      "price" : NumberDecimal("10"),
+      "quantity" : NumberInt("2"),
+      "date" : ISODate("2014-03-01T08:00:00Z") 
+   },
+  {
+      "_id" : 2,
+      "item" : "tomato", 
+      "price" : NumberDecimal("20"), 
+      "quantity" : NumberInt("1"), 
+      "date" : ISODate("2014-03-01T09:00:00Z") 
+   },
+  { 
+      "_id" : 3, 
+      "item" : "lemon", 
+      "price" : NumberDecimal("5"), 
+      "quantity" : NumberInt( "10"),
+      "date" : ISODate("2014-03-15T09:00:00Z") 
+   },
+  { 
+      "_id" : 4, 
+      "item" : "lemon", 
+      "price" : NumberDecimal("5"), 
+      "quantity" :  NumberInt("20") , 
+      "date" : ISODate("2014-04-04T11:21:39.736Z") 
+   },
+  { 
+      "_id" : 5, 
+      "item" : "apple", 
+      "price" : NumberDecimal("10"), 
+      "quantity" : NumberInt("10") , 
+      "date" : ISODate("2014-04-04T21:23:13.331Z") 
+   },
+   { 
+      "_id" : 6, 
+      "item" : "pumpkin", 
+      "price" : NumberDecimal("7.5"), 
+      "quantity": NumberInt("5" ) , 
+      "date" : ISODate("2015-06-04T05:08:13Z") 
+   },
+   { 
+      "_id" : 7,
+      "item" : "pumpkin", 
+      "price" : NumberDecimal("7.5"), 
+      "quantity": NumberInt("10") , 
+      "date" : ISODate("2015-09-10T08:43:00Z") 
+   },
+   { 
+      "_id" : 8, 
+      "item" : "apple", 
+      "price" : NumberDecimal("10"), 
+      "quantity" : NumberInt("5" ) , 
+      "date" : ISODate("2016-02-06T20:20:13Z") 
+   }
+])
+
+// We are looking for the count of the items with price greater than 5
+db.sales.find({ price: { $gt: 5 } }).count();
+
+// group the elements by items. We need the groups of products with total amount greater than 100
+db.sales.aggregate([
+   { 
+      $group: {
+         _id: "$item",
+         totalSaleAmount: { $sum: { $multiply: [ "$price", "$quantity" ] } }
+      }
+   },
+   {
+      $match: { "totalSaleAmount": { $gte: 100 } }
+   }
+]);

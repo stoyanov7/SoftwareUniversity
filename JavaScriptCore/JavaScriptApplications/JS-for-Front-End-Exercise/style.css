@@ -1,0 +1,15 @@
+body{
+     background-image: url("./img/hands-with-pencil-and-ruler.jpg");
+     background-size: cover;
+ }
+ 
+ .modal-dialog {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%) !important;
+ }
+ 
+ .w-70{
+     width: 70%;
+ }

@@ -1,10 +1,12 @@
 function getInfo() {
+     $('#buses').text("");
+     $('#stopName').text("");
+
      let stopId = $('#stopId').val();
-     let baseUrl = `https://judgetests.firebaseio.com/businfo/${stopId}.json`;
-     $('#stopId').empty();
+     const baseUrl = 'https://judgetests.firebaseio.com/businfo/';     
 
      $.ajax({
-          url: baseUrl,
+          url: baseUrl + stopId + '.json',
           method: 'GET',
           success: (data) => {
                $('#stopName').text(data.name);
@@ -15,4 +17,6 @@ function getInfo() {
           },
           error: () => $('#stopName').text('Error')
      });
+    
+     $('#stopId').val('');
 }
